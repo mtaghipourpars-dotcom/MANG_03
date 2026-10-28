@@ -67,3 +67,7 @@ A decision does not imply an action was completed; action completion does not au
 
 ## 8. Traceability requirements
 Record timestamps, actor, previous and new state, reason, evidence, authority basis, and relevant profile/rule version for important transitions. Preserve rejected or redirected intake history. Merges/duplicate links should remain traceable and reversible according to governance rules.
+
+
+## 9. Manufacturing Issue–Solution qualification matrix
+The reusable manufacturing taxonomy, ordered qualification checks, data-readiness levels, issue-to-solution applicability patterns, relationship semantics, governance, and MVP acceptance checklist are defined in the [Manufacturing Issue–Solution Matrix and Qualification Framework](../design/manufacturing-issue-solution-matrix.md). This matrix is a generic starter baseline; validate site-specific safety, quality, compliance, authority, and source-system rules during the pilot. Qualification must preserve intake history, avoid opaque scoring as the sole gate, and must not require a submitter to diagnose root cause or supply a solution.
