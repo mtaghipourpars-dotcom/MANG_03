@@ -510,7 +510,13 @@ These do not block the start of UI design, but must be decided before the affect
 13. Final state enums, reopen/close rules, retention, and audit-detail policy.
 14. Required languages, localization, deployment constraints, and integration security details.
 
-## 15. Recommended next design sequence
+## 15. MVP catalogue-authoring button behavior
+
+In the Issue Type selector/list form, show **NEW ISSUE** in its intended location but disabled. In the Solution Type selector/list form, show **NEW SOLUTION** in its intended location but disabled. Use semantic disabled behavior and optional helper text “Available in a future version.” Do not merely style the buttons to look disabled while leaving them actionable. There must be no modal, navigation, API call, draft, or catalogue mutation from pointer or keyboard interaction.
+
+These buttons concern reusable catalogue definitions only. **Create Issue Intake** and adding a case-specific **Solution Candidate** remain separate MVP functions and must stay enabled where authorized. Catalogue entries are maintained through controlled seed/configuration updates until a later release implements user proposals, similarity checks, relationship suggestions, and governed approval.
+
+## 16. Recommended next design sequence
 
 1. Approve/adjust this reference scenario and the user-visible screen inventory.
 2. Create low-fidelity wireframes for Home/Work Queue, Intake, Qualification, Case Workspace, Candidate Comparison, Decision Room, Action Board, and Outcome Review.
