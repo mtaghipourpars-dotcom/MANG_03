@@ -108,3 +108,10 @@ The Home screen follows the supplied PARS Value Protection Tower reference and `
 
 ## Home navigation and dedicated portfolio views
 The sidebar contains exactly eight primary destinations in this order: Home, Projects, Value Map, Issue, Solution, Decision & Actions, Outcomes & Learning, Settings. Home's **Product / Work-Portfolio Status** panel opens the dedicated Projects page; Home's **Project Value & Risk Map** panel opens the dedicated Value Map page. Both destination pages expose fuller drill-down tables and linked demo workflows. The visual source is `newmodel1/demo/main.png`; all sample projects, statuses, dates and placements remain synthetic.
+
+
+## Home, Issue and Solution workspaces (2026-10-28)
+- Home is the primary management dashboard. Section order: (1) status cards, (2) Issue workbench / queue, (3) Project Value & Risk Map beside Product / Work-Portfolio Status, (4) management decisions requiring attention beside the priority project portfolio, (5) latest material developments and decision-integrity guardrails.
+- The Issue page is an Issue List workspace with status metrics, searchable/filterable rows, qualification/evidence dashboards, and the selected Issue record. The **New Issue Intake** button is placed at the bottom of the page and opens the complete intake form.
+- The Solution page is a Solution List workspace with candidate status metrics, searchable/filterable candidates, feasibility and assessment dashboards, and detailed comparison for the selected solution set.
+- Demo records and counts remain synthetic. Issue intake captures observed facts; manager-owned qualitative financial evaluation occurs after qualification. Unknowns are not treated as zero.
