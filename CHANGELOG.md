@@ -3,10 +3,11 @@
 - Re-centered the Home page on the product's founding purpose: allocate scarce **key resources**, especially cash and cash-flow timing, to the issues that matter most.
 - Added separate executive views for **Project Value & Risk Map** (efficiency / risk-adjusted allocation) and **Product / Work-Portfolio Status** (effectiveness / commitments and outcomes).
 - Added visible financial signals for cash-flow timing, cash required, and margin at risk; unavailable/live-system values remain explicitly unknown or not connected.
+- Added a standard Financial Impact Screening panel to Issue detail. Every Issue receives a financial screen; quantitative depth scales with materiality and evidence. Unknown values are not treated as zero.
 - Marked map positions and portfolio statuses as synthetic demo fixtures; no live ERP or verified project-level financial values are implied.
 - Added bilingual first-principles product charters and updated the architecture and README references in English and Persian.
 - Extended browser smoke tests to verify the two Home views and financial signals in both English and Persian.
-- Validation: browser smoke test passed for commit `70f09e8a4bd91683a524eda0dcc18250ce0e63fe`; a subsequent accessibility/localization and marker-label refinement triggered a new run that is being checked.
+- Validation: [latest bilingual browser smoke test passed](https://github.com/mtaghipourpars-dotcom/MANG_03/actions/runs/40725081648) for commit `0fdf458cbf3dfb221ee5defdd5fd3234b36cab21`, covering the Home value-risk and portfolio views plus Issue-level financial screening in English and Persian.
 
 ## 2026-10-28 — Three decision-integrity guardrails added
 - Added a rejected/deferred alternatives ledger with explicit reasons and reopening triggers; reconsideration flags are session-only and do not silently change the recorded decision.
