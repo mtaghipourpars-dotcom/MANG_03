@@ -144,3 +144,13 @@ Do not treat the prototype as a reliable operational simulation. DEF-A-001 and D
 | Backend/high-risk infrastructure tests | BLOCKED / NOT IMPLEMENTED | Durable persistence, audit event integrity, offline synchronization, conflict recovery, authentication/authorization, ERP integration, resource collision and shock recalculation are outside this static MVP. |
 
 **Current disposition:** the two original interaction defects are fixed at prototype scope. Mocked-DOM checks and the latest Chromium smoke test pass. Full WCS acceptance remains **NOT PASSED** because multiple required operational capabilities remain unimplemented; cross-browser and assistive-technology validation are also outstanding.
+
+
+## Added decision-integrity guardrails (2026-10-28)
+The prototype now includes three additional UI workflows:
+
+- Rejected/deferred alternatives ledger: records reasons and explicit reopening triggers; a reconsideration flag does not change the prior decision.
+- Recommendation abstention and emergency proposal: supports a visible hold reason and a reversible, owner-assigned, future-expiry proposal; clearly states that it is not approved or executed.
+- Decision-change/value evidence: captures baseline, changed decision, observed outcome, measurement window and attribution status, without asserting causality.
+
+Automated Chromium checks cover the new interactions. These are session-only prototype behaviors. Durable event history, production authority, emergency expiry enforcement, source verification, backend persistence and causal/value validation remain BLOCKED / NOT IMPLEMENTED. WCS-013 through WCS-015 are therefore not claimed as fully passed.
