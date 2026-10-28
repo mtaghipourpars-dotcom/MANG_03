@@ -155,3 +155,8 @@
 - Replaced generic portfolio icons with photographic product tiles and added photo-led management decision cards.
 - Added a synthetic project portfolio table and material-development list while preserving the separation between effectiveness and efficiency.
 - All project metrics and placements remain explicitly synthetic; no live PARS/ERP integration is claimed.
+
+
+## Home header removal (2026-10-28)
+- Removed the Home page intro/header block (eyebrow, greeting/title, subtitle, and New Issue Intake button) from both English and Persian renderings. Home now begins directly with dashboard content.
+- Updated smoke-test expectations so navigation and language checks no longer depend on the removed greeting.
