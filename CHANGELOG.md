@@ -174,3 +174,9 @@
 - Rebuilt Issue as an Issue List workspace with status dashboards, search/filter, qualification/evidence context, selected-record detail, and New Issue Intake at the bottom of the page.
 - Rebuilt Solution as a Solution List workspace with candidate status dashboards, search/filter and detailed comparison.
 - Added browser-smoke coverage for Home section presence, Issue/Solution list counts, search behavior, and bottom placement of New Issue Intake. Demo records remain synthetic.
+
+
+## 2026-10-28 — Home dashboard rendering fix
+- Fixed an automatic-semicolon-insertion defect in the Home renderer: a newline immediately after `return` caused the Home function to return `undefined`, leaving the main page blank.
+- Restored the agreed Home section sequence: status cards; Issue workbench; Project Value & Risk Map beside Product / Work-Portfolio Status; management decisions beside priority project portfolio; latest material developments and decision-integrity controls.
+- Existing browser smoke tests assert that the Home dashboard content and key sections render.
