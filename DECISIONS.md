@@ -65,3 +65,7 @@ Agreed design direction: the conceptual network can initially be implemented wit
 - Exact profile aggregation/scoring formula and whether any profile parameters act as hard constraints rather than weighted criteria.
 - Final state enums, database schema, API, and UI.
 - Simulation or gamification is not part of the agreed core unless explicitly specified later.
+
+
+## D-018 — Manager-owned, staged parametric impact assessment
+Agreed direction: the MVP will not require experts or managers to calculate precise monetary impact for every solution. Begin with contextual, manager-owned 1–5 ratings across defined impact dimensions, each with clear scale anchors and direction, rationale, assumptions, and explicit confidence/unknown handling. Higher-level reviews can refine the assessment and add quantified analysis where material and evidence supports it. Preserve assessment history. Raw ordinal scores must not be summed or presented as monetary values. The proposed baseline dimensions/scales and staged model are documented in [Parametric Solution Impact Assessment](docs/decision/parametric-impact-assessment.md); exact anchors, final parameter list, profile aggregation, and refinement triggers remain open.
