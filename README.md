@@ -96,3 +96,7 @@ The same governed impact parameters are used both to assess each case-specific s
 - [Issue–Solution applicability matrix](docs/data/seed/issue-solution-applicability-matrix.csv) — conditional cross-domain solution patterns and safeguards.
 - [Enterprise qualification rules](docs/data/seed/enterprise-qualification-rules.csv) — explicit qualification and governance checks.
 - [Relationship types](docs/data/seed/relationship-types.csv) — typed semantics, evidence and prohibited inferences.
+
+
+## MVP scope decision — catalogue authoring deferred
+The MVP does **not** expose user-facing **NEW ISSUE** or **NEW SOLUTION** actions. It uses a curated, versioned catalogue; unmatched Issue Intakes remain saved as **Not sure / Other — classification review required**, and cases with no suitable Solution Type are routed for manual review. User-created reusable Issue Types/Solution Types, generated qualification templates and relationship-governance UI are reserved for a later release. See [D-025](DECISIONS.md) and the [Enterprise Issue–Solution Reference Matrix](docs/design/enterprise-issue-solution-reference-matrix.md).
