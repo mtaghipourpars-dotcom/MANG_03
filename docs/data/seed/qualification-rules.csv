@@ -1,0 +1,19 @@
+rule_code,sequence,check_name,check_type,pass_condition,failure_disposition,mandatory,notes
+Q01,1,Intake persistence,System integrity,Unique intake ID and timestamp exist,Retry/queue safely; never lose report,Yes,Block transition if persistence fails
+Q02,2,Reporter and context,Data quality,Reporter or permitted anonymous/source identity and context captured,Request context or use authorized safety-reporting exception,Conditional,Site policy may permit anonymous safety reports
+Q03,3,Understandable statement,Qualification,Reviewer can identify what was observed or reported,Needs information with a specific question,Yes,Root cause is not required
+Q04,4,Fact versus interpretation,Data quality,Facts opinions assumptions and suspected causes can be distinguished,Clarify labels; do not reject because cause is unknown,Yes,Preserve original wording
+Q05,5,Scope and location,Context,Material site/process/object/time scope is known or explicitly unknown,Needs information or manual triage,Conditional,Ask only if material to routing or assessment
+Q06,6,Immediate danger,Hard escalation,Safety environmental product-safety or critical compliance risk screened,Trigger emergency or mandatory local process in parallel,Yes,Do not wait for ordinary qualification
+Q07,7,Containment need,Human review,Immediate containment need identified where relevant,Escalate to responsible function; ordinary case can continue,Conditional,Urgency does not replace qualification
+Q08,8,Evidence availability,Evidence,Evidence attached/referenced or explicitly unavailable,Request evidence if material,Conditional,Do not require evidence inaccessible to submitter
+Q09,9,Duplicate or related case,Link review,Similar active/recent cases checked with explainable basis,Mark potential duplicate and link for review,Yes,Similarity is not proof
+Q10,10,Formal scope,Qualification,Supported process or clear redirect destination identified,Out of scope/redirect with reason,Yes,Preserve intake and route when feasible
+Q11,11,Actionability,Qualification,A diagnostic or review next step can be defined,Needs information or route to triage,Yes,A proposed solution is not required
+Q12,12,Operational object link,Context,Known project/order/material/equipment/contract linked if available,Keep unknown explicit; request only if needed,Conditional,Do not invent IDs or links
+Q13,13,Classification,Data quality,Primary Issue Type selected with reasonable confidence,Unclassified/triage required,Conditional,Do not force false category
+Q14,14,Ownership and routing,Operational control,Responsible review queue or owner assigned,Route to general triage and flag unowned,Yes,Unowned intake must remain visible
+Q15,15,Contradiction check,Data quality,Material conflicts are visible and handled,Needs information or human validation,Conditional,Never silently auto-correct material facts
+Q16,16,Duplicate disposition,Human review,Reviewer decides new case linked case or duplicate relationship,Keep pending if ambiguous,Conditional,Preserve original intake
+Q17,17,Acceptance decision,Governance,Explainable disposition and authority recorded,Do not create accepted Issue Case,Yes,Disposition must be explicit
+Q18,18,Audit record,System integrity,Actor/rule version time result rationale and evidence references recorded,Block transition if audit cannot persist,Yes,Append history rather than overwrite
