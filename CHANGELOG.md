@@ -1,3 +1,10 @@
+## 2026-10-28 — Phase A defect-fix iteration 1
+- Fixed Issue Intake submission to retain entered fields in a temporary in-memory queue visible on the Issue page; copy explicitly states refresh/close clears the queue and no formal case is created.
+- Fixed “Mark information needed” to update and render CASE-024's temporary qualification review status and note.
+- Replaced the decorative search block with a working local search across the synthetic CASE-024 and session-only intake records.
+- Relabelled non-mutating candidate/action/history controls as preview actions so they do not imply persistent changes.
+- Browser-runtime validation remains outstanding; this commit does not claim the full Worst-Case Stress Test suite passes.
+
 ## 2026-10-28 — Phase A static HTML prototype review
 - Added `docs/testing/phase-a-static-prototype-review.md` with 22 source-level checks and disposition of all 12 Worst-Case Stress Tests.
 - Recorded two defects: Issue Intake submit claims “Saved locally” without retaining a record; “Mark information needed” implies a status change but only shows a toast.
