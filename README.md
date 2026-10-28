@@ -147,3 +147,8 @@ The HTML source was statically inspected. The review found that the intake form 
 - The HTML prototype now has an English/Persian language toggle, RTL support, and localized UI/demo text. Canonical IDs, status codes, and machine fields remain unchanged. Translation must never overwrite the original issue narrative or source evidence.
 
 - [Persian/English seed-data terminology map](docs/localization/seed-data-language-map.fa-en.csv)
+
+- [Persian worst-case stress test specification](docs/design/worst-case-stress-test-specification.fa.md)
+- [Persian Phase A prototype review](docs/testing/phase-a-static-prototype-review.fa.md)
+- [Persian master-data and relationships guide](docs/data/master-data-and-relationships.fa.md)
+- [Persian end-to-end Issue–Solution chain](docs/design/issue-solution-end-to-end-chain.fa.md)
