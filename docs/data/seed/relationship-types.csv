@@ -1,0 +1,18 @@
+relationship_code,meaning,direction_or_semantics,minimum_evidence_control,may_drive_automatic_suggestion
+is-a,Taxonomy/subtype,Classification edge,Governed classification,Yes
+symptom-of,Observed symptom may be associated with issue type,Not a proven cause,Case evidence and symptom context,Limited
+possible-cause-of,Hypothesized causal direction,Directed hypothesis,Explicit hypothesis label and case validation,No without case validation
+validated-cause-of,Cause supported in this case,Directed validated claim,Evidence reviewer method and validation date,Only within approved rules
+may-affect,Possible impact on object/process/commitment,Contextual potential effect,Context and impact path,No by itself
+observed-effect-on,Effect observed in this case,Directed observation,Observation source and timestamp,Only for reporting
+mitigates,Solution pattern may reduce issue/impact,Conditional applicability,Applicability conditions and known limits,Only after conditions checked
+requires,Candidate needs prerequisite/resource/approval,Prerequisite dependency,Explicit prerequisite and current state,Can exclude if hard prerequisite unmet
+blocked-by,Progress prevented by current blocker,Directed case-specific blocker,Evidence and owner,May route work
+competes-for,Cases/options need same scarce resource/time window,Shared resource contention,Resource and time-window evidence,May flag conflict
+depends-on,Action/candidate depends on another item,Directed dependency,Condition and responsible owner,May route work
+alternative-to,Candidates are alternatives in context,Context-specific alternative relation,Compatibility/exclusivity conditions,No automatic selection
+duplicate-candidate-of,Possible duplicate report/case,Similarity relation,Match rationale and human disposition,No automatic merge
+linked-to,General contextual link,Non-causal association,Relation rationale,No
+supersedes,New decision/configuration version replaces effective one,Version/history relation,Authority and preserved prior record,Only for current-state view
+verified-by,Claim supported by evidence,Claim-to-evidence relation,Evidence reference and verifier,Supports confidence display
+contradicts,Evidence/claim conflicts with another record,Conflict relation,Preserve both and assign resolution,May trigger review
