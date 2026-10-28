@@ -104,3 +104,7 @@ Neither view replaces the other, and neither should collapse efficiency and effe
 
 ## Home visual contract (PARS reference)
 The Home screen follows the supplied PARS Value Protection Tower reference and `newmodel1/demo/main.png`. The value/risk map and product/work portfolio are separate, equally prominent views. Portfolio product tiles and management-attention cards use photography rather than generic icons. Map markers, status labels and intervention windows must drill into relevant demo workflows. The prototype's project values, progress, statuses and deadlines are synthetic; the reference image is a visual guide, not evidence of live data.
+
+
+## Home navigation and dedicated portfolio views
+The sidebar contains exactly eight primary destinations in this order: Home, Projects, Value Map, Issue, Solution, Decision & Actions, Outcomes & Learning, Settings. Home's **Product / Work-Portfolio Status** panel opens the dedicated Projects page; Home's **Project Value & Risk Map** panel opens the dedicated Value Map page. Both destination pages expose fuller drill-down tables and linked demo workflows. The visual source is `newmodel1/demo/main.png`; all sample projects, statuses, dates and placements remain synthetic.
