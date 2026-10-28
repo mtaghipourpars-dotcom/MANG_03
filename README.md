@@ -61,6 +61,7 @@ Examples include project, production order, purchase order, sales order, compone
 - [Seed Relationship Types (CSV)](docs/data/seed/relationship-types.csv)
 - [MVP End-to-End ISSUE → SOLUTION → DECISION → ACTION → OUTCOME chain](docs/design/issue-solution-end-to-end-chain.md)
 - [End-to-end reference design scenario](docs/design/reference-scenario-end-to-end.md)
+- [Worst-Case Stress Test Specification](docs/design/worst-case-stress-test-specification.md) — Iran/high-risk operating conditions, integrity rules, 12 test cases, execution phases, and acceptance gate.
 
 - [Architecture overview](docs/architecture/overview.md)
 - [Conceptual master data and network map](docs/architecture/conceptual-network-map.md)
@@ -108,3 +109,7 @@ The synthetic case `CASE-024` is modeled from intake through qualification, thre
 
 ## MVP scope decision — catalogue authoring deferred
 The MVP keeps **NEW ISSUE** and **NEW SOLUTION** buttons visible in their related Issue Type / Solution Type forms, but both buttons are **disabled** and have no action or side effects. This is specifically about creating reusable catalogue definitions—not submitting an Issue Intake or creating a case-specific Solution Candidate. The MVP uses a curated, versioned catalogue; unmatched Issue Intakes remain saved as **Not sure / Other — classification review required**, and cases with no suitable Solution Type are routed for manual review. Runtime catalogue authoring and its governed AI-assisted workflow are reserved for a later release. See [D-025/D-026](DECISIONS.md) and the [Enterprise Issue–Solution Reference Matrix](docs/design/enterprise-issue-solution-reference-matrix.md).
+
+
+## Worst-case stress testing
+The stress-test specification defines synthetic, evidence-based checks for liquidity/FX shocks, supply uncertainty, stale data, infrastructure outages, shared-resource conflicts, missing approvals, decision pressure, recovery, and audit integrity. It is a test contract, not a claim that the current prototype or production service has passed. The current HTML prototype cannot validate backend persistence, access control, ERP integration, concurrency, or offline synchronization; unsupported tests must be marked **BLOCKED / NOT IMPLEMENTED**, never PASS.
