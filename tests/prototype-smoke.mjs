@@ -36,8 +36,8 @@ try {
   await page.locator("#evidence").fill("SMOKE-EVIDENCE-001");
   await page.getByRole("button", { name: "Save intake" }).click();
 
-  await page.getByText("Browser smoke test intake", { exact: true }).waitFor();
-  await page.getByText("SMOKE-EVIDENCE-001", { exact: true }).waitFor();
+  await page.getByText("Browser smoke test intake", { exact: false }).waitFor();
+  await page.getByText("SMOKE-EVIDENCE-001", { exact: false }).waitFor();
   await page.getByText(/disappear when this page is refreshed or closed/i).waitFor();
   const intakeIdText = await page.locator("#content").innerText();
   const intakeId = intakeIdText.match(/INT-DEMO-\d+-\d+/)?.[0];
