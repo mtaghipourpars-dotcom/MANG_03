@@ -125,3 +125,4 @@
 - Added Persian companion documentation for architecture, issue lifecycle, decision/learning, rejected alternatives, recommendation abstention/emergency actions, value measurement and the CASE-024 synthetic fixture.
 - Added automated regression checks for language metadata, RTL direction and dynamically rendered Persian solution content.
 - Canonical identifiers, enum codes and source narratives remain stable; localized display text does not overwrite original evidence.
+- Added a Persian/English terminology map for issue domains, archetypes, solution patterns, relationship types and status labels in seed catalogues.
