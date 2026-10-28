@@ -152,3 +152,5 @@ The HTML source was statically inspected. The review found that the intake form 
 - [Persian Phase A prototype review](docs/testing/phase-a-static-prototype-review.fa.md)
 - [Persian master-data and relationships guide](docs/data/master-data-and-relationships.fa.md)
 - [Persian end-to-end Issue–Solution chain](docs/design/issue-solution-end-to-end-chain.fa.md)
+
+- [Bilingual enterprise issue-type labels and descriptions](docs/localization/enterprise-issue-type-labels.fa-en.csv)
