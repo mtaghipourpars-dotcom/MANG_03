@@ -1,0 +1,251 @@
+{
+  "fixture_id": "DEMO-CASE-024",
+  "fixture_version": "1.0",
+  "data_classification": "SYNTHETIC_DEMO_ONLY",
+  "warning": "All dates, ratings, roles, object identifiers, and outcomes in this fixture are illustrative. They are not company facts or live ERP data.",
+  "profile_snapshot": {
+    "profile_id": "PROFILE-LIQUIDITY-01",
+    "profile_name": "Liquidity Protection",
+    "profile_version": 1,
+    "frozen_at_decision": true,
+    "frozen_targets": [
+      {
+        "parameter_id": "LIQUIDITY_EFFECT",
+        "operator": "GTE",
+        "target": 2,
+        "scale": "1-5",
+        "meaning": "At least 2/5 on the approved illustrative liquidity scale"
+      }
+    ],
+    "note": "The illustrative profile snapshot is frozen at decision time. Later settings changes must not rewrite it."
+  },
+  "issue_intake": {
+    "intake_id": "INT-118",
+    "title": "Critical component availability date is unconfirmed",
+    "description": "Supplier confirmation for a component required by a project production order is pending. No delivery miss or financial loss has yet been verified.",
+    "status": "ACCEPTED",
+    "reported_by_role": "Project Supply Coordinator",
+    "reported_at": "2026-10-28T09:00:00+03:30",
+    "evidence": [
+      {
+        "evidence_id": "E-001",
+        "type": "SUPPLIER_CONFIRMATION_PENDING",
+        "status": "OBSERVED",
+        "description": "Latest supplier date confirmation is not yet available."
+      }
+    ],
+    "qualification": {
+      "result": "ACCEPTED",
+      "reason": "Issue is sufficiently clear for assessment; the actual supply date and downstream impact remain unverified.",
+      "reviewer_role": "Issue Qualification Reviewer"
+    },
+    "catalogue_ui": {
+      "new_issue_button": {
+        "visible": true,
+        "disabled": true,
+        "tooltip": "Available in a future version",
+        "creates_record": false
+      }
+    }
+  },
+  "issue_case": {
+    "case_id": "CASE-024",
+    "intake_id": "INT-118",
+    "issue_type_id": "SUP-SUPPLIER-COMMITMENT-UNCERTAINTY",
+    "issue_type_label": "Supplier delivery/commitment uncertainty",
+    "status": "IN_REVIEW",
+    "linked_objects": [
+      {
+        "object_type": "PROJECT",
+        "object_id": "PROJECT-T-07",
+        "link_status": "CONTEXT_LINK",
+        "causality_proven": false
+      },
+      {
+        "object_type": "PRODUCTION_ORDER",
+        "object_id": "DEMO-ORDER-410",
+        "link_status": "CONTEXT_LINK",
+        "causality_proven": false
+      },
+      {
+        "object_type": "PURCHASE_ORDER",
+        "object_id": "DEMO-PO-882",
+        "link_status": "CONTEXT_LINK",
+        "causality_proven": false
+      }
+    ]
+  },
+  "solution_candidates": [
+    {
+      "candidate_id": "CAND-024-A",
+      "solution_type_id": "SUP-EXPEDITE-EXISTING-ORDER",
+      "label": "Expedite the existing supplier order",
+      "status": "ASSESSED",
+      "feasibility": "FEASIBLE_WITH_CONDITIONS",
+      "conditions": ["Supplier must confirm achievable date and any expedite cost."],
+      "assessment": {
+        "DELIVERY_PROTECTION": 4,
+        "FINANCIAL_RESOURCES_REQUIRED": 2,
+        "MARGIN_PROTECTION": 3,
+        "LIQUIDITY_EFFECT": 2,
+        "SCARCE_RESOURCE_DEMAND": 2,
+        "EXECUTION_RISK": 3
+      },
+      "unknowns": ["Actual expedite cost", "Supplier-confirmed recovery date"],
+      "assessor_role": "Responsible Project Manager"
+    },
+    {
+      "candidate_id": "CAND-024-B",
+      "solution_type_id": "ENG-QUALIFY-ALTERNATE-COMPONENT",
+      "label": "Qualify an alternate source/component",
+      "status": "ASSESSED",
+      "feasibility": "BLOCKED_PENDING_VALIDATION",
+      "hard_constraints": [
+        {
+          "constraint": "Engineering and quality approval required before substitution",
+          "state": "NOT_SATISFIED",
+          "effect": "Cannot be selected for execution until authorized validation is complete"
+        }
+      ],
+      "assessment": {
+        "DELIVERY_PROTECTION": null,
+        "FINANCIAL_RESOURCES_REQUIRED": null,
+        "MARGIN_PROTECTION": null,
+        "LIQUIDITY_EFFECT": null,
+        "SCARCE_RESOURCE_DEMAND": null,
+        "EXECUTION_RISK": null
+      },
+      "unknowns": ["Technical equivalence", "Qualification lead time", "Commercial terms"],
+      "assessor_role": "Responsible Project Manager"
+    },
+    {
+      "candidate_id": "CAND-024-C",
+      "solution_type_id": "PLN-RESEQUENCE-WORK",
+      "label": "Re-sequence work using available capacity",
+      "status": "ASSESSED",
+      "feasibility": "FEASIBLE_WITH_CONDITIONS",
+      "conditions": ["Planning owner must confirm no harmful impact to higher-priority demand."],
+      "assessment": {
+        "DELIVERY_PROTECTION": 3,
+        "FINANCIAL_RESOURCES_REQUIRED": 4,
+        "MARGIN_PROTECTION": 3,
+        "LIQUIDITY_EFFECT": 4,
+        "SCARCE_RESOURCE_DEMAND": 2,
+        "EXECUTION_RISK": 2
+      },
+      "unknowns": ["Final impact on the downstream milestone"],
+      "assessor_role": "Responsible Project Manager"
+    }
+  ],
+  "comparison": {
+    "comparison_id": "CMP-024-01",
+    "case_id": "CASE-024",
+    "profile_id": "PROFILE-LIQUIDITY-01",
+    "profile_version": 1,
+    "same_profile_used_for_all_candidates": true,
+    "feasibility_checked_separately_from_priority": true,
+    "blocked_candidate_can_become_selected_without_constraint_resolution": false,
+    "decision_note": "Qualitative ratings support discussion; they are not money, probabilities, or proof of outcome."
+  },
+  "decision": {
+    "decision_id": "DEC-024-01",
+    "case_id": "CASE-024",
+    "selected_candidate_id": "CAND-024-C",
+    "status": "APPROVED",
+    "decision_maker_role": "Authorized Project Manager",
+    "authority_basis": "Illustrative delegated authority for a reversible work-sequencing response",
+    "rationale": "Select re-sequencing as the initial response because its assessed liquidity effect is favorable and execution risk is lower in this illustrative comparison. Keep supplier confirmation open; this is not proof that the delivery commitment is protected.",
+    "profile_snapshot_ref": "PROFILE-LIQUIDITY-01",
+    "frozen_targets": [
+      {
+        "parameter_id": "LIQUIDITY_EFFECT",
+        "operator": "GTE",
+        "target": 2
+      }
+    ],
+    "rejected_or_deferred_options": [
+      {
+        "candidate_id": "CAND-024-A",
+        "reason": "Retained as a fallback pending confirmed date and expedite cost."
+      },
+      {
+        "candidate_id": "CAND-024-B",
+        "reason": "Deferred because mandatory engineering/quality validation is not satisfied."
+      }
+    ],
+    "supersedes_decision_id": null
+  },
+  "actions": [
+    {
+      "action_id": "ACT-024-01",
+      "decision_id": "DEC-024-01",
+      "case_id": "CASE-024",
+      "description": "Validate and release the approved resequencing plan",
+      "owner_role": "Production Planning",
+      "status": "COMPLETED",
+      "completion_evidence": "Illustrative planning review recorded; no live schedule change is implied."
+    },
+    {
+      "action_id": "ACT-024-02",
+      "decision_id": "DEC-024-01",
+      "case_id": "CASE-024",
+      "description": "Obtain written supplier date confirmation and update the case evidence",
+      "owner_role": "Procurement",
+      "status": "COMPLETED",
+      "completion_evidence": "Illustrative supplier update received and attached to the case."
+    }
+  ],
+  "outcome_review": {
+    "outcome_id": "OUT-024-01",
+    "case_id": "CASE-024",
+    "decision_id": "DEC-024-01",
+    "review_status": "REVIEWED",
+    "observed": [
+      {
+        "parameter_id": "LIQUIDITY_EFFECT",
+        "value": 3,
+        "scale": "1-5",
+        "evidence_status": "ILLUSTRATIVE_OBSERVATION",
+        "target_at_decision": 2,
+        "target_result": "MET"
+      },
+      {
+        "parameter_id": "DELIVERY_PROTECTION",
+        "value": 3,
+        "scale": "1-5",
+        "evidence_status": "ILLUSTRATIVE_OBSERVATION",
+        "target_at_decision": null,
+        "target_result": "NOT_EVALUATED_AGAINST_FROZEN_TARGET"
+      }
+    ],
+    "overall_outcome": "PARTIALLY_EFFECTIVE",
+    "resolution_status": "PARTIALLY_RESOLVED",
+    "residual_follow_up": "Continue monitoring the downstream commitment until the project milestone is verified.",
+    "learning": {
+      "eligible_for_generalized_learning": false,
+      "reason": "One synthetic case is not sufficient evidence to change reusable recommendation rankings or an approved decision profile."
+    }
+  },
+  "catalogue_ui": {
+    "new_solution_button": {
+      "visible": true,
+      "disabled": true,
+      "tooltip": "Available in a future version",
+      "creates_record": false
+    },
+    "case_specific_candidate_creation": {
+      "allowed": true,
+      "distinct_from_reusable_solution_type_creation": true
+    }
+  },
+  "audit_events": [
+    {"event_id":"EVT-001","entity":"INT-118","event":"INTAKE_CREATED","actor_role":"Project Supply Coordinator"},
+    {"event_id":"EVT-002","entity":"INT-118","event":"QUALIFICATION_ACCEPTED","actor_role":"Issue Qualification Reviewer"},
+    {"event_id":"EVT-003","entity":"CASE-024","event":"FORMAL_CASE_CREATED","actor_role":"Issue Qualification Reviewer"},
+    {"event_id":"EVT-004","entity":"CMP-024-01","event":"CANDIDATES_ASSESSED_AND_COMPARED","actor_role":"Responsible Project Manager"},
+    {"event_id":"EVT-005","entity":"DEC-024-01","event":"DECISION_APPROVED","actor_role":"Authorized Project Manager"},
+    {"event_id":"EVT-006","entity":"ACT-024-01","event":"ACTION_COMPLETED","actor_role":"Production Planning"},
+    {"event_id":"EVT-007","entity":"ACT-024-02","event":"ACTION_COMPLETED","actor_role":"Procurement"},
+    {"event_id":"EVT-008","entity":"OUT-024-01","event":"OUTCOME_REVIEWED","actor_role":"Responsible Project Manager"}
+  ]
+}
