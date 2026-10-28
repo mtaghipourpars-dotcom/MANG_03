@@ -76,3 +76,7 @@ Architecture and conceptual design. No production implementation or live organiz
 
 ## Initial financial-impact approach
 The MVP starts with a manager-owned, staged parametric assessment rather than requiring precise monetary calculations from every user. Candidate-specific 1–5 ratings use explicit anchors and directions; unknown values remain explicit; ordinal scores are not money and must not be blindly summed. Higher-level review can refine the assessment and add quantified analysis where justified. See [Parametric Solution Impact Assessment](docs/decision/parametric-impact-assessment.md).
+
+
+## Decision Profiles and organizational learning
+The same governed impact parameters are used both to assess each case-specific solution and to prioritize alternatives under weighted Decision Profiles. The product direction includes organization-defined default profiles, personal/custom profiles, and a solution-specific profile perspective. Candidate comparisons must use the same selected comparison profile. Over time, the service may recommend context-specific organizational Best Profiles from observed outcomes, with sample size and uncertainty visible; selection alone is not evidence of success. See [Parametric Solution Impact Assessment](docs/decision/parametric-impact-assessment.md) and [Decision, Action, Outcome, and Learning](docs/decision/decision-and-learning.md).
