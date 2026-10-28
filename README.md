@@ -98,5 +98,8 @@ The same governed impact parameters are used both to assess each case-specific s
 - [Relationship types](docs/data/seed/relationship-types.csv) — typed semantics, evidence and prohibited inferences.
 
 
+## End-to-end sample fixture
+The synthetic case `CASE-024` is modeled from intake through qualification, three candidate solutions, profile-based decision, actions, observed outcome, and audit events: [CASE-024 demo fixture](docs/data/demo/CASE-024-end-to-end-demo.json). It is sample data for validating the end-to-end contract, not a running application, live integration, or real organizational evidence.
+
 ## MVP scope decision — catalogue authoring deferred
 The MVP keeps **NEW ISSUE** and **NEW SOLUTION** buttons visible in their related Issue Type / Solution Type forms, but both buttons are **disabled** and have no action or side effects. This is specifically about creating reusable catalogue definitions—not submitting an Issue Intake or creating a case-specific Solution Candidate. The MVP uses a curated, versioned catalogue; unmatched Issue Intakes remain saved as **Not sure / Other — classification review required**, and cases with no suitable Solution Type are routed for manual review. Runtime catalogue authoring and its governed AI-assisted workflow are reserved for a later release. See [D-025/D-026](DECISIONS.md) and the [Enterprise Issue–Solution Reference Matrix](docs/design/enterprise-issue-solution-reference-matrix.md).
