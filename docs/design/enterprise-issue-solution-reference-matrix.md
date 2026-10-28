@@ -8,7 +8,7 @@
 
 This is the canonical MANG_03 Issue–Solution reference matrix. It replaces a manufacturing-only framing with an enterprise-wide, user-extensible model for issues, opportunities, constraints, risks, decisions, actions and observed outcomes across the full organizational value chain.
 
-The matrix is a configurable reference taxonomy, not a claim that every organization has every process or issue. Users may propose new reusable Issue Types and Solution Types from the working interface without code deployment. The system suggests matches, relationships and qualification templates, but does not silently merge entries, invent causality, or automatically approve solutions.
+The matrix is a configurable reference taxonomy, not a claim that every organization has every process or issue. In later versions, users may propose new reusable Issue Types and Solution Types from the working interface without code deployment. For the MVP, the related NEW ISSUE and NEW SOLUTION buttons remain visible but disabled; catalogue updates use controlled seed/configuration releases. Future matching, relationship and qualification-template suggestions must not silently merge entries, invent causality, or automatically approve solutions.
 
 The design draws on public cross-industry process classification, project/portfolio risk management, asset lifecycle management, quality-management practice and enterprise/manufacturing integration. It does not reproduce a proprietary company playbook or claim that any public standard prescribes this exact matrix.
 
