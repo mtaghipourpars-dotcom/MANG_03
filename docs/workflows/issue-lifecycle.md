@@ -75,3 +75,7 @@ The reusable manufacturing taxonomy, ordered qualification checks, data-readines
 
 ## 10. Enterprise-wide catalogue extensibility
 Issue and Solution catalogues are enterprise-wide and user-extensible across the value chain. The inline ADD flow searches existing definitions, proposes explainable matches and relationships, and can save a new definition as Draft/Provisional while preserving the live intake. Qualification templates and relationships remain Proposed until reviewed; similarity does not prove identity, causality or applicability. See [Enterprise Value-Chain Issue–Solution Knowledge Network](../design/enterprise-value-chain-extensible-issue-solution-network.md).
+
+
+## 11. Canonical enterprise-wide reference matrix
+The [Enterprise Issue–Solution Reference Matrix](../design/enterprise-issue-solution-reference-matrix.md) governs domain coverage, qualification checks, solution archetypes, relationship semantics, user-extensible catalogues, versioning, resource conflicts and outcome review. The manufacturing matrix is a domain appendix, not a scope boundary.
