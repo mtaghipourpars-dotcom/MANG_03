@@ -13,7 +13,7 @@ The source contains six page renderers, responsive CSS breakpoints, a synthetic 
 
 The source review also found a material gap: submitting the Issue Intake form generates an ID and shows a “Saved locally” toast, but the code does not add the intake to an in-memory list, render it in the queue, or store it in browser persistence. The toast therefore overstates what the current implementation actually does. Several other controls are intentionally toast-only and do not change state.
 
-**Phase A disposition: PARTIAL / NEEDS FOLLOW-UP.** Some source-level checks pass; no browser-runtime checks were performed; backend-dependent tests are blocked. The stress-test suite as a whole has not passed.
+**Initial Phase A disposition: PARTIAL / NEEDS FOLLOW-UP.** The two initial source-level defects were addressed in subsequent iterations and exercised with a mocked-DOM harness. This is not a real-browser test. Backend-dependent tests remain blocked, and the stress-test suite as a whole has not passed.
 
 ## 2. Source-level checks
 
@@ -108,7 +108,7 @@ The search field is a non-interactive `div`. Hide it, style it as clearly illust
 
 ## 6. Exit recommendation
 
-Do not proceed to Phase B as though the current prototype supports reliable stateful simulation. First fix **DEF-A-001** and **DEF-A-002**, and label other mock controls honestly. Then run a real browser walkthrough of navigation, form validation, disabled buttons, and the corrected local intake state. Keep backend-dependent WCS tests marked **BLOCKED / NOT IMPLEMENTED** until those capabilities exist.
+Do not treat the prototype as a reliable operational simulation. DEF-A-001 and DEF-A-002 have been fixed at temporary in-page state level, mock controls have been relabelled, local search is implemented, and mocked-DOM regression checks pass. Next required gate is a real browser walkthrough of native form validation, responsive rendering, keyboard interaction, and disabled controls. Keep backend-dependent WCS tests marked **BLOCKED / NOT IMPLEMENTED** until those capabilities exist.
 
 **Overall Phase A status: PARTIAL — source review completed; browser execution outstanding; two functional/wording defects identified.**
 
@@ -124,5 +124,23 @@ Do not proceed to Phase B as though the current prototype supports reliable stat
 
 - Updated the Issue detail qualification gate to reflect the temporary “Needs information” state instead of retaining a contradictory “Passed” badge.
 - Added modal focus restoration on dismissal and Tab/Shift+Tab containment while the dialog is open.
-- JavaScript syntax compilation passed after the edits. A mocked-DOM interaction harness is being used to exercise form submission, state transitions, and search logic; it is not a real browser test.
+- JavaScript syntax compilation passed after the edits. A mocked-DOM interaction harness passed form submission/queue rendering, temporary qualification status transition, local search, navigation across all six pages, all three Issue tabs, modal Tab focus containment, and focus restoration. The harness does not execute a browser engine or certify CSS layout, native form validation, accessibility APIs, or cross-browser behavior.
 - Real browser rendering, keyboard/screen-reader accessibility, and backend-dependent WCS tests remain outstanding and must not be marked passed from source checks alone.
+
+
+## 9. Latest regression results (mocked DOM; not browser certification)
+
+| Check | Result | Evidence |
+|---|---|---|
+| JavaScript syntax compilation | PASS | Current inline script compiled without syntax errors. |
+| Navigate all six pages | PASS | Home, Issue, Solution, Decision & Actions, Outcomes & Learning, Settings all rendered non-empty content in the mocked DOM. |
+| Issue tabs | PASS | Overview, Evidence & links, Qualification rendered non-empty content. |
+| Intake submit | PASS (temporary state only) | Entered title, domain, urgency, description and evidence appeared in the rendered intake queue with a generated demo ID and an explicit refresh-clears warning. |
+| Qualification action | PASS (temporary state only) | “Mark information needed” changed the rendered disposition/review status and qualification-gate badge. |
+| Local search | PASS (temporary state only) | Search matched the newly submitted intake and showed its ID. |
+| Modal focus containment | PASS (mocked focus model) | Tab at the final focusable element wrapped to the first; close restored the opener focus. |
+| NEW ISSUE / NEW SOLUTION | PASS (source check) | Both remain disabled in the rendered source helper. |
+| Real browser and responsive visual check | NOT RUN | Browser engine was not available in the execution environment. |
+| Backend/high-risk infrastructure tests | BLOCKED / NOT IMPLEMENTED | Durable persistence, audit event integrity, offline synchronization, conflict recovery, authentication/authorization, ERP integration, resource collision and shock recalculation are outside this static MVP. |
+
+**Current disposition:** the two original interaction defects are fixed at prototype scope and the local mock regression checks pass. Overall WCS acceptance remains **NOT PASSED** because real-browser validation and multiple required operational capabilities remain unimplemented.
