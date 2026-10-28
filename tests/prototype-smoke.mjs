@@ -16,6 +16,24 @@ try {
   await page.getByText("Open Issue Cases", { exact: true }).waitFor();
   await page.getByRole("heading", { name: "Project Value & Risk Map" }).waitFor();
   await page.getByRole("heading", { name: "Product / Work-Portfolio Status" }).waitFor();
+  assert.deepEqual(await page.locator("#nav [data-page]").evaluateAll(nodes => nodes.map(n => n.dataset.page)),
+    ["home", "projects", "valueMap", "issue", "solution", "decision", "outcome", "settings"],
+    "sidebar should contain the eight agreed destinations in the agreed order");
+  await page.locator('#nav [data-page="projects"]').click();
+  await page.getByRole("heading", { name: "Product / Work-Portfolio Status" }).waitFor();
+  assert.equal(await page.locator(".projects-photo-grid .product-photo").count(), 6,
+    "Projects page should show six product-family photo tiles");
+  await page.locator('#nav [data-page="valueMap"]').click();
+  await page.getByRole("heading", { name: "Project Value & Risk Map" }).waitFor();
+  assert.equal(await page.locator(".value-map-large .map-point").count(), 5,
+    "Value Map page should show five project markers");
+  await page.locator('#nav [data-page="home"]').click();
+  await page.locator('.portfolio-card [data-act="go-projects"]').click();
+  await page.getByRole("heading", { name: "Priority project register" }).waitFor();
+  await page.locator('#nav [data-page="home"]').click();
+  await page.locator('.value-risk-card [data-act="go-value-map"]').click();
+  await page.getByRole("heading", { name: "Project exposure register" }).waitFor();
+  await page.locator('#nav [data-page="home"]').click();
   assert.equal(await page.locator(".product-photo-grid .product-photo").count(), 6,
     "Home portfolio should show six photo-led product family tiles instead of generic icons");
   assert.equal(await page.locator(".management-decision .decision-thumb").count(), 2,
