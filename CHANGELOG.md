@@ -1,3 +1,10 @@
+## 2026-10-28 — Expanded Chromium regression suite passing
+- Added native required-field validation checks for Issue Intake.
+- Added real-browser checks for modal dismissal by Close, Escape, Cancel, and backdrop click; focus containment, focus restoration, and post-submit focus transfer.
+- Verified local search by partial title for illustrative CASE-019, and confirmed temporary intake data clears after full page refresh.
+- Latest passing run: https://github.com/mtaghipourpars-dotcom/MANG_03/actions/runs/40715532733
+- Browser smoke tests pass. Full cross-browser and assistive-technology review plus backend-dependent WCS capabilities remain outside this static prototype.
+
 ## 2026-10-28 — Chromium browser smoke tests passing
 - Added Playwright smoke coverage and a GitHub Actions workflow for the static HTML MVP.
 - Latest run passed in Chromium: all six navigation destinations, Issue tabs, intake creation and temporary queue rendering, refresh-clears behavior, search by intake and illustrative case title, qualification-state updates, disabled catalogue controls, modal focus containment/restoration, and 390px mobile horizontal-overflow check.
