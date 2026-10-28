@@ -98,6 +98,11 @@ The same governed impact parameters are used both to assess each case-specific s
 - [Relationship types](docs/data/seed/relationship-types.csv) — typed semantics, evidence and prohibited inferences.
 
 
+## Interactive visual MVP prototype
+- [Open the interactive browser prototype source](docs/demo/mvp-prototype.html) — a single-file, responsive, client-side prototype for Home, Issue, Solution, Decision & Actions, Outcomes & Learning, and Settings.
+- The prototype uses synthetic data for `CASE-024`, supports navigation and a local Issue Intake form, and intentionally keeps reusable catalogue buttons **visible but disabled**.
+- This is a UI prototype only: no backend, persistent storage, authentication/authorization, or ERP integration. New intake data is not persisted after refresh; demo queue counts and secondary rows are illustrative.
+
 ## End-to-end sample fixture
 The synthetic case `CASE-024` is modeled from intake through qualification, three candidate solutions, profile-based decision, actions, observed outcome, and audit events: [CASE-024 demo fixture](docs/data/demo/CASE-024-end-to-end-demo.json). It is sample data for validating the end-to-end contract, not a running application, live integration, or real organizational evidence.
 
