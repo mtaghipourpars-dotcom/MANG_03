@@ -55,13 +55,13 @@ try {
   await page.getByText("Needs information", { exact: true }).first().waitFor();
 
   await page.getByRole("button", { name: "Qualification" }).click();
-  const disabledCatalogButtons = page.getByRole("button", { name: "NEW ISSUE" });
+  const disabledCatalogButtons = page.getByRole("button", { name: "NEW ISSUE", exact: true });
   assert.ok(await disabledCatalogButtons.count() >= 1, "NEW ISSUE should remain visible in qualification");
   for (let i = 0; i < await disabledCatalogButtons.count(); i++) {
     await assertDisabled(disabledCatalogButtons.nth(i));
   }
   await page.locator('[data-page="solution"]').first().click();
-  const disabledSolutionButtons = page.getByRole("button", { name: "NEW SOLUTION" });
+  const disabledSolutionButtons = page.getByRole("button", { name: "NEW SOLUTION", exact: true });
   assert.ok(await disabledSolutionButtons.count() >= 1, "NEW SOLUTION should remain visible in Solution");
   for (let i = 0; i < await disabledSolutionButtons.count(); i++) {
     await assertDisabled(disabledSolutionButtons.nth(i));
