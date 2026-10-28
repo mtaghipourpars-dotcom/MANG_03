@@ -1,3 +1,10 @@
+## 2026-10-28 — Three decision-integrity guardrails added
+- Added a rejected/deferred alternatives ledger with explicit reasons and reopening triggers; reconsideration flags are session-only and do not silently change the recorded decision.
+- Added recommendation abstention for stale/conflicting evidence, unresolved hard gates, or no feasible candidate, plus a separately labeled emergency reversible-action proposal requiring an owner, future expiry and reversibility confirmation.
+- Added decision-change/value-evidence capture for baseline, decision delta, observed outcome, measurement window and attribution status; no causal claim is implied.
+- Added Playwright regression coverage for the three workflows and updated architecture/acceptance documentation.
+- Prototype remains static and synthetic: no durable persistence, auth, notifications, expiry enforcement, ERP integration, or action execution.
+
 ## 2026-10-28 — Expanded Chromium regression suite passing
 - Added native required-field validation checks for Issue Intake.
 - Added real-browser checks for modal dismissal by Close, Escape, Cancel, and backdrop click; focus containment, focus restoration, and post-submit focus transfer.
