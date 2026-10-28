@@ -41,3 +41,8 @@
 - شناسه‌ها و کدهای سیستمی ثابت می‌مانند؛ متن فارسی صرفاً نمایش مکمل است و جایگزین متن اصلی یا شواهد منبع نمی‌شود.
 
 - [واژه‌نامه دوزبانه داده‌های اولیه و کاتالوگ‌ها](localization/seed-data-language-map.fa-en.csv)
+
+- [مشخصات آزمون فشار در بدترین حالت — فارسی](design/worst-case-stress-test-specification.fa.md)
+- [گزارش بازبینی نمونه اولیه — فارسی](testing/phase-a-static-prototype-review.fa.md)
+- [داده‌های پایه و روابط — فارسی](data/master-data-and-relationships.fa.md)
+- [زنجیره انتهابه‌انتهای مسئله تا راهکار — فارسی](design/issue-solution-end-to-end-chain.fa.md)
