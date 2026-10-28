@@ -180,3 +180,9 @@
 - Fixed an automatic-semicolon-insertion defect in the Home renderer: a newline immediately after `return` caused the Home function to return `undefined`, leaving the main page blank.
 - Restored the agreed Home section sequence: status cards; Issue workbench; Project Value & Risk Map beside Product / Work-Portfolio Status; management decisions beside priority project portfolio; latest material developments and decision-integrity controls.
 - Existing browser smoke tests assert that the Home dashboard content and key sections render.
+
+
+## 2026-10-28 — Google AI Studio implementation contract package
+- Added repository-wide agent instructions, master development protocol, staged implementation gates, mandatory screen reference contract, application architecture/data contract, acceptance checklist, staged prompt pack and append-only implementation ledger.
+- Updated README and English/Persian architecture/product documents to point to the same normative implementation process.
+- The first Google AI Studio action is discovery only. AI Studio build, database provisioning, authentication, runtime tests and live integrations remain NOT RUN / NOT VERIFIED until evidence is recorded in the ledger.
