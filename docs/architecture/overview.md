@@ -100,3 +100,7 @@ The Home page has two separate primary views:
 - **Product / Work-Portfolio Status:** effectiveness—whether product families/projects achieve their intended outcomes and commitments.
 
 Neither view replaces the other, and neither should collapse efficiency and effectiveness into one opaque score. Financial signals must identify their evidence state. Current prototype placements and portfolio rows are synthetic fixtures; no live ERP or verified project-level financial values are connected. See the [First-Principles Product Charter](../product/first-principles-key-resource-allocation.md) and its [Persian companion](../product/first-principles-key-resource-allocation.fa.md).
+
+
+## Home visual contract (PARS reference)
+The Home screen follows the supplied PARS Value Protection Tower reference and `newmodel1/demo/main.png`. The value/risk map and product/work portfolio are separate, equally prominent views. Portfolio product tiles and management-attention cards use photography rather than generic icons. Map markers, status labels and intervention windows must drill into relevant demo workflows. The prototype's project values, progress, statuses and deadlines are synthetic; the reference image is a visual guide, not evidence of live data.
