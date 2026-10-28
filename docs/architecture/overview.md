@@ -87,3 +87,16 @@ Link to existing operational objects where available: project/WBS, production or
 4. Decision profiles, authority, action, outcome, and learning model.
 5. Validate the model with realistic end-to-end scenarios.
 6. Only then finalize physical database/API/UI implementation.
+
+
+## 11. Key-resource allocation and executive Home
+
+The service focuses on **key resources**, not an exhaustive inventory of every resource. A resource becomes decision-relevant when it is scarce, a binding constraint, strategically critical, materially exposed to an issue, or contested by multiple issues in the same time window. Cash and cash-flow timing are first-class dimensions because an option that is nominally profitable may still be infeasible before obligations fall due.
+
+Financial assessment for material issues should distinguish incremental cash required, cash-flow timing, due obligations, intervention cost versus no-action exposure, margin/value at risk, expected avoided cost, evidence provenance, confidence, and unknowns. Unknown is not zero; estimates are not realized outcomes; linked issues must not double-count the same exposure.
+
+The Home page has two separate primary views:
+- **Project Value & Risk Map:** efficiency and risk-adjusted key-resource allocation—where intervention can protect value at proportionate resource cost.
+- **Product / Work-Portfolio Status:** effectiveness—whether product families/projects achieve their intended outcomes and commitments.
+
+Neither view replaces the other, and neither should collapse efficiency and effectiveness into one opaque score. Financial signals must identify their evidence state. Current prototype placements and portfolio rows are synthetic fixtures; no live ERP or verified project-level financial values are connected. See the [First-Principles Product Charter](../product/first-principles-key-resource-allocation.md) and its [Persian companion](../product/first-principles-key-resource-allocation.fa.md).
