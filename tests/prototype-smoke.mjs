@@ -72,6 +72,13 @@ try {
     if (key === "issue") {
       assert.equal(await page.getByRole("heading", { name: "Financial Impact Screening" }).count(), 0,
         "quantitative financial assessment must not appear on Issue intake/detail in the current MVP");
+      assert.equal(await page.locator("#issue-list-table tbody tr").count(), 4, "Issue page should show four illustrative Issue records");
+      await page.locator("#issue-search").fill("supplier");
+      assert.equal(await page.locator("#issue-list-table tbody tr:visible").count(), 1, "Issue search should filter the list");
+      await page.locator("#issue-search").fill("");
+      assert.equal(await page.locator("#issue-list-table tbody tr:visible").count(), 4, "clearing Issue search should restore rows");
+      assert.equal(await page.locator(".issue-intake-footer [data-act='new-intake']").count(), 1,
+        "New Issue Intake should be at the bottom of the Issue page");
     }
   }
 
