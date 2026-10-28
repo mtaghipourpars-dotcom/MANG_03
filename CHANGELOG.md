@@ -160,3 +160,10 @@
 ## Home header removal (2026-10-28)
 - Removed the Home page intro/header block (eyebrow, greeting/title, subtitle, and New Issue Intake button) from both English and Persian renderings. Home now begins directly with dashboard content.
 - Updated smoke-test expectations so navigation and language checks no longer depend on the removed greeting.
+
+
+## 2026-10-28 — Dedicated Projects and Value Map navigation
+- Added the agreed eight-item sidebar: Home, Projects, Value Map, Issue, Solution, Decision & Actions, Outcomes & Learning, Settings.
+- Added dedicated Projects and Value Map pages with portfolio/product imagery, project registers, intervention windows, evidence state and links to existing demo workflows.
+- Connected the Home portfolio panel to Projects and the Home value/risk panel to Value Map.
+- Added browser smoke coverage for menu order, page rendering and Home-to-detail navigation. All project-level demo values remain synthetic.
