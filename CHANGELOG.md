@@ -147,3 +147,11 @@
 - Added a Persian/English terminology map for issue domains, archetypes, solution patterns, relationship types and status labels in seed catalogues.
 - Added Persian companion references for worst-case stress testing, Phase A review, master data/relationships and the end-to-end Issue–Solution chain.
 - Added bilingual qualification-rule labels and applied them to the runtime localization dictionary.
+
+
+## Home reference alignment (2026-10-28)
+- Updated the Home visual structure to follow the supplied PARS Value Protection Tower reference and `newmodel1/demo/main.png`.
+- Reworked the Project Value & Risk Map into a quadrant-style plot with colored project markers and intervention-window framing.
+- Replaced generic portfolio icons with photographic product tiles and added photo-led management decision cards.
+- Added a synthetic project portfolio table and material-development list while preserving the separation between effectiveness and efficiency.
+- All project metrics and placements remain explicitly synthetic; no live PARS/ERP integration is claimed.
