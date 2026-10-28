@@ -210,3 +210,16 @@ Copy this table for each test run.
 | Evidence / screenshot / log | |
 | Defect / owner | |
 | Retest result | |
+
+
+## 10. Additional decision-integrity tests added with the prototype guardrails
+
+These checks extend the original WCS contract; they do not change the status of infrastructure-dependent tests.
+
+| Test ID | Scenario | Required result | Prototype evidence / limitation |
+|---|---|---|---|
+| WCS-013 | Previously rejected/deferred alternative becomes relevant after new evidence | Keep original disposition and reason; flag a new reassessment; never silently overwrite the prior decision | UI can flag reconsideration in session memory; trigger monitoring and immutable audit history remain NOT IMPLEMENTED |
+| WCS-014 | Evidence is stale/conflicting, hard gate unresolved, or no candidate feasible | Abstain with a visible reason; do not present a candidate as recommended; preserve a separate bounded emergency proposal path | UI hold and proposal capture tested in browser; authorization, expiry enforcement and execution remain BLOCKED / NOT IMPLEMENTED |
+| WCS-015 | Product claims value after a decision or favorable outcome | Require baseline, decision delta, observed result, measurement window and attribution status; do not infer causality from sequence alone | UI capture tested; ROI calculation, source verification, counterfactual quality and causal attribution require pilot/backend validation |
+
+The added browser checks establish interaction behavior only. WCS-013 to WCS-015 are not fully passed at service level until their durable audit, authority, data-quality and outcome-evidence requirements are implemented and validated.
