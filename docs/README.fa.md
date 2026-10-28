@@ -58,3 +58,18 @@ MANG_03 برای تخصیص بهتر **منابع کلیدی** به مسائل �
 
 - [منشور طراحی محصول بر مبنای تفکر از اصول اولیه: تخصیص منابع کلیدی — فارسی](product/first-principles-key-resource-allocation.fa.md)
 - [First-Principles Product Charter: Key-Resource Allocation — English](product/first-principles-key-resource-allocation.md)
+
+
+## اجرای قطعی با Google AI Studio
+برای تبدیل مستندات محصول به Web App واقعی، پیش از هر تغییر کد این بسته را بخوانید و دقیقاً طبق گیت‌ها پیش بروید:
+- [دستورالعمل عامل کدنویس](../AGENTS.md)
+- [پروتکل اصلی توسعه](../MASTER_PROTOCOL.md)
+- [توالی پیاده‌سازی و گیت‌های توقف](../IMPLEMENTATION_SEQUENCE.md)
+- [قرارداد مرجع بصری صفحات](../SCREEN_REFERENCE_CONTRACT.md)
+- [قرارداد معماری و داده](../APP_ARCHITECTURE_AND_DATA.md)
+- [معیارهای پذیرش](../ACCEPTANCE_GATES.md)
+- [بسته Promptهای مرحله‌ای](../PROMPT_PACK.md)
+- [دفتر ثبت شواهد واقعی اجرا](../IMPLEMENTATION_LEDGER.md)
+- [راهنمای فارسی Google AI Studio](ai-studio/README.md)
+
+**گام اول فقط Prompt 0 و کشف مخزن است.** تا وقتی کد و تصویر مرجع واقعاً بررسی نشده و وضعیت گیت‌ها ثبت نشده، برنامه‌نویسی را شروع نکنید. مستندات به‌تنهایی به معنی ساخته‌شدن برنامه، اتصال پایگاه‌داده یا اتصال زنده سامانه‌های سازمانی نیستند.
