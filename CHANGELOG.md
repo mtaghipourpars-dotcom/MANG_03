@@ -167,3 +167,10 @@
 - Added dedicated Projects and Value Map pages with portfolio/product imagery, project registers, intervention windows, evidence state and links to existing demo workflows.
 - Connected the Home portfolio panel to Projects and the Home value/risk panel to Value Map.
 - Added browser smoke coverage for menu order, page rendering and Home-to-detail navigation. All project-level demo values remain synthetic.
+
+
+## 2026-10-28 — Home, Issue and Solution page refresh
+- Reordered Home to follow the agreed management sequence and added the Issue workbench directly after the status cards.
+- Rebuilt Issue as an Issue List workspace with status dashboards, search/filter, qualification/evidence context, selected-record detail, and New Issue Intake at the bottom of the page.
+- Rebuilt Solution as a Solution List workspace with candidate status dashboards, search/filter and detailed comparison.
+- Added browser-smoke coverage for Home section presence, Issue/Solution list counts, search behavior, and bottom placement of New Issue Intake. Demo records remain synthetic.
