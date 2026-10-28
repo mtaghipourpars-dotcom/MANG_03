@@ -164,3 +164,18 @@ MANG_03 focuses on allocating **key resources**, not registering every organizat
 
 - [First-principles product charter — English](docs/product/first-principles-key-resource-allocation.md)
 - [منشور طراحی محصول بر مبنای اصول اولیه — فارسی](docs/product/first-principles-key-resource-allocation.fa.md)
+
+
+## Deterministic implementation with Google AI Studio
+The following documents are the mandatory implementation contract for Google AI Studio Build mode. Read them before editing code and execute one gate at a time:
+- [Agent instructions](AGENTS.md)
+- [Master development protocol](MASTER_PROTOCOL.md)
+- [Implementation sequence and stop gates](IMPLEMENTATION_SEQUENCE.md)
+- [Screen reference contract](SCREEN_REFERENCE_CONTRACT.md)
+- [Application architecture and data contract](APP_ARCHITECTURE_AND_DATA.md)
+- [Acceptance gates](ACCEPTANCE_GATES.md)
+- [Prompt pack — one controlled prompt per phase](PROMPT_PACK.md)
+- [Implementation ledger / actual evidence](IMPLEMENTATION_LEDGER.md)
+- [راهنمای فارسی اجرای Google AI Studio](docs/ai-studio/README.md)
+
+**Critical boundary:** these documents specify how to build and validate the application; they do not imply that Google AI Studio has already built it, that persistent storage or authentication is configured, or that ERP/source systems are connected. The first action is Prompt 0 (discovery only). Do not implement until the actual imported code and visual reference have been inspected.
