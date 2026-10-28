@@ -330,7 +330,8 @@ Relational storage with typed relationship records is sufficient for MVP; graph 
 
 - Users can submit an issue even if no catalogue type fits; the intake is preserved as unclassified / review required.
 - Matching suggestions are explainable and allow selection of an existing type or an unclassified review path.
-- The MVP has no user-facing NEW ISSUE or NEW SOLUTION authoring actions.
+- The related catalogue forms display NEW ISSUE and NEW SOLUTION buttons in their intended positions, but both are disabled in the MVP and produce no action or side effects.
+- Disabled catalogue-authoring buttons must not block normal Issue Intake submission or case-specific Solution Candidate creation.
 - Catalogue updates are controlled maintainer/release operations in the MVP.
 - Later-version requirements for user-proposed types, inherited qualification templates and conditional links remain documented but inactive.
 - Reusable Solution Type and case-specific candidate remain separate.
