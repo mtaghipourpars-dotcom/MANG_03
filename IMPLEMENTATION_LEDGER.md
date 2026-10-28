@@ -67,3 +67,9 @@ For each gate, append:
 - Never erase old evidence; append a new entry.
 - Shared changes invalidate prior relevant evidence and require retesting.
 - Separate code complete, tests passed, data ready and production ready.
+
+
+### 2026-10-28 — Cross-linked canonical documentation
+- Updated `README.md`, both architecture overview files, both first-principles product charter files, `docs/README.fa.md`, and `CHANGELOG.md` to point to the Google AI Studio contracts.
+- All documentation writes returned successful GitHub commit SHAs. This confirms documentation commits only; it is not runtime or build validation.
+- Runtime tests and Google AI Studio execution remain NOT RUN.
