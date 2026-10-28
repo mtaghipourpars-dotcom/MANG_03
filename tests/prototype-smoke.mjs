@@ -78,6 +78,10 @@ try {
   await page.getByText(/Recommendation withheld for this session/i).waitFor();
   await page.getByText(/Engineering approval evidence is missing/i).waitFor();
   assert.equal(await page.locator(".candidate.selected").count(), 0, "abstention must remove the visual recommended-selection state");
+  await page.locator('[data-page="decision"]').first().click();
+  await page.getByText(/Current-session abstention guard is active/i).waitFor();
+  await page.locator('[data-page="solution"]').first().click();
+  await page.getByText(/Recommendation withheld for this session/i).waitFor();
   await page.getByRole("button", { name: "Clear session hold" }).click();
   assert.equal(await page.locator(".candidate.selected").count(), 1, "clearing abstention must restore the fixture's selected-candidate styling");
   await page.locator("#g3-emergency-title").fill("Temporarily hold the non-critical release");
