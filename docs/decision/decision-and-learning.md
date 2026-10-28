@@ -3,46 +3,78 @@
 ## 1. Decision support, not autonomous authority
 The initial product recommends and structures choices for authorized people. It does not autonomously make CEO-level decisions or modify operational schedules. Future automation may be considered separately and must retain explicit authority, safeguards, and auditability.
 
-## 2. Decision profiles
-A profile represents the priorities relevant to a decision at a particular time. Examples include:
-- delivery / contractual commitment protection
+## 2. Configurable decision profiles
+A profile represents the priorities relevant to a decision at a particular time. Parameters may include:
+- sales/customer commitments and delivery dates
+- liquidity preservation and cash-flow timing
 - profitability and margin
-- liquidity / cash flow
-- customer or sales commitments
-- quality, safety, compliance, or other organizational priorities
+- quality, safety, and compliance
+- constrained resources, capacity, and other organizational goals
 
-Profiles are configurable and may change with current organizational goals. Each decision must record the applied profile and version, the criteria and weights used, and any justified override. A profile is not assumed to be a permanent strategic setting.
+Profiles are configurable and versioned. Each decision records the profile version, parameter values, criteria/weights, hard constraints, and any justified override. A profile is not assumed to be a permanent strategic setting.
 
-## 3. Feasibility versus priority
-Evaluate feasibility separately from preference. A candidate may be attractive under the current profile but infeasible due to material, capacity, timing, technical qualification, authorization, or other constraints. Display infeasibility reasons and uncertainty rather than hiding them inside a score.
+The profile should influence evaluation and ranking, not silently remove otherwise applicable solution candidates. Hard constraints (for example, legal, safety, technical qualification, or authority restrictions) are represented separately from weighted preferences and must show explicit reasons when they rule out an option.
 
-## 4. Candidate evaluation
+## 3. Feasibility versus profile-based priority
+Evaluate feasibility separately from preference. A candidate may rank highly under the active profile but be infeasible due to material, capacity, timing, technical qualification, authorization, or other constraints. Display feasibility and its reasons/uncertainty independently from profile-based ranking.
+
+## 4. Financial impact of each solution candidate
+Each solution candidate receives its own financial-impact assessment, even before it is selected. The assessment is case-specific and should use available operational and financial evidence rather than a fixed financial score attached to the solution type.
+
+Where supported by data, record separate components:
+- direct implementation / procurement / expediting cost
+- expected revenue and margin/profit impact
+- cash inflow/outflow amounts and timing
+- cost or loss expected to be avoided
+- opportunity cost of consuming or freeing shared resources
+- delay, contractual, or customer-commitment cost where evidenced
+- other material financial effects with a stated basis
+
+Keep **net financial impact**, **profitability/margin**, and **cash-flow/liquidity timing** as distinct measures. A solution can improve margin while worsening near-term cash flow, or protect a delivery commitment at a direct cost. Do not add the same impact twice across linked cases or dimensions.
+
+Each assessment should record currency, calculation period/horizon, baseline/comparison scenario, formula or method, input values, data source, assumptions, low/base/high estimate or uncertainty range where appropriate, confidence, calculation timestamp, and model/version. Clearly label missing data and estimates; do not present unsupported precision as fact. Expected impact is not the same as observed outcome.
+
+## 5. Candidate evaluation and visibility
 A candidate may include:
-- expected benefits and adverse impacts across several dimensions
+- expected benefits/adverse impacts by dimension and affected object
+- solution-level financial-impact assessment
 - resource requirements and timing
 - operational dependencies and affected objects
-- financial estimates, including uncertainty and assumptions
-- feasibility and confidence
-- evidence/provenance
-- ranking under the applied profile
+- feasibility, constraints, and confidence
+- evidence/provenance and assumptions
+- rank under the applied decision profile
 
-Financial factors are important but not exclusive. A financial warning should be interpreted in context of production, procurement, customer commitments, delivery, margin, and current organizational priorities. The CEO may also choose a direct liquidity-management response.
+The system must not equate rank with authority to decide. Profile changes may change rankings, but must not automatically delete candidate records.
 
-## 5. Decision record
+## 6. Decisions across organizational levels
+A lower-level manager's selection is a recorded decision, not a global lock on the Issue–Solution network. Higher-level authorized managers must still be able to view and assess other applicable candidates and may select a different option within their authority and hard constraints.
+
+When a later decision changes the earlier direction:
+- preserve the earlier decision, rationale, authority, profile version, and timestamp;
+- create a new or explicitly superseding decision linked to the prior decision;
+- record which options were reconsidered and why;
+- assess actions already started and explicitly continue, amend, or cancel them through authorized steps;
+- retain the history and show the current effective decision without erasing prior records.
+
+Do not hide or disable alternatives merely because a lower-level option was selected. An option may be marked infeasible or restricted only for a recorded, current reason such as technical qualification, legal/safety constraints, resource unavailability, or delegated authority. Show the reason and distinguish a hard constraint from a preference.
+
+## 7. Decision record
 Capture:
-- case and decision identifier
+- case and decision identifier, and any superseded/prior decision
 - authorized decision-maker and authority basis
-- timestamp and current profile/version
+- timestamp and current profile/version and parameter values
 - alternatives considered, selected option(s), rejected options
 - rationale, assumptions, exceptions, and risk acceptance
-- expected outcomes and measures
+- financial and non-financial expected outcomes and measures
 - generated actions and assigned owners
 - later actual results and retrospective assessment
 
-## 6. Actions and ownership
+## 8. Actions and ownership
 One decision can create multiple actions. Assign action ownership based on the decision and current responsibility, not automatically to the issue submitter or originating department. Support reassignment, due dates, dependencies, progress, evidence, and escalation. Record assignment history.
 
-## 7. Outcome and resolution
+If a new decision conflicts with work already underway, do not silently overwrite the old action. Record authorized continuation, change, cancellation, or replacement and any associated cost/impact.
+
+## 9. Outcome and resolution
 Record observed outcomes independently from expectations:
 - actual execution and completion evidence
 - actual delivery/financial/resource/quality effects where available
@@ -51,14 +83,15 @@ Record observed outcomes independently from expectations:
 
 Do not require every issue and all related work to follow one universal closure pattern.
 
-## 8. Learning from evidence
+## 10. Learning from evidence
 Never infer success from the fact that a solution was selected. Learning should compare expected and actual outcomes and account for context, execution quality, uncertainty, and comparability. If a solution repeatedly performs poorly under comparable conditions, its future recommendation rank may be reduced; if it performs well, confidence may increase. Keep a traceable record of the evidence and learning rule used.
 
 In an initial version, start with simple, explainable baseline weights (equal weights where appropriate). Recommendations can become more informed as decision, action, outcome, and lesson records accumulate. A useful future explanation might state that a similar solution was selected in several comparable cases, with the actual outcomes shown—not merely claim that it is preferred.
 
-## 9. Core distinctions
+## 11. Core distinctions
 - Feasibility ≠ Priority
 - Decision ≠ Action ≠ Resolution
 - Selected solution ≠ successful outcome
 - Relationship ≠ proven causality
 - Estimated impact ≠ observed impact
+- A lower-level decision ≠ suppression of higher-level alternatives
