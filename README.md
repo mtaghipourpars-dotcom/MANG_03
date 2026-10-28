@@ -72,3 +72,7 @@ Architecture and conceptual design. No production implementation or live organiz
 - Estimate the financial impact of each case-specific solution candidate independently where data supports it. Keep direct cost, margin/profit, net impact, and cash-flow timing distinct; record assumptions, source, horizon, uncertainty, and confidence.
 - Evaluate candidates using configurable, versioned Decision Profiles (for example, sales commitments, liquidity preservation, margin, delivery, quality, and safety). Feasibility and hard constraints are separate from profile ranking.
 - A lower-level selection must not hide or disable other applicable candidates for higher-level managers. Preserve the prior decision and record any later superseding decision; explicitly handle actions already underway.
+
+
+## Initial financial-impact approach
+The MVP starts with a manager-owned, staged parametric assessment rather than requiring precise monetary calculations from every user. Candidate-specific 1–5 ratings use explicit anchors and directions; unknown values remain explicit; ordinal scores are not money and must not be blindly summed. Higher-level review can refine the assessment and add quantified analysis where justified. See [Parametric Solution Impact Assessment](docs/decision/parametric-impact-assessment.md).
