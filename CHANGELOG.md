@@ -1,5 +1,9 @@
 # Change Log
 
+## 2026-10-28 — Enterprise-wide extensible Issue–Solution network
+- Expanded the Issue–Solution architecture from a manufacturing-focused starter matrix to the full enterprise value chain.
+- Defined inline user creation for reusable Issue Types and Solution Types, explainable matching, proposed qualification-rule templates, typed/versioned relationships, and catalogue governance.
+- Added safeguards against silent merges, unreviewed recommendations, weakened mandatory controls, and historical record rewrites.
 ## 2026-10-28 — Manufacturing Issue–Solution matrix and qualification framework
 - Added machine-readable seed CSV catalogues for Issue–Solution applicability, qualification rules, and typed relationship semantics.
 - Added a starter manufacturing taxonomy spanning materials, suppliers, equipment, quality, production, capacity, engineering, projects, logistics, finance, commercial, people, systems, safety, governance, and external disruptions.
