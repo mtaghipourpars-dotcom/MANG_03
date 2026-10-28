@@ -240,3 +240,14 @@ Decision Profiles are configurable and versioned. Parameters may include sales/c
 ## 12. Decisions at different authority levels
 
 A lower-level selection does not hide or disable other applicable solution candidates for higher-level managers. Candidate visibility and evaluation are separate from the current effective decision. A higher-level authorized manager may select another solution within applicable hard constraints. Preserve the earlier decision and record the later decision as new or superseding, with rationale and links to affected decisions. Assess actions already started and explicitly record authorized continuation, amendment, cancellation, or replacement. Never silently overwrite prior decisions or actions.
+
+
+## 11. Financial impact and profile-based choice
+
+Each case-specific Solution Candidate should have its own Financial Impact Assessment before final selection where data permits. Do not attach one fixed financial score to the reusable Solution Type. Assess direct implementation cost, margin/profit effect, cash-flow amount and timing, avoided cost/loss, shared-resource opportunity cost, and evidenced delay/commitment costs as separate components. Keep net financial impact, profitability/margin, and cash flow/liquidity distinct. Record currency, baseline, time horizon, method, source inputs, assumptions, uncertainty range, confidence, and calculation version. Avoid double-counting and unsupported precision.
+
+Decision Profiles are configurable and versioned. Parameters may include sales/customer commitments, liquidity preservation, margin, delivery, quality, safety, compliance, and resource priorities. Record the active profile version and parameter values with each decision. Evaluate feasibility separately from profile ranking; hard legal, safety, technical, resource, and authority constraints must have explicit reasons.
+
+## 12. Decisions at different authority levels
+
+A lower-level selection must not hide or disable other applicable solution candidates for higher-level managers. Candidate visibility is separate from the current effective decision. A higher-level authorized manager may select another solution within applicable constraints. Preserve the earlier decision and record the later decision as new or superseding, with rationale and links to affected decisions. Assess actions already started and explicitly record authorized continuation, amendment, cancellation, or replacement. Never silently overwrite prior decisions or actions.
