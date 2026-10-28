@@ -124,3 +124,10 @@ The stress-test specification defines synthetic, evidence-based checks for liqui
 
 ### Phase A review status (2026-10-28)
 The HTML source was statically inspected. The review found that the intake form reports “Saved locally” but does not retain the submitted record, and “Mark information needed” shows a state-change message without changing state. Several other workflow controls are preview/toast-only. Browser-runtime testing remains outstanding; persistence, authorization, ERP, concurrency and offline-sync tests remain blocked/not implemented. See the [Phase A review report](docs/testing/phase-a-static-prototype-review.md).
+
+
+## Decision integrity guardrails (2026-10-28)
+- [Rejected and Deferred Alternatives Ledger](docs/decision/rejected-alternatives-ledger.md): preserve alternatives and explicit reopening triggers without silently rewriting decisions.
+- [Recommendation Abstention and Emergency Reversible-Action Path](docs/workflows/recommendation-abstention-emergency-path.md): allow justified abstention and a separately governed, reversible emergency proposal path.
+- [Decision Change and Value Evidence Measurement](docs/decision/value-evidence-measurement.md): evaluate decision changes and observed outcomes against a defensible baseline without unsupported causal claims.
+- The prototype exposes these flows in the Decision, Solution, and Outcomes pages. All added records remain in browser session memory; no backend, durable audit history, authorization, alerting, expiry enforcement, or execution is implied.
