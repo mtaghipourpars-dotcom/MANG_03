@@ -36,10 +36,11 @@ try {
   }
 
   await page.locator('[data-page="solution"]').first().click();
-  await page.getByRole("button", { name: /Switch interface to Persian|تغییر زبان رابط به فارسی/ }).click();
+  await page.locator("#mang03-language-toggle").click();
   await page.getByRole("heading", { name: "مقایسه گزینه‌های راهکار" }).waitFor();
-  await page.getByText("تسریع سفارش فعلی تأمین‌کننده", { exact: true }).waitFor();
-  await page.getByRole("button", { name: /Switch interface to English|تغییر زبان رابط به انگلیسی/ }).click();
+  assert.equal((await page.locator(".candtitle").first().innerText()).trim(), "تسریع سفارش فعلی تأمین‌کننده",
+    "candidate labels generated after navigation should be translated into Persian");
+  await page.locator("#mang03-language-toggle").click();
   await page.getByRole("heading", { name: /Compare solution candidates/ }).waitFor();
 
   await page.locator('[data-page="issue"]').first().click();
