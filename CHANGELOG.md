@@ -1,3 +1,13 @@
+## 2026-10-28 — First-principles key-resource allocation
+
+- Re-centered the Home page on the product's founding purpose: allocate scarce **key resources**, especially cash and cash-flow timing, to the issues that matter most.
+- Added separate executive views for **Project Value & Risk Map** (efficiency / risk-adjusted allocation) and **Product / Work-Portfolio Status** (effectiveness / commitments and outcomes).
+- Added visible financial signals for cash-flow timing, cash required, and margin at risk; unavailable/live-system values remain explicitly unknown or not connected.
+- Marked map positions and portfolio statuses as synthetic demo fixtures; no live ERP or verified project-level financial values are implied.
+- Added bilingual first-principles product charters and updated the architecture and README references in English and Persian.
+- Extended browser smoke tests to verify the two Home views and financial signals in both English and Persian.
+- Validation: browser smoke test passed for commit `70f09e8a4bd91683a524eda0dcc18250ce0e63fe`; a subsequent accessibility/localization and marker-label refinement triggered a new run that is being checked.
+
 ## 2026-10-28 — Three decision-integrity guardrails added
 - Added a rejected/deferred alternatives ledger with explicit reasons and reopening triggers; reconsideration flags are session-only and do not silently change the recorded decision.
 - Added recommendation abstention for stale/conflicting evidence, unresolved hard gates, or no feasible candidate, plus a separately labeled emergency reversible-action proposal requiring an owner, future expiry and reversibility confirmation.
