@@ -1,5 +1,9 @@
 # Change Log
 
+## 2026-10-28 — Canonical enterprise Issue–Solution matrix rewritten
+- Replaced manufacturing-only framing with a full enterprise value-chain reference matrix, common issue archetypes, 24 qualification checks, reusable solution archetypes, conditional applicability rules, typed relationships, catalogue extensibility, governance and outcome learning.
+- Added machine-readable enterprise Issue Type and qualification-rule seeds and expanded cross-domain applicability and relationship data.
+- Retained the manufacturing matrix as a clearly labelled domain appendix and linked the canonical matrix from the README.
 ## 2026-10-28 — Enterprise-wide extensible Issue–Solution network
 - Expanded the Issue–Solution architecture from a manufacturing-focused starter matrix to the full enterprise value chain.
 - Defined inline user creation for reusable Issue Types and Solution Types, explainable matching, proposed qualification-rule templates, typed/versioned relationships, and catalogue governance.
