@@ -14,10 +14,16 @@ try {
   const htmlPath = resolve("docs/demo/mvp-prototype.html");
   await page.goto(pathToFileURL(htmlPath).href);
   await page.getByRole("heading", { name: /Good afternoon, Manager/ }).waitFor();
+  await page.getByRole("heading", { name: "Project Value & Risk Map" }).waitFor();
+  await page.getByRole("heading", { name: "Product / Work-Portfolio Status" }).waitFor();
+  await page.getByText("Cash-flow timing", { exact: true }).waitFor();
   await page.getByRole("button", { name: /Switch interface to Persian|تغییر زبان رابط به فارسی/ }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "fa", "Persian locale should set document language");
   assert.equal(await page.locator("html").getAttribute("dir"), "rtl", "Persian locale should enable RTL layout");
   await page.getByRole("heading", { name: "وقت بخیر، مدیر گرامی" }).waitFor();
+  await page.getByRole("heading", { name: "نقشه ارزش و ریسک پروژه‌ها" }).waitFor();
+  await page.getByRole("heading", { name: "وضعیت سبد محصولات / حوزه‌های کاری" }).waitFor();
+  await page.getByText("زمان‌بندی جریان نقد", { exact: true }).waitFor();
   await page.getByRole("button", { name: /Switch interface to English|تغییر زبان رابط به انگلیسی/ }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en", "English locale should restore document language");
   assert.equal(await page.locator("html").getAttribute("dir"), "ltr", "English locale should restore LTR layout");
