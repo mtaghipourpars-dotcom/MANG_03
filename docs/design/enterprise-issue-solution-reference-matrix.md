@@ -24,7 +24,7 @@ The design draws on public cross-industry process classification, project/portfo
 8. Separate qualification, urgency, priority, feasibility, authority and expected value.
 9. Unknown/Not assessed is not zero, false, low impact or no risk.
 10. A solution link means potentially applicable under stated conditions, not guaranteed effectiveness.
-11. Users can propose catalogue definitions and relationships; governance determines when they become trusted.
+11. User-facing catalogue authoring is deferred beyond MVP; the data model must support later proposals and governed activation.
 12. MANG_03 supports human decisions and traceability; it does not autonomously change detailed production schedules or silently execute ERP transactions.
 13. Freeze catalogue, rule and impact-parameter versions at decision time; learn from verified execution outcomes.
 14. Model shared-resource competition across cases: cash, people, machines, suppliers, test capacity and management attention.
@@ -238,33 +238,45 @@ Initially use manager-owned qualitative scales (e.g., 1–5) with explicit ancho
 
 At decision time, freeze parameter/rule/catalogue versions, targets/thresholds and rationale. Compare actual results to frozen targets. A critical target breach remains visible and cannot be offset by another positive dimension. Outcome labels: Successful, Partially Successful, Unsuccessful, Unknown, each with evidence and rationale.
 
-## 10. User-extensible catalogue behavior
+## 10. Catalogue behavior and MVP scope boundary
 
-### ADD / New Issue
-1. Preserve the intake narrative first.
-2. Search existing types by terms, synonyms, language, semantic similarity, domain/process/object context.
-3. Show likely matches and explain similarities and differences.
-4. Offer Use Existing, Create Child/Subtype, Create New, Save Provisional/Needs Review, Cancel.
-5. Suggest parent, synonyms, inclusion/exclusion, diagnostic questions, evidence needs, affected objects and qualification template.
-6. Mark generated definitions/rules/links PROPOSED and let the user edit them.
-7. Validate duplicate code, parent cycles, contradictions, missing steward and unsafe rule weakening.
-8. Save stable ID, creator, provenance, version, status and review history.
-9. Continue intake without losing input where policy permits provisional classification.
+### 10.1 MVP decision: no user-facing NEW ISSUE / NEW SOLUTION
 
-### ADD / New Solution
-1. Search existing patterns and related Issue Types; explain matches and differences.
-2. Offer Use Existing, Create Child/Subtype, Create New, Save Provisional, Cancel.
-3. Capture intent, context, prerequisites, risks, resources, authority and verification criteria; allow unknowns.
-4. Suggest conditional Issue Type links and a solution checklist, all marked Proposed.
-5. Keep reusable Solution Type separate from case-specific Solution Candidate.
-6. Do not make a new solution approved or executable by default.
+To reduce MVP complexity, users cannot create new reusable Issue Types or Solution Types from the interface in the MVP. The enterprise-wide catalogue and its data model remain designed for later extension, but runtime catalogue authoring, AI-generated taxonomy, user-managed qualification templates and approval workflows for new types are deferred to a later version.
 
-### Lifecycle and rule inheritance
-Suggested lifecycle: Draft → In Review → Approved → Active → Deprecated/Superseded; Rejected is a recorded disposition, not deletion. MVP can simplify the UI but should preserve the underlying status/history.
+The MVP uses a curated, versioned seed catalogue maintained through controlled project/configuration updates. This is a deliberate release-scope decision, not a limitation on the long-term product architecture.
 
-A new Issue Type receives a proposed rule template built from: enterprise-mandatory controls; parent domain/type templates; declared characteristics/risk flags; affected object/evidence needs; approved site/process rules; reviewed local additions. A child may add stricter checks but cannot silently weaken mandatory safety, legal, cyber, product-safety, privacy, audit or access controls. Conflicts require explicit resolution.
+### 10.2 MVP Issue intake behavior
 
-Minimum reusable catalogue fields: stable ID/code; name/definition; parent; synonyms/locales; inclusion/exclusion; examples; evidence needs; object/process scope; relationship records; rule-set version; owner/steward; creator/reviewer; status; effective dates; provenance; version history.
+1. Preserve the submitted intake narrative, reporter, timestamp and evidence before requiring complete classification.
+2. Search the existing Issue Type catalogue using names, synonyms and configured terms; show relevant candidates where available.
+3. Let the user select an existing type, or choose **Not sure / Other — classification review required** when no listed type fits. This is a case classification state, not a new Issue Type.
+4. Do not display a **NEW ISSUE** or **ADD ISSUE TYPE** action in the MVP.
+5. Route unclassified items to a review queue so an authorized steward can map them to an existing type. If the catalogue genuinely lacks a type, record the gap for a later controlled catalogue update; do not lose or block the intake merely because the type is missing.
+6. Similarity results are suggestions, not automatic identity or automatic merging. The user/reviewer must confirm links or duplicate dispositions.
+
+### 10.3 MVP Solution behavior
+
+1. Retrieve applicable patterns from the existing, curated Solution Type catalogue and show their conditions, prerequisites, cautions and required approvals.
+2. Let users assess case-specific Solution Candidates derived from the catalogue or record a case-specific option within the MVP's supported fields; a case-specific option must not create a reusable Solution Type.
+3. Do not display a **NEW SOLUTION** or **ADD SOLUTION TYPE** action in the MVP.
+4. If no catalogue pattern fits, record **No suitable catalogue solution / manual review required** and allow escalation. Do not force-fit a misleading solution or mark the case infeasible without assessment.
+5. Reusable Solution Type authoring, AI-generated Solution Types, relationship proposals and their review/approval workflow are deferred to a later version.
+
+### 10.4 Later-version extensibility requirements (preserved, not MVP functionality)
+
+When introduced in a later release, NEW ISSUE and NEW SOLUTION should:
+- Search existing definitions and explain likely matches and differences.
+- Offer use-existing, create-subtype, create-new, save-provisional and cancel paths.
+- Generate only proposed definitions, qualification templates, synonyms and conditional relationships; never silently approve AI-generated content.
+- Capture creator, provenance, steward, version, status, review history and effective dates.
+- Inherit enterprise-mandatory controls and parent templates; child definitions may strengthen but may not silently weaken mandatory safety, legal, cyber, product-safety, privacy, audit or access controls.
+- Keep reusable types separate from case-specific issues and solution candidates.
+- Preserve history when definitions are deprecated or superseded.
+
+### 10.5 Catalogue governance in MVP
+
+The MVP must still support stable catalogue IDs, explicit definitions, synonyms supplied in the curated data, controlled versions, statuses, auditability and non-destructive deprecation. Catalogue updates are performed through a controlled maintainer/release process, not by ordinary users at runtime. Unreviewed links/rules cannot silently drive recommendations.
 
 ## 11. Core entities and separation of concerns
 
@@ -316,11 +328,11 @@ Relational storage with typed relationship records is sufficient for MVP; graph 
 
 ## 14. MVP acceptance criteria
 
-- Users can submit an issue even if no catalogue type fits.
-- Matching suggestions are explainable and allow existing/subtype/new/provisional choice.
-- New types and templates can be proposed without code deployment.
-- New Issue Types receive proposed—not trusted by default—qualification rules.
-- New Solution Types receive conditional proposed links, not guaranteed success.
+- Users can submit an issue even if no catalogue type fits; the intake is preserved as unclassified / review required.
+- Matching suggestions are explainable and allow selection of an existing type or an unclassified review path.
+- The MVP has no user-facing NEW ISSUE or NEW SOLUTION authoring actions.
+- Catalogue updates are controlled maintainer/release operations in the MVP.
+- Later-version requirements for user-proposed types, inherited qualification templates and conditional links remain documented but inactive.
 - Reusable Solution Type and case-specific candidate remain separate.
 - Every suggestion has provenance and a disposition path.
 - Unreviewed relationships do not imply causality or drive approved recommendations.
