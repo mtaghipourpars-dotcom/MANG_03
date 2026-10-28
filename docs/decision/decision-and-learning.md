@@ -95,3 +95,11 @@ In an initial version, start with simple, explainable baseline weights (equal we
 - Relationship ≠ proven causality
 - Estimated impact ≠ observed impact
 - A lower-level decision ≠ suppression of higher-level alternatives
+
+
+## 12. Manager-owned parametric assessment as the initial financial-impact model
+The initial MVP must not require experts or managers to calculate precise financial values for every candidate. Start with manager-owned, contextual 1–5 ratings for understandable impact dimensions, with written scale anchors, a short rationale, assumptions, and explicit confidence/unknown states. Subject-matter experts provide facts and evidence; managers own the initial enterprise-level assessment; higher-level forums may challenge and refine it. Preserve all revisions and their authors.
+
+The initial candidate dimensions and their directions are proposed in [Parametric Solution Impact Assessment](parametric-impact-assessment.md): delivery/commitment contribution (higher is better), financial resources required (lower is generally better), margin/profit effect (higher is better), liquidity effect (higher is better), scarce/shared-resource demand (lower is generally better), and execution risk (lower is generally better). The final parameter list and scale anchors remain open for validation.
+
+A 1–5 rating is ordinal, not money. Do not add raw ratings into a purported financial value or treat a rating of 4 as twice a rating of 2. Keep dimensions visible and separate. Unknown/not assessed is not zero or neutral. Refine in stages: initial managerial view, cross-functional review, quantified analysis when material and supported by evidence, then actual outcomes after execution. Not every candidate needs a full financial model.
