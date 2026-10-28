@@ -45,7 +45,7 @@ try {
     ["decision", /Decision & action tracking/],
     ["outcome", /Outcomes & organizational learning/],
     ["settings", /Settings & demo controls/],
-    ["home", /Good afternoon, Manager/]
+    ["home", /Project Value & Risk Map/]
   ]) {
     await page.locator(`[data-page="${key}"]`).first().click();
     await page.getByRole("heading", { name: heading }).waitFor();
