@@ -154,3 +154,5 @@ The HTML source was statically inspected. The review found that the intake form 
 - [Persian end-to-end Issue–Solution chain](docs/design/issue-solution-end-to-end-chain.fa.md)
 
 - [Bilingual enterprise issue-type labels and descriptions](docs/localization/enterprise-issue-type-labels.fa-en.csv)
+
+- [Bilingual qualification-rule labels](docs/localization/qualification-rule-labels.fa-en.csv)
