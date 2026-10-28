@@ -289,7 +289,18 @@ A demo is considered to demonstrate the chain when a user can:
 - No decision selection alone qualifies as successful outcome evidence.
 - Production-grade role/permission enforcement, integration security, and deployment readiness are not claimed by this design document.
 
-## 10. Next modeling sequence
+## 10. MVP catalogue-authoring button behavior
+
+The ISSUE and SOLUTION screens must retain the **NEW ISSUE** and **NEW SOLUTION** buttons in the related reusable Issue Type / Solution Type selection forms. In the MVP, both buttons are visibly disabled (not hidden), have a tooltip/helper message such as “Available in a future version,” and trigger no click, keyboard, modal, navigation, API, or data-write behavior. This applies only to reusable catalogue definitions. It must not disable the normal **Create Issue Intake** flow or the ability to add a case-specific **Solution Candidate** to an accepted Issue.
+
+Acceptance checks:
+- Both buttons are visible in their related forms and use a real disabled state, not just muted styling.
+- Keyboard focus/activation and pointer interaction cannot invoke them.
+- No catalogue record or draft is created and no backend request is sent.
+- The form still supports selecting existing catalogue entries and all other enabled MVP actions.
+- UI labels/tooltips make the future-version limitation clear without suggesting that the entire Issue/Solution workflow is unavailable.
+
+## 11. Next modeling sequence
 
 1. Validate this chain and the scenario-specific user journeys.
 2. Design the HOME and sidebar visual prototype, then ISSUE LIST/DETAIL.
