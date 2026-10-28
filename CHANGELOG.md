@@ -1,3 +1,11 @@
+## 2026-10-28 — Manager-owned qualitative financial evaluation
+
+- Removed the premature **Financial Impact Screening** panel from Issue detail; employees registering an Issue are not asked to estimate monetary impact.
+- Reaffirmed the MVP's financial core: relevant managers assign qualitative values to versioned parameters after Issue review/qualification.
+- Defined guardrails for qualitative scales, Unknown / Not assessed, assessor/time/profile provenance, and keeping financial parameters separate from an opaque overall score.
+- Deferred quantitative monetary valuation and cash-flow modelling to later versions, contingent on data quality, process ownership, and organizational maturity.
+- Updated the English/Persian product charters and architecture docs; added regression assertions that the removed panel stays absent in both locales.
+
 ## 2026-10-28 — First-principles key-resource allocation
 
 - Re-centered the Home page on the product's founding purpose: allocate scarce **key resources**, especially cash and cash-flow timing, to the issues that matter most.
