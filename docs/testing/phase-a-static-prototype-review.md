@@ -11,9 +11,9 @@
 
 The source contains six page renderers, responsive CSS breakpoints, a synthetic `CASE-024` scenario, a required-field Issue Intake modal, explicit demo limitations, and visible disabled catalogue-authoring buttons.
 
-The source review also found a material gap: submitting the Issue Intake form generates an ID and shows a “Saved locally” toast, but the code does not add the intake to an in-memory list, render it in the queue, or store it in browser persistence. The toast therefore overstates what the current implementation actually does. Several other controls are intentionally toast-only and do not change state.
+The initial source review found a material gap: submitting the Issue Intake form claimed to save a record but did not retain it. This was fixed in subsequent iterations with an explicitly temporary in-page queue. Other controls that do not mutate state have been relabelled as previews.
 
-**Initial Phase A disposition: PARTIAL / NEEDS FOLLOW-UP.** The two initial source-level defects were addressed in subsequent iterations and exercised with a mocked-DOM harness. This is not a real-browser test. Backend-dependent tests remain blocked, and the stress-test suite as a whole has not passed.
+**Initial Phase A disposition: PARTIAL / NEEDS FOLLOW-UP.** Both original defects were fixed at prototype scope. The expanded Chromium smoke suite now passes; backend-dependent tests remain blocked, and the full stress-test suite has not passed.
 
 ## 2. Source-level checks
 
@@ -21,16 +21,16 @@ The source review also found a material gap: submitting the Issue Intake form ge
 |---|---|---|---|
 | A-001 | HTML document and viewport metadata | PASS | HTML document, UTF-8 metadata, and responsive viewport declaration exist. |
 | A-002 | Six expected page renderers | PASS | `home`, `issue`, `solution`, `decision`, `outcome`, `settings` are defined and registered. |
-| A-003 | Responsive layout breakpoints | PASS | CSS contains 1000px and 620px breakpoints. Actual visual behavior is not browser-verified. |
-| A-004 | Required Issue Intake fields | PASS (source only) | Title and observed-situation fields have HTML `required`. Native browser validation was not exercised. |
+| A-003 | Responsive layout breakpoints | PASS | CSS contains 1000px and 620px breakpoints; Chromium confirmed no horizontal overflow at 390px. Full visual-quality review at additional viewports remains outstanding. |
+| A-004 | Required Issue Intake fields | PASS (Chromium) | Native required-field validation rejects a blank title and observed-situation field in the browser smoke test. |
 | A-005 | Intake vs formal case distinction | PASS (copy only) | Modal says intake is created first and formal case creation follows qualification. Actual intake retention is deficient; see A-011. |
-| A-006 | NEW ISSUE and NEW SOLUTION visible but disabled | PASS (source only) | Helper emits a real `disabled` attribute and `aria-disabled="true"`; both labels occur in relevant forms. Browser/keyboard interaction not exercised. |
+| A-006 | NEW ISSUE and NEW SOLUTION visible but disabled | PASS (Chromium) | Both buttons remain visible and disabled on their respective pages in the browser smoke test. |
 | A-007 | Modal dismissal | PASS (source only) | Close button, Cancel, Escape, and backdrop-click handlers are present. Runtime behavior not exercised. |
-| A-008 | Navigation handlers | PASS (source only) | Sidebar page handlers and page renderer mapping exist. Actual navigation not browser-tested. |
+| A-008 | Navigation handlers | PASS (Chromium) | All six navigation destinations and all three Issue tabs render successfully in the browser smoke test. |
 | A-009 | Synthetic-data disclosure | PASS | Sidebar/header label the demo data; settings disclose no persistence, authorization, or live ERP integration. |
 | A-010 | Blocked candidate presentation | PASS (sample display only) | Candidate B has a blocked state and no numeric score in the sample rendering logic. No dynamic constraint engine is implemented. |
-| A-011 | Issue Intake actually retained after Submit | FAIL | Submit generates a random-looking demo ID and toast, then resets/closes the form. It does not append a record to state or queue, nor persist it. The phrase “Saved locally” is misleading because no record is retained even in current-page state. |
-| A-012 | “Mark information needed” changes qualification state | FAIL / misleading affordance | Handler only displays a toast saying the demo state was returned; no qualification state changes. |
+| A-011 | Issue Intake actually retained after Submit | FIXED — temporary state | Submitted values and a demo ID appear in an in-page queue; the UI warns that refresh/close clears the entry. Chromium confirms queue rendering and refresh-clears behavior. |
+| A-012 | “Mark information needed” changes qualification state | FIXED — temporary state | The action updates the displayed disposition, review status and qualification-gate badge in browser memory; it is not durable or audited. |
 | A-013 | Candidate “View assessment” updates assessment state | BLOCKED / NOT IMPLEMENTED | Handler displays a toast with the candidate rationale only; no assessment is changed or recorded. |
 | A-014 | Owner reassignment persists or changes owner | BLOCKED / NOT IMPLEMENTED | Handler explicitly reports that reassignment is not persisted or sent. |
 | A-015 | Follow-up note persists | BLOCKED / NOT IMPLEMENTED | Handler explicitly reports the note is not persisted. No note input is provided by this action. |
@@ -38,8 +38,8 @@ The source review also found a material gap: submitting the Issue Intake form ge
 | A-017 | Durable browser storage | BLOCKED / NOT IMPLEMENTED | No localStorage, sessionStorage, IndexedDB, or equivalent persistence API is present. |
 | A-018 | Network / ERP integration | BLOCKED / NOT IMPLEMENTED | No fetch, XMLHttpRequest, or WebSocket usage was found in the inspected source. |
 | A-019 | Authentication and authorization | BLOCKED / NOT IMPLEMENTED | A demo-manager avatar/role label is present, but no identity or permission enforcement exists. |
-| A-020 | Search field works | BLOCKED / NOT IMPLEMENTED | The search element is a decorative `div`, not an input or implemented search control. |
-| A-021 | Modal accessibility completeness | NEEDS REVIEW | Dialog semantics and labelled title exist; focus trap, focus restoration, and browser/screen-reader behavior were not verified and no focus-trap/restore logic was found. |
+| A-020 | Search field works | PASS (local Chromium search) | Search matches the detailed CASE-024 and session-only intake, plus illustrative CASE-019/CASE-011 by title. No server search is implied. |
+| A-021 | Modal accessibility completeness | PARTIAL — Chromium | Focus containment/restoration and Close/Escape/Cancel/backdrop behavior pass browser tests. Screen-reader and broader assistive-technology review remains outstanding. |
 | A-022 | True offline operation and recovery | BLOCKED / NOT IMPLEMENTED | No durable offline queue, synchronization, or conflict-resolution implementation exists. |
 
 ## 3. Worst-case test mapping
@@ -101,23 +101,23 @@ The search field is a non-interactive `div`. Hide it, style it as clearly illust
 - The source explicitly discloses key prototype limitations.
 
 **Not established:**
-- Successful page rendering in a browser or responsive visual quality.
-- Successful real clicks, form validation, modal keyboard behavior, or screen-reader behavior.
-- Persistence, audit integrity, authorization, concurrency, offline operation, synchronization, or ERP integration.
+- Full visual-quality review across browsers and a broad viewport matrix; only a 390px no-horizontal-overflow check is automated.
+- Screen-reader/assistive-technology behavior and full accessibility conformance.
+- Durable persistence, audit integrity, authorization, concurrency, offline operation, synchronization, or ERP integration.
 - Passing the complete Worst-Case Stress Test suite.
 
 ## 6. Exit recommendation
 
 Do not treat the prototype as a reliable operational simulation. DEF-A-001 and DEF-A-002 have been fixed at temporary in-page state level, mock controls have been relabelled, local search is implemented, and mocked-DOM regression checks pass. Next required gate is a real browser walkthrough of native form validation, responsive rendering, keyboard interaction, and disabled controls. Keep backend-dependent WCS tests marked **BLOCKED / NOT IMPLEMENTED** until those capabilities exist.
 
-**Overall Phase A status: PARTIAL — source review completed; browser execution outstanding; two functional/wording defects identified.**
+**Overall Phase A status: PARTIAL — original prototype defects fixed; expanded Chromium smoke suite passing; operational WCS acceptance remains blocked by unimplemented backend capabilities.**
 
 
 ## 7. Defect-fix iteration 1 — source re-review
 
 - **Reviewed source before fix:** `7230817277d07a3598598a9a509f4f8aa93c2e18`.
 - **Fixes committed:** Issue Intake values are appended to a temporary in-memory queue and rendered on the Issue page; the UI explicitly states that refresh/close clears these records and that no formal case is created. “Mark information needed” now changes the temporary CASE-024 qualification status and displays the updated state. The header search is now a local search over CASE-024 and session-only intake records. Non-mutating candidate/action/history controls are relabelled as previews.
-- **Validation boundary:** These are source changes only. A real browser walkthrough, runtime JavaScript execution, keyboard/screen-reader verification, and responsive visual inspection have not been performed in this iteration. Do not mark WCS-001 or WCS-002 as fully passed based on source inspection alone. Durable persistence, audit event integrity, offline continuity, conflict recovery, authorization, ERP integration, shared-resource collision, and shock recalculation remain BLOCKED / NOT IMPLEMENTED.
+- **Validation boundary at the time:** These were source changes only. The later Chromium smoke run is documented in §9. Do not mark WCS-001 or WCS-002 as full operational passes: only temporary in-page UI behavior was exercised. Durable persistence, audit event integrity, offline continuity, conflict recovery, authorization, ERP integration, shared-resource collision, and shock recalculation remain BLOCKED / NOT IMPLEMENTED.
 
 
 ## 8. Defect-fix iteration 2 — source-level verification
@@ -125,7 +125,7 @@ Do not treat the prototype as a reliable operational simulation. DEF-A-001 and D
 - Updated the Issue detail qualification gate to reflect the temporary “Needs information” state instead of retaining a contradictory “Passed” badge.
 - Added modal focus restoration on dismissal and Tab/Shift+Tab containment while the dialog is open.
 - JavaScript syntax compilation passed after the edits. A mocked-DOM interaction harness passed form submission/queue rendering, temporary qualification status transition, local search, navigation across all six pages, all three Issue tabs, modal Tab focus containment, and focus restoration. The harness does not execute a browser engine or certify CSS layout, native form validation, accessibility APIs, or cross-browser behavior.
-- Real browser rendering, keyboard/screen-reader accessibility, and backend-dependent WCS tests remain outstanding and must not be marked passed from source checks alone.
+- Real-browser validation was subsequently added and passed as recorded in §9. Screen-reader/accessibility conformance and backend-dependent WCS tests remain outstanding and must not be marked passed from the smoke suite alone.
 
 
 ## 9. Latest regression results (Playwright Chromium + mocked DOM)
