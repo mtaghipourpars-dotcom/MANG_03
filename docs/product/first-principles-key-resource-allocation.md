@@ -41,21 +41,22 @@ These are independent decision dimensions and must remain visible separately.
 
 A low-cost option can be ineffective. An effective option can be financially inefficient or infeasible under cash timing. Do not collapse both dimensions into one opaque score. Apply hard safety, legal, technical, authority, and liquidity constraints first; then compare the remaining feasible options under a versioned decision profile.
 
-## 5. Financial assessment as a standard dimension of every issue
+## 5. Financial evaluation belongs to manager review—not initial Issue registration
 
-Every issue receives a financial-impact screening as a standard part of assessment—not as an optional field or decorative dashboard widget. The screening may conclude that an effect is not applicable, unknown, or potentially material; it must record the basis. The depth of quantification should be proportional to materiality, uncertainty, and decision stakes.
+The initial Issue Intake is for recording an observed situation, not asking an employee to calculate or estimate its financial consequences. At registration, the submitter may lack financial data, authority, context, or the expertise to estimate cash-flow, margin, opportunity cost, or avoided loss. Requiring those figures at intake would create friction and encourage false precision.
 
-Where relevant, capture or derive:
-- incremental cash required and expected payment dates;
-- expected cash inflow/outflow timing and the period of exposure;
-- due obligations and the consequences of a funding gap;
-- cost to intervene versus cost/exposure if no action is taken;
-- margin or value at risk, with the calculation basis;
-- expected avoided cost or cash release, without double-counting;
-- financial impact horizon and dependencies;
-- source, timestamp, owner, confidence, currency/unit, and scenario/version.
+The MVP therefore does **not** perform a quantitative financial-impact assessment on the intake/detail screen. Instead, after an Issue is reviewed and qualified, the relevant manager(s) assess its decision significance using a versioned set of **qualitative parameters** and defined value scales. The parameter set and the people authorized to assign values should reflect the issue domain and the manager's area of responsibility.
 
-Distinguish **actual, forecast, estimate, assumption, and unknown**. Unknown values stay unknown; they are not silently treated as zero. Estimated benefit is not realized benefit. A missing supplier confirmation alone does not prove a delivery miss, causal link, or financial loss. Do not double-count the same exposure through multiple linked issues.
+Design rules:
+- Do not require monetary amounts or financial calculations from the person registering an Issue.
+- Keep Issue Intake separate from manager assessment; qualification does not imply that financial assessment is complete.
+- Use explicit qualitative scales with clear meanings, and provide **Unknown / Not assessed** where evidence or authority is insufficient. Unknown is not the lowest value and must not silently become zero.
+- Record who assigned each value, when, under which parameter/profile version, and the evidence or rationale used.
+- Keep financial parameters visible alongside effectiveness, urgency, risk, and feasibility, but do not collapse them into an unexplained universal score.
+- Use the parameter values to help managers compare Issues and Solution Candidates and allocate scarce key resources—especially cash—more consistently. The tool supports, but does not replace, managerial judgment or authority.
+- Defer quantitative monetary valuation, cash-flow modelling, and automated financial-impact calculations to later versions, when data availability, process discipline, ownership, and organizational maturity can support reliable figures.
+
+The product's financial core is therefore **manager-owned qualitative evaluation in the MVP**, with a deliberate path toward evidence-based quantitative evaluation later—not a mandatory financial calculation at registration.
 
 ## 6. Cash-flow-first does not mean cash-only
 
