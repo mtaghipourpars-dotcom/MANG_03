@@ -45,7 +45,8 @@ try {
 
   await page.locator("#caseSearch").fill("Browser smoke test intake");
   await page.locator("#caseSearch").press("Enter");
-  await page.getByRole("status").getByText(new RegExp(intakeId)).waitFor();
+  await page.getByRole("status").waitFor();
+  assert.match(await page.getByRole("status").innerText(), new RegExp(intakeId), "search should identify the matching intake");
 
   await page.getByRole("button", { name: "Qualification" }).click();
   await page.getByRole("button", { name: "Mark information needed" }).click();
@@ -76,6 +77,11 @@ try {
   await page.locator("#closeModal").click();
   assert.equal(await opener.evaluate(el => el === document.activeElement), true,
     "closing the modal should restore focus to the opener");
+
+  await page.reload();
+  await page.locator('[data-page="issue"]').first().click();
+  assert.equal(await page.getByText("Browser smoke test intake", { exact: false }).count(), 0,
+    "temporary intake should clear after a full page refresh");
 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.locator('[data-page="home"]').first().click();
