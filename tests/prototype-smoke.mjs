@@ -53,16 +53,19 @@ try {
   await page.getByRole("button", { name: "Issue detail" }).click();
   await page.getByText("Needs information", { exact: true }).first().waitFor();
 
+  await page.getByRole("button", { name: "Qualification" }).click();
   const disabledCatalogButtons = page.getByRole("button", { name: "NEW ISSUE" });
-  assert.ok(await disabledCatalogButtons.count() >= 1, "NEW ISSUE should remain visible");
+  assert.ok(await disabledCatalogButtons.count() >= 1, "NEW ISSUE should remain visible in qualification");
   for (let i = 0; i < await disabledCatalogButtons.count(); i++) {
     await assertDisabled(disabledCatalogButtons.nth(i));
   }
+  await page.locator('[data-page="solution"]').first().click();
   const disabledSolutionButtons = page.getByRole("button", { name: "NEW SOLUTION" });
-  assert.ok(await disabledSolutionButtons.count() >= 1, "NEW SOLUTION should remain visible");
+  assert.ok(await disabledSolutionButtons.count() >= 1, "NEW SOLUTION should remain visible in Solution");
   for (let i = 0; i < await disabledSolutionButtons.count(); i++) {
     await assertDisabled(disabledSolutionButtons.nth(i));
   }
+  await page.locator('[data-page="issue"]').first().click();
 
   const opener = page.locator('.pagehead button[data-act="new-intake"]');
   await opener.click();
