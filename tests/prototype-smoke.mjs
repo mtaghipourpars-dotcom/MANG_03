@@ -77,6 +77,7 @@ try {
   await page.getByText(/Recommendation withheld for this session/i).waitFor();
   assert.equal(await page.locator(".candidate.selected").count(), 0, "abstention must remove the visual recommended-selection state");
   await page.getByRole("button", { name: "Clear session hold" }).click();
+  assert.equal(await page.locator(".candidate.selected").count(), 1, "clearing abstention must restore the fixture's selected-candidate styling");
   await page.locator("#g3-emergency-title").fill("Temporarily hold the non-critical release");
   await page.locator("#g3-emergency-owner").fill("Production Planning Lead");
   await page.locator("#g3-emergency-expiry").fill("2099-01-01T12:00");
