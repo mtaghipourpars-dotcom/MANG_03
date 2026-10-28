@@ -1,3 +1,8 @@
+## 2026-10-28 — Worst-case stress test specification
+- Added `docs/design/worst-case-stress-test-specification.md` with an Iran/high-risk synthetic stress scenario and 12 test cases covering intake integrity, qualification vs urgency, stale data, FX/liquidity shocks, hard constraints, shared-resource collisions, decision pressure, action/outcome separation, degraded connectivity, recovery, audit history, and unclassified catalogue items.
+- Defined PASS / FAIL / BLOCKED / NEEDS REVIEW statuses, phased execution, minimum acceptance gates, and a test-run evidence template.
+- Explicitly distinguished a proposed test contract from test execution; current HTML prototype limitations are not counted as passes.
+
 # Change Log
 
 ## 2026-10-28 — Interactive visual MVP prototype
