@@ -111,3 +111,10 @@ The search field is a non-interactive `div`. Hide it, style it as clearly illust
 Do not proceed to Phase B as though the current prototype supports reliable stateful simulation. First fix **DEF-A-001** and **DEF-A-002**, and label other mock controls honestly. Then run a real browser walkthrough of navigation, form validation, disabled buttons, and the corrected local intake state. Keep backend-dependent WCS tests marked **BLOCKED / NOT IMPLEMENTED** until those capabilities exist.
 
 **Overall Phase A status: PARTIAL — source review completed; browser execution outstanding; two functional/wording defects identified.**
+
+
+## 7. Defect-fix iteration 1 — source re-review
+
+- **Reviewed source before fix:** `7230817277d07a3598598a9a509f4f8aa93c2e18`.
+- **Fixes committed:** Issue Intake values are appended to a temporary in-memory queue and rendered on the Issue page; the UI explicitly states that refresh/close clears these records and that no formal case is created. “Mark information needed” now changes the temporary CASE-024 qualification status and displays the updated state. The header search is now a local search over CASE-024 and session-only intake records. Non-mutating candidate/action/history controls are relabelled as previews.
+- **Validation boundary:** These are source changes only. A real browser walkthrough, runtime JavaScript execution, keyboard/screen-reader verification, and responsive visual inspection have not been performed in this iteration. Do not mark WCS-001 or WCS-002 as fully passed based on source inspection alone. Durable persistence, audit event integrity, offline continuity, conflict recovery, authorization, ERP integration, shared-resource collision, and shock recalculation remain BLOCKED / NOT IMPLEMENTED.
