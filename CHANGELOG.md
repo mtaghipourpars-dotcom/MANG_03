@@ -127,3 +127,4 @@
 - Canonical identifiers, enum codes and source narratives remain stable; localized display text does not overwrite original evidence.
 - Added a Persian/English terminology map for issue domains, archetypes, solution patterns, relationship types and status labels in seed catalogues.
 - Added Persian companion references for worst-case stress testing, Phase A review, master data/relationships and the end-to-end Issue–Solution chain.
+- Added bilingual qualification-rule labels and applied them to the runtime localization dictionary.
