@@ -74,7 +74,7 @@ The reusable manufacturing taxonomy, ordered qualification checks, data-readines
 
 
 ## 10. Enterprise-wide catalogue extensibility
-Issue and Solution catalogues are enterprise-wide and user-extensible across the value chain. The inline ADD flow searches existing definitions, proposes explainable matches and relationships, and can save a new definition as Draft/Provisional while preserving the live intake. Qualification templates and relationships remain Proposed until reviewed; similarity does not prove identity, causality or applicability. See [Enterprise Value-Chain Issue–Solution Knowledge Network](../design/enterprise-value-chain-extensible-issue-solution-network.md).
+Issue and Solution catalogues are enterprise-wide and designed for later user extensibility across the value chain. The MVP does not activate an inline ADD flow: NEW ISSUE and NEW SOLUTION remain visible but disabled in their related forms. A later version may search existing definitions, propose explainable matches and relationships, and save reviewed proposals as Draft/Provisional while preserving the live intake. Qualification templates and relationships must remain Proposed until reviewed; similarity does not prove identity, causality or applicability. See [Enterprise Value-Chain Issue–Solution Knowledge Network](../design/enterprise-value-chain-extensible-issue-solution-network.md).
 
 
 ## 11. Canonical enterprise-wide reference matrix
