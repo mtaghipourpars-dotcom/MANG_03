@@ -40,3 +40,4 @@ Store stable machine fields separately from localized display fields. Recommende
 Use [seed-data-language-map.fa-en.csv](seed-data-language-map.fa-en.csv) for Persian/English display terms used across issue domains, archetypes, solution patterns, relationship types and status labels. The original seed files and canonical IDs remain unchanged for compatibility; UI-facing strings must resolve through locale resources before display.
 
 - [Bilingual enterprise issue-type labels and descriptions](enterprise-issue-type-labels.fa-en.csv)
+- [Bilingual qualification-rule labels](qualification-rule-labels.fa-en.csv)
