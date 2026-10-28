@@ -118,3 +118,11 @@ Do not proceed to Phase B as though the current prototype supports reliable stat
 - **Reviewed source before fix:** `7230817277d07a3598598a9a509f4f8aa93c2e18`.
 - **Fixes committed:** Issue Intake values are appended to a temporary in-memory queue and rendered on the Issue page; the UI explicitly states that refresh/close clears these records and that no formal case is created. “Mark information needed” now changes the temporary CASE-024 qualification status and displays the updated state. The header search is now a local search over CASE-024 and session-only intake records. Non-mutating candidate/action/history controls are relabelled as previews.
 - **Validation boundary:** These are source changes only. A real browser walkthrough, runtime JavaScript execution, keyboard/screen-reader verification, and responsive visual inspection have not been performed in this iteration. Do not mark WCS-001 or WCS-002 as fully passed based on source inspection alone. Durable persistence, audit event integrity, offline continuity, conflict recovery, authorization, ERP integration, shared-resource collision, and shock recalculation remain BLOCKED / NOT IMPLEMENTED.
+
+
+## 8. Defect-fix iteration 2 — source-level verification
+
+- Updated the Issue detail qualification gate to reflect the temporary “Needs information” state instead of retaining a contradictory “Passed” badge.
+- Added modal focus restoration on dismissal and Tab/Shift+Tab containment while the dialog is open.
+- JavaScript syntax compilation passed after the edits. A mocked-DOM interaction harness is being used to exercise form submission, state transitions, and search logic; it is not a real browser test.
+- Real browser rendering, keyboard/screen-reader accessibility, and backend-dependent WCS tests remain outstanding and must not be marked passed from source checks alone.
