@@ -54,6 +54,7 @@ Examples include project, production order, purchase order, sales order, compone
 
 ## Documentation map
 
+- [Manufacturing Issue–Solution Matrix and Qualification Framework](docs/design/manufacturing-issue-solution-matrix.md)
 - [MVP End-to-End ISSUE → SOLUTION → DECISION → ACTION → OUTCOME chain](docs/design/issue-solution-end-to-end-chain.md)
 - [End-to-end reference design scenario](docs/design/reference-scenario-end-to-end.md)
 
