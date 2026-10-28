@@ -1,18 +1,22 @@
-relationship_code,meaning,direction_or_semantics,minimum_evidence_control,may_drive_automatic_suggestion
-is-a,Taxonomy/subtype,Classification edge,Governed classification,Yes
-symptom-of,Observed symptom may be associated with issue type,Not a proven cause,Case evidence and symptom context,Limited
-possible-cause-of,Hypothesized causal direction,Directed hypothesis,Explicit hypothesis label and case validation,No without case validation
-validated-cause-of,Cause supported in this case,Directed validated claim,Evidence reviewer method and validation date,Only within approved rules
-may-affect,Possible impact on object/process/commitment,Contextual potential effect,Context and impact path,No by itself
-observed-effect-on,Effect observed in this case,Directed observation,Observation source and timestamp,Only for reporting
-mitigates,Solution pattern may reduce issue/impact,Conditional applicability,Applicability conditions and known limits,Only after conditions checked
-requires,Candidate needs prerequisite/resource/approval,Prerequisite dependency,Explicit prerequisite and current state,Can exclude if hard prerequisite unmet
-blocked-by,Progress prevented by current blocker,Directed case-specific blocker,Evidence and owner,May route work
-competes-for,Cases/options need same scarce resource/time window,Shared resource contention,Resource and time-window evidence,May flag conflict
-depends-on,Action/candidate depends on another item,Directed dependency,Condition and responsible owner,May route work
-alternative-to,Candidates are alternatives in context,Context-specific alternative relation,Compatibility/exclusivity conditions,No automatic selection
-duplicate-candidate-of,Possible duplicate report/case,Similarity relation,Match rationale and human disposition,No automatic merge
-linked-to,General contextual link,Non-causal association,Relation rationale,No
-supersedes,New decision/configuration version replaces effective one,Version/history relation,Authority and preserved prior record,Only for current-state view
-verified-by,Claim supported by evidence,Claim-to-evidence relation,Evidence reference and verifier,Supports confidence display
-contradicts,Evidence/claim conflicts with another record,Conflict relation,Preserve both and assign resolution,May trigger review
+relationship_type,directionality,meaning,evidence_required,default_status,allowed_uses,prohibited_inference
+IS_A,Directed,Child type is subtype of parent,Taxonomy review,Proposed,Template inheritance,No causal inference
+SYNONYM_OF,Symmetric,Alternate term for same concept,Steward confirmation and locale,Proposed,Search expansion,Do not merge historical cases
+SIMILAR_TO,Symmetric,Concepts share traits but differ,Explainable match rationale,Proposed,Comparison panel,Not identity
+DUPLICATE_CANDIDATE_OF,Directed,Potential duplicate definition or case,Match signals and context,Proposed,Human review queue,No silent merge
+POSSIBLE_CAUSE_OF,Directed,Hypothesized causal link,Source and hypothesis context,Proposed,Investigation suggestion only,Not validated cause
+VALIDATED_CAUSE_OF,Directed,Cause supported in defined context,Evidence reviewer date and scope,In Review,Approved causal learning,No universal generalization
+SYMPTOM_OF,Directed,Observed sign may indicate condition,Diagnostic context,Proposed,Triage suggestions,Not proof
+MAY_AFFECT,Directed,Potential effect on object or objective,Mechanism hypothesis and scope,Proposed,Impact prompt,Not observed impact
+OBSERVED_EFFECT_ON,Directed,Recorded measured effect,Measurement source and time,Proposed,Outcome history,No assumed causality without evidence
+MITIGATES,Directed,Intervention may reduce issue or risk,Applicability conditions,Proposed,Candidate retrieval after approval,Not guaranteed resolution
+REQUIRES,Directed,Prerequisite relation,Dependency definition,Proposed,Feasibility gating,Not authority approval unless explicit
+BLOCKED_BY,Directed,Current progress blocked by another item,Case evidence and time context,Proposed,Dependency view,Not necessarily root cause
+DEPENDS_ON,Directed,Progress depends on event/resource/decision,Owner/date/condition if known,Proposed,Sequencing review,No automatic fault attribution
+COMPETES_FOR,Symmetric,Cases need same scarce resource in overlapping periods,Resource pool and time window,Proposed,Enterprise trade-off,No priority by seniority
+ALTERNATIVE_TO,Symmetric,Options may substitute for same objective,Objective and differences,Proposed,Option comparison,Not equal feasibility
+CONTRADICTS,Symmetric,Claims/rules/evidence conflict,Both sources and conflict type,Proposed,Reconciliation,Do not discard either source
+SUPERSEDES,Directed,New definition prospectively replaces old,Approval and mapping,Proposed,Future catalogue selection,Do not rewrite history
+LINKED_TO,Symmetric,Relevant relationship without stronger claim,Rationale and context,Proposed,Navigation,No causality/applicability assumption
+VERIFIED_BY,Directed,Claim/action/outcome checked by evidence/control,Verification record,Proposed,Assurance,No unverified closure
+APPLIES_WHEN,Directed,Conditional applicability expression,Versioned conditions,Proposed,Recommendation filtering,No unconditional applicability
+OWNED_BY,Directed,Accountability relation to role/function,Approved responsibility map,Proposed,Routing,No invented individual assignment
