@@ -229,3 +229,14 @@ Suggested MVP core: Issue Intake, Qualification Assessment, Issue Case, Issue Ty
 - Authoritative source and key mapping for each operational object.
 - Exact authority thresholds and escalation rules.
 - Whether the MVP stores graph traversals as queries over relational tables or needs a specialized graph store. No specialized graph database is assumed by this conceptual model.
+
+
+## 11. Financial impact and profile-based choice
+
+Every case-specific Solution Candidate should have its own Financial Impact Assessment before final selection where sufficient data exists. Do not attach a single fixed financial score to the reusable Solution Type. Assess, where supported, direct implementation cost, margin/profit effect, cash-flow amount and timing, avoided cost/loss, opportunity cost of shared resources, and evidenced delay/commitment costs. Keep net financial impact, margin/profitability, and cash-flow/liquidity distinct. Store currency, baseline, time horizon, method/formula, input sources, assumptions, uncertainty range, confidence, and calculation/model version. Do not double-count overlapping impacts or present unsupported precision.
+
+Decision Profiles are configurable and versioned. Parameters may include sales/customer commitments, liquidity preservation, margin, delivery, quality, safety, compliance, and resource priorities. Record the active profile version and parameter values with each decision. Evaluate feasibility separately from profile-based ranking; hard legal, safety, technical, resource, and authority constraints must have explicit reasons.
+
+## 12. Decisions at different authority levels
+
+A lower-level selection does not hide or disable other applicable solution candidates for higher-level managers. Candidate visibility and evaluation are separate from the current effective decision. A higher-level authorized manager may select another solution within applicable hard constraints. Preserve the earlier decision and record the later decision as new or superseding, with rationale and links to affected decisions. Assess actions already started and explicitly record authorized continuation, amendment, cancellation, or replacement. Never silently overwrite prior decisions or actions.
