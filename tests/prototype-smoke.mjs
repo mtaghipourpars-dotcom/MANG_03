@@ -14,6 +14,14 @@ try {
   const htmlPath = resolve("docs/demo/mvp-prototype.html");
   await page.goto(pathToFileURL(htmlPath).href);
   await page.getByRole("heading", { name: /Good afternoon, Manager/ }).waitFor();
+  await page.getByRole("button", { name: /Switch interface to Persian|تغییر زبان رابط به فارسی/ }).click();
+  assert.equal(await page.locator("html").getAttribute("lang"), "fa", "Persian locale should set document language");
+  assert.equal(await page.locator("html").getAttribute("dir"), "rtl", "Persian locale should enable RTL layout");
+  await page.getByRole("heading", { name: "وقت بخیر، مدیر گرامی" }).waitFor();
+  await page.getByRole("button", { name: /Switch interface to English|تغییر زبان رابط به انگلیسی/ }).click();
+  assert.equal(await page.locator("html").getAttribute("lang"), "en", "English locale should restore document language");
+  assert.equal(await page.locator("html").getAttribute("dir"), "ltr", "English locale should restore LTR layout");
+  await page.getByRole("heading", { name: /Good afternoon, Manager/ }).waitFor();
 
   for (const [key, heading] of [
     ["issue", /Issue intake & qualification/],
