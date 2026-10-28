@@ -156,3 +156,11 @@ The HTML source was statically inspected. The review found that the intake form 
 - [Bilingual enterprise issue-type labels and descriptions](docs/localization/enterprise-issue-type-labels.fa-en.csv)
 
 - [Bilingual qualification-rule labels](docs/localization/qualification-rule-labels.fa-en.csv)
+
+
+## First-principles product direction: key-resource allocation
+
+MANG_03 focuses on allocating **key resources**, not registering every organizational resource. Financial assessment—especially cash availability, cash-flow timing, due obligations, intervention cost, and margin/value at risk—is a material dimension of Issue assessment. The Home page keeps **Project Value & Risk Map** (efficiency / risk-adjusted allocation) and **Product / Work-Portfolio Status** (effectiveness / commitments and outcomes) as separate primary views. The current UI uses synthetic fixtures only; project-level monetary values and live ERP financial data are not connected.
+
+- [First-principles product charter — English](docs/product/first-principles-key-resource-allocation.md)
+- [منشور طراحی محصول بر مبنای اصول اولیه — فارسی](docs/product/first-principles-key-resource-allocation.fa.md)
