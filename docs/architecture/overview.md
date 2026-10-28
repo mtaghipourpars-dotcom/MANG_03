@@ -115,3 +115,7 @@ The sidebar contains exactly eight primary destinations in this order: Home, Pro
 - The Issue page is an Issue List workspace with status metrics, searchable/filterable rows, qualification/evidence dashboards, and the selected Issue record. The **New Issue Intake** button is placed at the bottom of the page and opens the complete intake form.
 - The Solution page is a Solution List workspace with candidate status metrics, searchable/filterable candidates, feasibility and assessment dashboards, and detailed comparison for the selected solution set.
 - Demo records and counts remain synthetic. Issue intake captures observed facts; manager-owned qualitative financial evaluation occurs after qualification. Unknowns are not treated as zero.
+
+
+## Deterministic implementation contract for Google AI Studio
+The repository-level implementation instructions are normative: `AGENTS.md`, `MASTER_PROTOCOL.md`, `IMPLEMENTATION_SEQUENCE.md`, `SCREEN_REFERENCE_CONTRACT.md`, `APP_ARCHITECTURE_AND_DATA.md`, `ACCEPTANCE_GATES.md`, `PROMPT_PACK.md`, and `IMPLEMENTATION_LEDGER.md`. Implement one gate at a time; preserve existing canonical IDs and contracts; record conflicts rather than guessing. The Home section order, Issue/Solution list behavior, manager-owned qualitative financial assessment, data provenance, unknown-value handling, human decision authority, and synthetic-data boundary are mandatory. These documents do not claim an implemented backend, database, authentication, or live integration.
