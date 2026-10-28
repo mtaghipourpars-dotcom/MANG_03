@@ -1,5 +1,10 @@
 # Change Log
 
+## 2026-10-28 — Weighted Decision Profiles and Best Profile learning
+- Unified the parameter catalogue used for solution impact assessment and profile-based prioritization.
+- Documented organization defaults, personal/custom profiles, solution-specific profile perspectives, fair candidate comparison, and transparent weighted priority indicators.
+- Added outcome-based Best Profile recommendations with sample-size, context, and uncertainty safeguards.
+
 ## 2026-10-28 — Parametric financial-impact assessment
 - Added a manager-owned, staged 1–5 assessment model for case-specific solution candidates.
 - Distinguished ordinal ratings from monetary calculations; documented scale direction, unknown values, assessment ownership, progressive refinement, and audit history.
