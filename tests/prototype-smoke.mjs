@@ -16,6 +16,12 @@ try {
   await page.getByRole("heading", { name: /Good afternoon, Manager/ }).waitFor();
   await page.getByRole("heading", { name: "Project Value & Risk Map" }).waitFor();
   await page.getByRole("heading", { name: "Product / Work-Portfolio Status" }).waitFor();
+  assert.equal(await page.locator(".product-photo-grid .product-photo").count(), 6,
+    "Home portfolio should show six photo-led product family tiles instead of generic icons");
+  assert.equal(await page.locator(".management-decision .decision-thumb").count(), 2,
+    "management decisions should use photographic thumbnails");
+  assert.equal(await page.locator(".value-risk-map .map-point").count(), 5,
+    "value-risk map should show five interactive synthetic project markers");
   await page.getByText("Cash-flow timing", { exact: true }).waitFor();
   await page.getByRole("button", { name: /Switch interface to Persian|تغییر زبان رابط به فارسی/ }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "fa", "Persian locale should set document language");
