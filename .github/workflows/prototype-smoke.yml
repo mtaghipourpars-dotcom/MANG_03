@@ -1,0 +1,35 @@
+name: Prototype browser smoke test
+
+on:
+  push:
+    paths:
+      - "docs/demo/mvp-prototype.html"
+      - "tests/prototype-smoke.mjs"
+      - ".github/workflows/prototype-smoke.yml"
+  pull_request:
+    paths:
+      - "docs/demo/mvp-prototype.html"
+      - "tests/prototype-smoke.mjs"
+      - ".github/workflows/prototype-smoke.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  chromium-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Playwright
+        run: npm install --no-save playwright
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run browser smoke tests
+        run: node tests/prototype-smoke.mjs
