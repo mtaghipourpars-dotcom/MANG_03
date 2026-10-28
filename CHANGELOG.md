@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-10-28 — Manufacturing Issue–Solution matrix and qualification framework
+- Added a starter manufacturing taxonomy spanning materials, suppliers, equipment, quality, production, capacity, engineering, projects, logistics, finance, commercial, people, systems, safety, governance, and external disruptions.
+- Defined transparent pre-registration qualification checks and dispositions, including information-needed, duplicate/link, redirect, non-acceptance with reason, and urgent parallel escalation.
+- Added conditional Issue–Solution applicability patterns, reusable Solution Type attributes, typed relationship semantics, candidate retrieval controls, data-readiness levels, governance, and MVP acceptance checks.
+- Explicitly separated qualification, urgency, priority, feasibility, decision authority, decision, action, and resolution; prohibited unsupported causal/financial assumptions.
+
 ## 2026-10-28 — MVP navigation and end-to-end ISSUE → SOLUTION chain
 - Recorded the agreed fixed HOME layout with role/context-specific data for the MVP/demo.
 - Separated ISSUE (intake, review, qualification, Issue Detail) from SOLUTION (candidate assessment, comparison, and decision preparation/recording) in the primary sidebar.
