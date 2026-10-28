@@ -145,3 +145,5 @@ The HTML source was statically inspected. The review found that the intake form 
 - [Persian value-evidence measurement](docs/decision/value-evidence-measurement.fa.md)
 - [Persian CASE-024 demo fixture](docs/data/demo/CASE-024-end-to-end-demo.fa.json)
 - The HTML prototype now has an English/Persian language toggle, RTL support, and localized UI/demo text. Canonical IDs, status codes, and machine fields remain unchanged. Translation must never overwrite the original issue narrative or source evidence.
+
+- [Persian/English seed-data terminology map](docs/localization/seed-data-language-map.fa-en.csv)
