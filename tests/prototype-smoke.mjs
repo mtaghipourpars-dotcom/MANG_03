@@ -17,8 +17,8 @@ try {
 
   for (const [key, heading] of [
     ["issue", /Issue intake & qualification/],
-    ["solution", /Solution candidates/],
-    ["decision", /Decision & actions/],
+    ["solution", /Compare solution candidates/],
+    ["decision", /Decision & action tracking/],
     ["outcome", /Outcomes & organizational learning/],
     ["settings", /Settings & demo controls/],
     ["home", /Good afternoon, Manager/]
@@ -50,7 +50,7 @@ try {
   await page.getByRole("button", { name: "Qualification" }).click();
   await page.getByRole("button", { name: "Mark information needed" }).click();
   await page.getByText("Returned for additional information.", { exact: false }).waitFor();
-  await page.getByRole("button", { name: "Overview" }).click();
+  await page.getByRole("button", { name: "Issue detail" }).click();
   await page.getByText("Needs information", { exact: true }).first().waitFor();
 
   const disabledCatalogButtons = page.getByRole("button", { name: "NEW ISSUE" });
