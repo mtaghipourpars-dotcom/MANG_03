@@ -93,7 +93,7 @@ Link to existing operational objects where available: project/WBS, production or
 
 The service focuses on **key resources**, not an exhaustive inventory of every resource. A resource becomes decision-relevant when it is scarce, a binding constraint, strategically critical, materially exposed to an issue, or contested by multiple issues in the same time window. Cash and cash-flow timing are first-class dimensions because an option that is nominally profitable may still be infeasible before obligations fall due.
 
-Financial assessment for material issues should distinguish incremental cash required, cash-flow timing, due obligations, intervention cost versus no-action exposure, margin/value at risk, expected avoided cost, evidence provenance, confidence, and unknowns. Unknown is not zero; estimates are not realized outcomes; linked issues must not double-count the same exposure.
+Every issue should receive a standard financial-impact screening; the depth of quantitative assessment scales with materiality, uncertainty, and decision stakes. The assessment should distinguish incremental cash required, cash-flow timing, due obligations, intervention cost versus no-action exposure, margin/value at risk, expected avoided cost, evidence provenance, confidence, and unknowns. Unknown is not zero; estimates are not realized outcomes; linked issues must not double-count the same exposure.
 
 The Home page has two separate primary views:
 - **Project Value & Risk Map:** efficiency and risk-adjusted key-resource allocation—where intervention can protect value at proportionate resource cost.
