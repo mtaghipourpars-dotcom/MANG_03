@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-10-28 — End-to-end reference design scenario
+- Added the end-to-end reference scenario from issue intake through qualification, candidate assessment, decision, actions, outcome review, and organizational learning.
+- Defined conceptual screen responsibilities, data attributes, permissions, state dimensions, integration contracts, exception handling, auditability, and MVP acceptance criteria.
+- Clarified that decision-time profile targets are frozen for later outcome comparison and that meeting one parameter target does not alone prove overall decision success.
+
+
 ## 2026-10-28 — Weighted Decision Profiles and Best Profile learning
 - Unified the parameter catalogue used for solution impact assessment and profile-based prioritization.
 - Documented organization defaults, personal/custom profiles, solution-specific profile perspectives, fair candidate comparison, and transparent weighted priority indicators.
