@@ -5,7 +5,7 @@
 - **Reviewed source revision (blob SHA):** `7230817277d07a3598598a9a509f4f8aa93c2e18`
 - **Review date:** 2026-10-28
 - **Review method:** Static source inspection of the HTML, CSS, and JavaScript retrieved from the repository.
-- **Important limitation:** This review did not execute the page in a real browser or automate clicks. Therefore runtime behavior, browser compatibility, keyboard/screen-reader behavior, and visual rendering are not certified. This report must not be described as a completed interactive/browser test.
+- **Initial review limitation:** The original Phase A review was source-only. Subsequent iterations added and passed an automated Chromium smoke test; this does not replace full cross-browser, visual, or assistive-technology certification.
 
 ## 1. Summary
 
@@ -128,7 +128,7 @@ Do not treat the prototype as a reliable operational simulation. DEF-A-001 and D
 - Real browser rendering, keyboard/screen-reader accessibility, and backend-dependent WCS tests remain outstanding and must not be marked passed from source checks alone.
 
 
-## 9. Latest regression results (mocked DOM; not browser certification)
+## 9. Latest regression results (Playwright Chromium + mocked DOM)
 
 | Check | Result | Evidence |
 |---|---|---|
@@ -140,7 +140,7 @@ Do not treat the prototype as a reliable operational simulation. DEF-A-001 and D
 | Local search | PASS (temporary state only) | Search matched the newly submitted intake and showed its ID. |
 | Modal focus containment | PASS (mocked focus model) | Tab at the final focusable element wrapped to the first; close restored the opener focus. |
 | NEW ISSUE / NEW SOLUTION | PASS (source check) | Both remain disabled in the rendered source helper. |
-| Real browser and responsive visual check | NOT RUN | Browser engine was not available in the execution environment. |
+| Automated Chromium interaction smoke test | PASS | [GitHub Actions run](https://github.com/mtaghipourpars-dotcom/MANG_03/actions/runs/40715309176): navigation, intake, search, qualification, disabled controls, modal focus, refresh-clears behavior, and mobile horizontal overflow passed. |
 | Backend/high-risk infrastructure tests | BLOCKED / NOT IMPLEMENTED | Durable persistence, audit event integrity, offline synchronization, conflict recovery, authentication/authorization, ERP integration, resource collision and shock recalculation are outside this static MVP. |
 
-**Current disposition:** the two original interaction defects are fixed at prototype scope and the local mock regression checks pass. Overall WCS acceptance remains **NOT PASSED** because real-browser validation and multiple required operational capabilities remain unimplemented.
+**Current disposition:** the two original interaction defects are fixed at prototype scope. Mocked-DOM checks and the latest Chromium smoke test pass. Full WCS acceptance remains **NOT PASSED** because multiple required operational capabilities remain unimplemented; cross-browser and assistive-technology validation are also outstanding.
