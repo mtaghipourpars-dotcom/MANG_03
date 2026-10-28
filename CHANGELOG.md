@@ -1,6 +1,7 @@
 # Change Log
 
 ## 2026-10-28 — Manufacturing Issue–Solution matrix and qualification framework
+- Added machine-readable seed CSV catalogues for Issue–Solution applicability, qualification rules, and typed relationship semantics.
 - Added a starter manufacturing taxonomy spanning materials, suppliers, equipment, quality, production, capacity, engineering, projects, logistics, finance, commercial, people, systems, safety, governance, and external disruptions.
 - Defined transparent pre-registration qualification checks and dispositions, including information-needed, duplicate/link, redirect, non-acceptance with reason, and urgent parallel escalation.
 - Added conditional Issue–Solution applicability patterns, reusable Solution Type attributes, typed relationship semantics, candidate retrieval controls, data-readiness levels, governance, and MVP acceptance checks.
