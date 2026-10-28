@@ -117,3 +117,11 @@
 - Added the conceptual network map and entity/cardinality model.
 - Separated reusable knowledge relationships from case-specific links and evidence.
 - Clarified that a relational database with typed relationship records can support the MVP.
+
+
+## 2026-10-28 — English / Persian localization
+- Added an in-prototype English/Persian language toggle with LTR/RTL layout and dynamic localization for interface text, forms, status labels, demo values, decision safeguards, validation messages and document title.
+- Added bilingual product localization contract and English–Persian terminology glossary.
+- Added Persian companion documentation for architecture, issue lifecycle, decision/learning, rejected alternatives, recommendation abstention/emergency actions, value measurement and the CASE-024 synthetic fixture.
+- Added automated regression checks for language metadata, RTL direction and dynamically rendered Persian solution content.
+- Canonical identifiers, enum codes and source narratives remain stable; localized display text does not overwrite original evidence.
