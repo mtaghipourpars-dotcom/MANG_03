@@ -1,3 +1,8 @@
+## 2026-10-28 — Defect-fix iteration 2: qualification feedback and modal keyboard handling
+- Kept the Issue detail qualification gate visibly aligned with the temporary “Needs information” state instead of leaving a contradictory “Passed” badge.
+- Added modal focus restoration and Tab/Shift+Tab focus containment; Escape remains available while the dialog is open.
+- Validation uses JavaScript syntax compilation and a mocked-DOM interaction harness; this is not a substitute for real browser, visual, or assistive-technology testing.
+
 ## 2026-10-28 — Phase A defect-fix iteration 1
 - Fixed Issue Intake submission to retain entered fields in a temporary in-memory queue visible on the Issue page; copy explicitly states refresh/close clears the queue and no formal case is created.
 - Fixed “Mark information needed” to update and render CASE-024's temporary qualification review status and note.
