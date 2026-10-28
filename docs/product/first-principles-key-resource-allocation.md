@@ -132,3 +132,7 @@ The Home page's two primary panels follow the supplied PARS dashboard compositio
 - **Management decisions requiring attention** uses photographic thumbnails, issue/project identifiers, concise decision context, functional drill-downs and intervention deadlines.
 - Keep effectiveness (portfolio commitments/outcomes) separate from efficiency (value/risk and scarce-resource allocation).
 - All project statuses, progress, dates, positions and financial amounts shown in this prototype are synthetic. Do not infer real PARS project performance or live ERP connectivity from reference imagery.
+
+
+## Dedicated Projects and Value Map destinations
+The primary sidebar has eight destinations in the agreed order: Home, Projects, Value Map, Issue, Solution, Decision & Actions, Outcomes & Learning, Settings. The Home portfolio panel navigates to Projects; the Home value/risk panel navigates to Value Map. Projects focuses on product/work-family effectiveness, commitments, progress and follow-up. Value Map focuses on exposure, intervention windows, evidence state and scarce-key-resource efficiency. The two views must remain distinct. All project-level values and statuses in the current prototype are synthetic.
