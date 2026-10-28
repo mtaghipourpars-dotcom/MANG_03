@@ -1,5 +1,12 @@
 # MANG_03 — Enterprise Issue–Solution Decision Support
 
+## Prototype and validation status
+
+- [Interactive HTML prototype](docs/demo/mvp-prototype.html)
+- [Worst-case stress test specification](docs/design/worst-case-stress-test-specification.md)
+- [Phase A static review and defect-fix log](docs/testing/phase-a-static-prototype-review.md)
+- Latest iteration implements a temporary in-page Issue Intake queue, visible temporary qualification status changes, and local demo search. Data clears on refresh; no backend, durable storage, authentication/authorization, or ERP integration is implemented. Browser-runtime validation and backend-dependent stress tests remain outstanding.
+
 ## Purpose
 
 MANG_03 is an enterprise-level decision-support service for manufacturing and engineering organizations. It helps authorized users raise issues, qualify them for entry into a shared Issue–Solution network, assess cross-functional impacts, route issues according to authority and context, support decisions, track actions and outcomes, and learn from history.
