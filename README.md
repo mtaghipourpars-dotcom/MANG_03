@@ -131,3 +131,17 @@ The HTML source was statically inspected. The review found that the intake form 
 - [Recommendation Abstention and Emergency Reversible-Action Path](docs/workflows/recommendation-abstention-emergency-path.md): allow justified abstention and a separately governed, reversible emergency proposal path.
 - [Decision Change and Value Evidence Measurement](docs/decision/value-evidence-measurement.md): evaluate decision changes and observed outcomes against a defensible baseline without unsupported causal claims.
 - The prototype exposes these flows in the Decision, Solution, and Outcomes pages. All added records remain in browser session memory; no backend, durable audit history, authorization, alerting, expiry enforcement, or execution is implied.
+
+
+## Bilingual product localization — English / فارسی
+- [Persian project overview](docs/README.fa.md)
+- [Bilingual product contract and acceptance rules](docs/localization/bilingual-product-contract.md)
+- [UI glossary (English–Persian)](docs/localization/ui-glossary-fa-en.csv)
+- [Persian architecture overview](docs/architecture/overview.fa.md)
+- [Persian issue lifecycle](docs/workflows/issue-lifecycle.fa.md)
+- [Persian decision and learning model](docs/decision/decision-and-learning.fa.md)
+- [Persian rejected-alternatives ledger](docs/decision/rejected-alternatives-ledger.fa.md)
+- [Persian recommendation abstention / emergency path](docs/workflows/recommendation-abstention-emergency-path.fa.md)
+- [Persian value-evidence measurement](docs/decision/value-evidence-measurement.fa.md)
+- [Persian CASE-024 demo fixture](docs/data/demo/CASE-024-end-to-end-demo.fa.json)
+- The HTML prototype now has an English/Persian language toggle, RTL support, and localized UI/demo text. Canonical IDs, status codes, and machine fields remain unchanged. Translation must never overwrite the original issue narrative or source evidence.
