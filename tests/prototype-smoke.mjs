@@ -18,6 +18,13 @@ try {
   await page.getByRole("heading", { name: "Product / Work-Portfolio Status" }).waitFor();
   await page.getByRole("heading", { name: "Issue List & Work Queue" }).waitFor();
   assert.ok(await page.locator(".home-issue-workbench").count() === 1, "Home should show the Issue workbench after the status cards");
+  const homeSectionOrder = await page.locator("#content h2").evaluateAll(nodes => nodes.map(n => n.textContent.trim()));
+  assert.ok(homeSectionOrder.indexOf("Issue List & Work Queue") < homeSectionOrder.indexOf("Project Value & Risk Map"),
+    "Home should place the Issue workbench before the value-risk map");
+  assert.ok(homeSectionOrder.indexOf("Project Value & Risk Map") < homeSectionOrder.indexOf("Management decisions requiring attention"),
+    "Home should place value/portfolio views before management decisions");
+  assert.ok(homeSectionOrder.indexOf("Management decisions requiring attention") < homeSectionOrder.indexOf("Latest material developments"),
+    "Home should place latest developments after decisions and project portfolio");
   assert.deepEqual(await page.locator("#nav [data-page]").evaluateAll(nodes => nodes.map(n => n.dataset.page)),
     ["home", "projects", "valueMap", "issue", "solution", "decision", "outcome", "settings"],
     "sidebar should contain the eight agreed destinations in the agreed order");
