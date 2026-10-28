@@ -123,3 +123,12 @@ The MVP should demonstrate, with clearly labeled synthetic data:
 ## 11. Non-goals
 
 Do not turn the MVP into an exhaustive enterprise resource-management system, a replacement ERP, an automatic production scheduler, a generic KPI wall, or a black-box ranking engine. The product is a decision-support service for allocating scarce key resources to important issues with financial clarity, explicit constraints, accountable decisions, and outcome evidence.
+
+
+## Home visual reference — PARS Value Protection Tower
+The Home page's two primary panels follow the supplied PARS dashboard composition and the `newmodel1/demo/main.png` visual baseline:
+- **Project Value & Risk Map** uses a plotted risk/value field, quadrant labels, colored project markers, intervention-window axis and supporting financial evidence signals.
+- **Product / Work-Portfolio Status** uses product photography tiles instead of generic icons, with family labels and clearly marked illustrative statuses.
+- **Management decisions requiring attention** uses photographic thumbnails, issue/project identifiers, concise decision context, functional drill-downs and intervention deadlines.
+- Keep effectiveness (portfolio commitments/outcomes) separate from efficiency (value/risk and scarce-resource allocation).
+- All project statuses, progress, dates, positions and financial amounts shown in this prototype are synthetic. Do not infer real PARS project performance or live ERP connectivity from reference imagery.
