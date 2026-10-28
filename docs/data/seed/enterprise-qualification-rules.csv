@@ -1,0 +1,25 @@
+rule_id,rule_name,scope,condition,required_action,unmet_outcome,mandatory_or_configurable,inheritance_policy,version,status
+Q01,Preserve intake,All,Any submission,Save original narrative author timestamp and evidence,Visible save error; do not claim accepted,Enterprise-mandatory,Non-overridable,1,Seed
+Q02,Emergency triage,All,Credible imminent safety security product-safety environmental or evidence-preservation concern,Parallel urgent escalation,Emergency escalation while preserving unknowns,Enterprise-mandatory,Non-overridable,1,Seed
+Q03,Understandable statement,All,Issue cannot be understood sufficiently to route,Ask focused clarification and preserve intake,Needs information,Configurable template,Child may strengthen,1,Seed
+Q04,Facts and interpretation,All,Claim mixes observed facts with inference,Separate fact interpretation assumption and unknown,Needs clarification; do not reject automatically,Enterprise-mandatory,Non-overridable,1,Seed
+Q05,Context/object,Type-dependent,Relevant object/process is required,Request reference or mark unknown,Needs information or provisional,Configurable template,Child may strengthen,1,Seed
+Q06,Baseline or requirement,Deviation,Deviation claimed against target or requirement,Ask for target/baseline and actual value if available,Provisional if not available,Configurable template,Child may strengthen,1,Seed
+Q07,Proportionate evidence,All,Decision needs evidence based on risk and type,Request relevant evidence only,Needs evidence or provisional,Configurable template,Child may strengthen,1,Seed
+Q08,Duplicate check,All,Potential similar intake/type found,Show matches and require explicit disposition,Potential duplicate review,Enterprise-mandatory,Non-overridable,1,Seed
+Q09,Catalogue match,All,Existing type may fit,Show match and differences; allow user choice,Existing type or new proposal,Enterprise-mandatory,Non-overridable,1,Seed
+Q10,Scope and routing,All,Scope/owner uncertain or outside configured scope,Route to queue or authorized destination with rationale,Redirect or needs routing,Configurable template,Child may strengthen,1,Seed
+Q11,Actionability,All,No plausible investigation decision action or referral can follow,Explain and record disposition,Not accepted with reason or redirect,Configurable template,Child may strengthen,1,Seed
+Q12,Impact dimensions,All,Potential impacts not assessed,Mark dimensions not assessed and request relevant data,Unknown remains visible,Enterprise-mandatory,Non-overridable,1,Seed
+Q13,Controlled-domain safeguards,EHS/QUA/CYB/LEG/DAT,Applicable controlled risk detected,Apply configured specialist control set,Escalate or hold relevant transition,Enterprise-mandatory,Non-overridable,1,Seed
+Q14,Authority,All,Decision/action needs authorization,Resolve authorized role from configured map,Route/escalate; do not infer individual authority,Enterprise-mandatory,Non-overridable,1,Seed
+Q15,Contradiction check,All,Dates quantities claims or evidence conflict,Show both sources and request reconciliation,Assessment remains uncertain,Configurable template,Child may strengthen,1,Seed
+Q16,New type proposal,All,No existing type adequately fits,Propose parent synonyms scope and rule template; save draft/provisional,Intake proceeds where policy permits,Enterprise-mandatory,Non-overridable,1,Seed
+Q17,Rule inheritance,All,New child type created,Inherit enterprise controls and parent templates visibly,Conflict review before activation,Enterprise-mandatory,Non-overridable,1,Seed
+Q18,Relationship governance,All,New relationship suggested,Mark proposed with rationale and evidence requirements,No trusted recommendation until approved,Enterprise-mandatory,Non-overridable,1,Seed
+Q19,Resource conflict,Shared resources,Multiple cases compete for resource and period,Show time-phased availability and opportunity cost,Escalate if no feasible allocation,Configurable template,Child may strengthen,1,Seed
+Q20,Version freeze,Decision/outcome,Authorized decision made,Freeze catalogue/rule/parameter versions and targets,Decision audit incomplete until captured,Enterprise-mandatory,Non-overridable,1,Seed
+Q21,Action vs outcome,All,Action marked complete,Require outcome review where resolution claimed,Remain unverified until evidence,Enterprise-mandatory,Non-overridable,1,Seed
+Q22,No feasible solution,All,All candidates fail hard constraint,Expose failed constraints and escalate trade-off,No feasible solution,Enterprise-mandatory,Non-overridable,1,Seed
+Q23,Privacy/access,All,Personal/confidential/security-sensitive information present,Apply access and retention policy,Restricted routing/visibility,Enterprise-mandatory,Non-overridable,1,Seed
+Q24,Auditability,All,Governed state change or review,Record actor timestamp before/after and rationale,Block governed transition if audit unavailable,Enterprise-mandatory,Non-overridable,1,Seed
