@@ -71,6 +71,32 @@ try {
     await assertDisabled(disabledCatalogButtons.nth(i));
   }
   await page.locator('[data-page="solution"]').first().click();
+  await page.getByRole("heading", { name: "Recommendation abstention & emergency path" }).waitFor();
+  await page.locator("#g3-abstain-reason").selectOption({ label: "Hard constraint unresolved" });
+  await page.getByRole("button", { name: "Withhold recommendation" }).click();
+  await page.getByText(/Recommendation withheld for this session/i).waitFor();
+  assert.equal(await page.locator(".candidate.selected").count(), 0, "abstention must remove the visual recommended-selection state");
+  await page.getByRole("button", { name: "Clear session hold" }).click();
+  await page.locator("#g3-emergency-title").fill("Temporarily hold the non-critical release");
+  await page.locator("#g3-emergency-owner").fill("Production Planning Lead");
+  await page.locator("#g3-emergency-expiry").fill("2099-01-01T12:00");
+  await page.locator("#g3-emergency-reversible").check();
+  await page.getByRole("button", { name: "Record emergency proposal" }).click();
+  await page.getByText(/Emergency proposal 1: Temporarily hold the non-critical release/i).waitFor();
+  await page.locator('[data-page="decision"]').first().click();
+  await page.getByRole("heading", { name: "Rejected / deferred alternatives ledger" }).waitFor();
+  await page.getByRole("button", { name: "Flag for reconsideration" }).first().click();
+  await page.getByText("REOPEN WHEN TRIGGER MET", { exact: true }).waitFor();
+  await page.locator('[data-page="outcome"]').first().click();
+  await page.getByRole("heading", { name: "Decision change & value proof ledger" }).waitFor();
+  await page.locator("#g3-baseline").fill("Prior comparable cases took 12 days; source: last quarter sample.");
+  await page.locator("#g3-changed-decision").fill("Changed from expedite to resequence after liquidity review; manager confirmed.");
+  await page.locator("#g3-observed-outcome").fill("Milestone achieved after 5 days; project log reference DEMO-OBS-01.");
+  await page.locator("#g3-measurement-window").fill("5 days after action");
+  await page.getByRole("button", { name: "Record value evaluation" }).click();
+  await page.getByText(/Evaluation captured \(session-only\)/i).waitFor();
+  await page.getByText(/Attribution: Not established/i).waitFor();
+  await page.locator('[data-page="solution"]').first().click();
   const disabledSolutionButtons = page.getByRole("button", { name: "NEW SOLUTION", exact: true });
   assert.ok(await disabledSolutionButtons.count() >= 1, "NEW SOLUTION should remain visible in Solution");
   for (let i = 0; i < await disabledSolutionButtons.count(); i++) {
