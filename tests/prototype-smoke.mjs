@@ -25,7 +25,8 @@ try {
   await page.getByRole("heading", { name: "وضعیت سبد محصولات / حوزه‌های کاری" }).waitFor();
   await page.getByText("زمان‌بندی جریان نقد", { exact: true }).waitFor();
   await page.locator('[data-page="issue"]').first().click();
-  await page.getByRole("heading", { name: "اطلاعات مسئله و بررسی اولیه" }).waitFor().catch(() => {});
+  assert.equal(await page.getByRole("heading", { name: "غربالگری اثر مالی" }).count(), 0,
+    "the removed quantitative financial screening panel must not appear in Persian Issue detail");
   await page.locator('[data-page="home"]').first().click();
   await page.getByRole("button", { name: /Switch interface to English|تغییر زبان رابط به انگلیسی/ }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en", "English locale should restore document language");
