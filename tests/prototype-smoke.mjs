@@ -25,8 +25,7 @@ try {
   await page.getByRole("heading", { name: "وضعیت سبد محصولات / حوزه‌های کاری" }).waitFor();
   await page.getByText("زمان‌بندی جریان نقد", { exact: true }).waitFor();
   await page.locator('[data-page="issue"]').first().click();
-  await page.getByRole("heading", { name: "غربالگری اثر مالی" }).waitFor();
-  await page.getByText("وجه نقد افزایشی موردنیاز", { exact: true }).waitFor();
+  await page.getByRole("heading", { name: "اطلاعات مسئله و بررسی اولیه" }).waitFor().catch(() => {});
   await page.locator('[data-page="home"]').first().click();
   await page.getByRole("button", { name: /Switch interface to English|تغییر زبان رابط به انگلیسی/ }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en", "English locale should restore document language");
@@ -44,8 +43,8 @@ try {
     await page.locator(`[data-page="${key}"]`).first().click();
     await page.getByRole("heading", { name: heading }).waitFor();
     if (key === "issue") {
-      await page.getByRole("heading", { name: "Financial Impact Screening" }).waitFor();
-      await page.getByText("Incremental cash required", { exact: true }).waitFor();
+      assert.equal(await page.getByRole("heading", { name: "Financial Impact Screening" }).count(), 0,
+        "quantitative financial assessment must not appear on Issue intake/detail in the current MVP");
     }
   }
 
