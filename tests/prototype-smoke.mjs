@@ -47,6 +47,9 @@ try {
   await page.locator("#caseSearch").press("Enter");
   await page.getByRole("status").waitFor();
   assert.match(await page.getByRole("status").innerText(), new RegExp(intakeId), "search should identify the matching intake");
+  await page.locator("#caseSearch").fill("supplier quality");
+  await page.locator("#caseSearch").press("Enter");
+  assert.match(await page.getByRole("status").innerText(), /CASE-019/, "search should match an illustrative case by title");
 
   await page.getByRole("button", { name: "Qualification" }).click();
   await page.getByRole("button", { name: "Mark information needed" }).click();
