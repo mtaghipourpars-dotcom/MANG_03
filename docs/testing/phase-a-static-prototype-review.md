@@ -137,10 +137,10 @@ Do not treat the prototype as a reliable operational simulation. DEF-A-001 and D
 | Issue tabs | PASS | Overview, Evidence & links, Qualification rendered non-empty content. |
 | Intake submit | PASS (temporary state only) | Entered title, domain, urgency, description and evidence appeared in the rendered intake queue with a generated demo ID and an explicit refresh-clears warning. |
 | Qualification action | PASS (temporary state only) | “Mark information needed” changed the rendered disposition/review status and qualification-gate badge. |
-| Local search | PASS (temporary state only) | Search matched the newly submitted intake and showed its ID. |
-| Modal focus containment | PASS (mocked focus model) | Tab at the final focusable element wrapped to the first; close restored the opener focus. |
+| Local search | PASS (temporary state only) | Search matched the newly submitted intake and CASE-019 by partial title. |
+| Modal focus containment/restoration | PASS (Chromium) | Tab/Shift+Tab containment and opener focus restoration passed in the real browser. |
 | NEW ISSUE / NEW SOLUTION | PASS (source check) | Both remain disabled in the rendered source helper. |
-| Automated Chromium interaction smoke test | PASS | [GitHub Actions run](https://github.com/mtaghipourpars-dotcom/MANG_03/actions/runs/40715309176): navigation, intake, search, qualification, disabled controls, modal focus, refresh-clears behavior, and mobile horizontal overflow passed. |
+| Automated Chromium interaction smoke test | PASS | [GitHub Actions run](https://github.com/mtaghipourpars-dotcom/MANG_03/actions/runs/40715532733): six-page navigation, Issue tabs, required-field validation, intake and queue, title search, qualification status, disabled controls, Close/Escape/Cancel/backdrop dismissal, focus behavior, refresh-clears behavior, and 390px mobile horizontal overflow passed. |
 | Backend/high-risk infrastructure tests | BLOCKED / NOT IMPLEMENTED | Durable persistence, audit event integrity, offline synchronization, conflict recovery, authentication/authorization, ERP integration, resource collision and shock recalculation are outside this static MVP. |
 
 **Current disposition:** the two original interaction defects are fixed at prototype scope. Mocked-DOM checks and the latest Chromium smoke test pass. Full WCS acceptance remains **NOT PASSED** because multiple required operational capabilities remain unimplemented; cross-browser and assistive-technology validation are also outstanding.
