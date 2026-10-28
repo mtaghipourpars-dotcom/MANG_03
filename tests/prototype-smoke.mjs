@@ -24,6 +24,10 @@ try {
   await page.getByRole("heading", { name: "نقشه ارزش و ریسک پروژه‌ها" }).waitFor();
   await page.getByRole("heading", { name: "وضعیت سبد محصولات / حوزه‌های کاری" }).waitFor();
   await page.getByText("زمان‌بندی جریان نقد", { exact: true }).waitFor();
+  await page.locator('[data-page="issue"]').first().click();
+  await page.getByRole("heading", { name: "غربالگری اثر مالی" }).waitFor();
+  await page.getByText("وجه نقد افزایشی موردنیاز", { exact: true }).waitFor();
+  await page.locator('[data-page="home"]').first().click();
   await page.getByRole("button", { name: /Switch interface to English|تغییر زبان رابط به انگلیسی/ }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en", "English locale should restore document language");
   assert.equal(await page.locator("html").getAttribute("dir"), "ltr", "English locale should restore LTR layout");
@@ -39,6 +43,10 @@ try {
   ]) {
     await page.locator(`[data-page="${key}"]`).first().click();
     await page.getByRole("heading", { name: heading }).waitFor();
+    if (key === "issue") {
+      await page.getByRole("heading", { name: "Financial Impact Screening" }).waitFor();
+      await page.getByText("Incremental cash required", { exact: true }).waitFor();
+    }
   }
 
   await page.locator('[data-page="solution"]').first().click();
