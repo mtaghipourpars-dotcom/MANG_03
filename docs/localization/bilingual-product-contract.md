@@ -34,3 +34,7 @@ Store stable machine fields separately from localized display fields. Recommende
 4. Changing language preserves the current case, form contents and session-only records.
 5. Tests verify language metadata, direction, key headings, form labels, error/guardrail states and dynamic content.
 6. All human-authored specifications, decision records, test documentation and seed data used by the product have an accessible Persian counterpart or explicit bilingual columns.
+
+
+## Seed catalogue terminology
+Use [seed-data-language-map.fa-en.csv](seed-data-language-map.fa-en.csv) for Persian/English display terms used across issue domains, archetypes, solution patterns, relationship types and status labels. The original seed files and canonical IDs remain unchanged for compatibility; UI-facing strings must resolve through locale resources before display.
