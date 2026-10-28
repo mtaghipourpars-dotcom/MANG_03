@@ -107,3 +107,14 @@ For MVP, implement a small, explicit set of entity types and typed relationship 
 Suggested core: Issue Intake, Qualification Assessment, Issue Case, Issue Type, Solution Type, Issue–Solution Applicability, Case–Object Link, Solution Candidate, Decision Profile Version, Decision Record, Action Record, Outcome Record, and Audit Event.
 
 Still open: final standard taxonomies; multiple-parent issue hierarchy; relationship types requiring human validation; confidence/evidence thresholds; time-phased resource detail; authoritative object-source mappings; authority thresholds; and whether later graph traversal needs a specialized store.
+
+
+## 9. Financial impact and profile-based decisions
+
+Each case-specific Solution Candidate may link to one or more **Financial Impact Assessments**. This is a live, contextual assessment, not an attribute copied from Solution Type. Record impact component, amount/range, currency, time horizon, baseline/comparison scenario, calculation method/version, source inputs, assumptions, confidence, and whether the value is estimated or observed. Distinguish direct cost, margin/profit effect, cash-flow timing, avoided loss/cost, opportunity cost, and evidenced contractual/delay effects. Prevent double counting across linked impacts.
+
+A **Decision Profile Version** holds configurable priorities and parameter values (for example, sales commitments, liquidity, margin, delivery, quality/safety/compliance). A decision references the exact version and parameter values applied. Feasibility and hard constraints remain separate from profile-based preference/ranking.
+
+## 10. Decision history and candidate visibility
+
+A lower-level decision is a historical record, not a lock that removes other applicable candidates from higher-level review. Higher-authority users may select a different option within their authority and applicable constraints. Model this with a new or superseding Decision Record linked to the prior decision. Preserve both rationales and the profile versions used. If earlier actions have started, record authorized continuation, amendment, cancellation, or replacement; never silently overwrite them.
