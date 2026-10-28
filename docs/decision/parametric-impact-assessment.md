@@ -97,3 +97,33 @@ The example intentionally does not convert scores into currency or a single univ
 - How quantified amounts, ranges, currency, and cash timing will be sourced and reconciled when added.
 
 Until these are explicitly decided, the 1–5 scales above are a proposed MVP baseline, not a finalized financial formula.
+
+
+## 9. Shared parameters and weighted Decision Profiles
+The impact parameters assessed for a case-specific solution are also the dimensions that Decision Profiles can prioritize. Maintain one governed parameter catalogue with definitions, scale anchors, direction, and version. Do not create unrelated sets of criteria for impact assessment and profile evaluation.
+
+The MVP may provide three organization-defined default profiles, for example:
+- **Delivery First** — gives greater weight to delivery/customer commitments.
+- **Liquidity Protection** — gives greater weight to liquidity and funding needs.
+- **Margin Protection** — gives greater weight to margin/profitability.
+
+Names and weights are examples, not finalized defaults. Authorized users may also create personal/custom profiles. The organization must define whether personal profiles are private, shareable, or eligible for organizational adoption. Every profile has an owner/scope, version, active status, parameter weights, and change history.
+
+A simple transparent weighted index is acceptable as a **decision-priority indicator**, not as a monetary Financial Impact value. For parameters where higher raw ratings mean a worse outcome (for example, funding required, scarce-resource demand, or execution risk), convert the rating to a common preference direction for scoring (for example, a 1–5 preference value derived by reversing the scale). Then apply the profile weights. The exact normalization and aggregation rule must be consistent, visible, versioned, and tested before implementation. Do not describe the resulting index as an audited financial amount or an objectively precise probability of success.
+
+Weights can be shown as percentages totaling 100% for ease of understanding. This is a proposed simple convention, not yet a locked requirement. Hard constraints remain outside the weighted score. If a required rating is unknown, do not silently treat it as neutral or zero: show the missing dimension and score coverage, and follow a configured rule for whether a provisional comparison is allowed.
+
+## 10. Profile scope and solution-specific profiles
+Support these distinct profile scopes:
+1. **Organization default profiles** — shared, governed, versioned starting points.
+2. **Personal/custom profiles** — created by a user for their own decision perspective, subject to permissions.
+3. **Solution-specific profile association** — a candidate solution may be associated with a tailored profile or proposed weighting to examine how it performs under that perspective.
+
+Important comparability rule: if the system ranks multiple candidate solutions against one another for a decision, it must apply the same selected comparison profile to all candidates in that comparison. A profile associated with an individual solution is an additional perspective or scenario, not a license to rank that solution using different weights from its competitors and present the results as directly comparable. Show which profile and version produced every score. A manager may switch profiles to see how rankings change.
+
+## 11. Organizational Best Profile learning
+The system may identify **Best Profile** candidates from recorded decisions and observed outcomes. It must not label a profile “best” merely because it was selected often or because its decisions were initially preferred.
+
+For each profile/version, track the number of uses, context and case types, decisions, execution evidence, outcome definition, successful/partially successful/unsuccessful results, and relevant time period. Show success rate together with the sample size and outcome coverage. Compare profiles only across reasonably comparable contexts, and make uncertainty visible when samples are small or outcomes are missing. Do not claim that a profile caused success just because success followed a decision made with that profile.
+
+A Best Profile may be recommended for a defined context (for example, a certain issue type or operating condition) and then approved/adopted by the organization. Keep the organization’s approved defaults distinct from system-generated recommendations. Learning must use actual outcomes and preserve the profile version used at decision time.
