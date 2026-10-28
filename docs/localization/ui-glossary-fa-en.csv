@@ -1,0 +1,21 @@
+term_en,term_fa,definition_en,definition_fa
+Issue,مسئله,An observed deviation or concern submitted for qualification,انحراف یا نگرانی مشاهده‌شده که برای ارزیابی صلاحیت ثبت می‌شود
+Issue Intake,ثبت اولیه مسئله,The initial report; retained even if incomplete or not accepted,گزارش اولیه؛ حتی اگر ناقص یا پذیرفته‌نشده باشد حفظ می‌شود
+Issue Case,پرونده مسئله,An accepted issue in the formal Issue–Solution process,مسئله پذیرفته‌شده در فرایند رسمی مسئله–راهکار
+Solution Candidate,گزینه راهکار,A case-specific possible response assessed against constraints,راهکار احتمالی مختص پرونده که در برابر محدودیت‌ها ارزیابی می‌شود
+Solution Type,نوع راهکار,A reusable catalogue definition,تعریف قابل‌استفاده مجدد در کاتالوگ
+Feasibility,امکان‌پذیری,Whether a candidate satisfies mandatory constraints,اینکه گزینه محدودیت‌های الزامی را برآورده می‌کند یا خیر
+Priority,اولویت,Relative preference among feasible options under a versioned profile,ترجیح نسبی میان گزینه‌های امکان‌پذیر بر اساس پروفایل نسخه‌بندی‌شده
+Hard gate,محدودیت قطعی,A mandatory condition that a priority score cannot override,شرط الزامی که امتیاز اولویت نمی‌تواند آن را نادیده بگیرد
+Decision authority,اختیار تصمیم‌گیری,The role or person authorized to make a decision,نقش یا شخص مجاز به اتخاذ تصمیم
+Decision,تصمیم,A recorded choice with rationale and authority,انتخاب ثبت‌شده همراه با منطق و اختیار
+Action,اقدام,Work assigned to an owner following a decision,کاری که پس از تصمیم به مسئول مشخص واگذار می‌شود
+Outcome,نتیجه,Observed result assessed against a frozen target and evidence,نتیجه مشاهده‌شده که در برابر هدف تثبیت‌شده و شواهد ارزیابی می‌شود
+Observed outcome,نتیجه مشاهده‌شده,A result supported by observation/evidence,نتیجه‌ای که با مشاهده یا شواهد پشتیبانی می‌شود
+Estimated impact,اثر برآوردی,An estimate that is not yet a verified outcome,برآوردی که هنوز نتیجه راستی‌آزمایی‌شده نیست
+Attribution,انتساب اثر,Assessment of whether an intervention contributed to an outcome,ارزیابی اینکه آیا مداخله در ایجاد نتیجه نقش داشته است
+Counterfactual,وضعیت خلاف‌واقع,What likely would have happened without the intervention,آنچه احتمالاً بدون مداخله رخ می‌داد
+Abstention,امتناع از توصیه,An explicit decision not to rank or recommend when evidence or feasibility is inadequate,خودداری صریح از رتبه‌بندی یا توصیه وقتی شواهد یا امکان‌پذیری کافی نیست
+Rejected alternatives ledger,دفتر ثبت گزینه‌های ردشده,Preserves rejected/deferred options and reopening triggers,گزینه‌های ردشده یا معوق و محرک‌های بازگشایی را حفظ می‌کند
+Emergency reversible action,اقدام اضطراری برگشت‌پذیر,A narrow containment proposal with owner, expiry and review,پیشنهاد محدود مهار وضعیت با مسئول، انقضا و بازبینی مشخص
+Synthetic demo,دموی شبیه‌سازی‌شده,Illustrative data that is not live company or ERP information,داده نمایشی که اطلاعات زنده شرکت یا ERP نیست
