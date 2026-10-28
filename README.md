@@ -113,3 +113,6 @@ The MVP keeps **NEW ISSUE** and **NEW SOLUTION** buttons visible in their relate
 
 ## Worst-case stress testing
 The stress-test specification defines synthetic, evidence-based checks for liquidity/FX shocks, supply uncertainty, stale data, infrastructure outages, shared-resource conflicts, missing approvals, decision pressure, recovery, and audit integrity. It is a test contract, not a claim that the current prototype or production service has passed. The current HTML prototype cannot validate backend persistence, access control, ERP integration, concurrency, or offline synchronization; unsupported tests must be marked **BLOCKED / NOT IMPLEMENTED**, never PASS.
+
+### Phase A review status (2026-10-28)
+The HTML source was statically inspected. The review found that the intake form reports “Saved locally” but does not retain the submitted record, and “Mark information needed” shows a state-change message without changing state. Several other workflow controls are preview/toast-only. Browser-runtime testing remains outstanding; persistence, authorization, ERP, concurrency and offline-sync tests remain blocked/not implemented. See the [Phase A review report](docs/testing/phase-a-static-prototype-review.md).
