@@ -3,6 +3,7 @@
 - Added recommendation abstention for stale/conflicting evidence, unresolved hard gates, or no feasible candidate, plus a separately labeled emergency reversible-action proposal requiring an owner, future expiry and reversibility confirmation.
 - Added decision-change/value-evidence capture for baseline, decision delta, observed outcome, measurement window and attribution status; no causal claim is implied.
 - Added Playwright regression coverage for the three workflows and updated architecture/acceptance documentation.
+- Follow-up hardening preserves the evidence/gate note used for abstention, displays the value measurement window, and tests restoration of the selected-candidate styling after clearing a session hold.
 - Prototype remains static and synthetic: no durable persistence, auth, notifications, expiry enforcement, ERP integration, or action execution.
 
 ## 2026-10-28 — Expanded Chromium regression suite passing
