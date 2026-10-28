@@ -5,7 +5,7 @@
 - [Interactive HTML prototype](docs/demo/mvp-prototype.html)
 - [Worst-case stress test specification](docs/design/worst-case-stress-test-specification.md)
 - [Phase A static review and defect-fix log](docs/testing/phase-a-static-prototype-review.md)
-- [Playwright browser smoke test](tests/prototype-smoke.mjs) · [GitHub Actions run](https://github.com/mtaghipourpars-dotcom/MANG_03/actions/runs/40715309176)
+- [Playwright browser smoke test](tests/prototype-smoke.mjs) · [GitHub Actions run](https://github.com/mtaghipourpars-dotcom/MANG_03/actions/runs/40715532733)
 - Latest iterations implement a temporary in-page Issue Intake queue, visible temporary qualification status changes, local demo search, and modal keyboard focus handling. Data clears on refresh; no backend, durable storage, authentication/authorization, or ERP integration is implemented. Automated Chromium smoke tests pass for navigation, intake, local search, qualification status, disabled catalogue controls, modal keyboard focus, refresh-clears behavior, and mobile horizontal overflow. Full cross-browser/accessibility review and backend-dependent stress tests remain outstanding.
 
 ## Purpose
