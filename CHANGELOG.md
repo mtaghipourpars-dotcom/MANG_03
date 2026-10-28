@@ -1,3 +1,10 @@
+## 2026-10-28 — Mocked-DOM regression cycle
+- Passed inline JavaScript syntax compilation.
+- Passed mocked-DOM navigation across all six pages and all three Issue tabs.
+- Passed intake submission and queue rendering, qualification-state transition and visible gate update, local search of a new intake, modal Tab focus containment, and focus restoration.
+- Confirmed catalogue-authoring buttons remain disabled and no durable storage/network/ERP behavior was introduced.
+- This is not real-browser certification. Responsive visual rendering, native validation, assistive technology behavior, and infrastructure-dependent WCS tests remain unverified or blocked.
+
 ## 2026-10-28 — Defect-fix iteration 2: qualification feedback and modal keyboard handling
 - Kept the Issue detail qualification gate visibly aligned with the temporary “Needs information” state instead of leaving a contradictory “Passed” badge.
 - Added modal focus restoration and Tab/Shift+Tab focus containment; Escape remains available while the dialog is open.
