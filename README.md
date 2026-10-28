@@ -54,6 +54,7 @@ Examples include project, production order, purchase order, sales order, compone
 
 ## Documentation map
 
+- [Enterprise Value-Chain Extensible Issue–Solution Network](docs/design/enterprise-value-chain-extensible-issue-solution-network.md)
 - [Manufacturing Issue–Solution Matrix and Qualification Framework](docs/design/manufacturing-issue-solution-matrix.md)
 - [Seed Issue–Solution Applicability Matrix (CSV)](docs/data/seed/issue-solution-applicability-matrix.csv)
 - [Seed Qualification Rules (CSV)](docs/data/seed/qualification-rules.csv)
