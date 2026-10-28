@@ -1,3 +1,11 @@
+## 2026-10-28 — Chromium browser smoke tests passing
+- Added Playwright smoke coverage and a GitHub Actions workflow for the static HTML MVP.
+- Latest run passed in Chromium: all six navigation destinations, Issue tabs, intake creation and temporary queue rendering, refresh-clears behavior, search by intake and illustrative case title, qualification-state updates, disabled catalogue controls, modal focus containment/restoration, and 390px mobile horizontal-overflow check.
+- Added local search matching for CASE-019 and CASE-011 by their displayed titles.
+- Added focus transfer to the new intake queue after submission.
+- Run: https://github.com/mtaghipourpars-dotcom/MANG_03/actions/runs/40715309176
+- This is a browser smoke test, not full accessibility certification or proof of backend-dependent Worst-Case Stress Tests.
+
 ## 2026-10-28 — Mocked-DOM regression cycle
 - Passed inline JavaScript syntax compilation.
 - Passed mocked-DOM navigation across all six pages and all three Issue tabs.
