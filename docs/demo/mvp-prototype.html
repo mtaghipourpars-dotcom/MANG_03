@@ -110,4 +110,95 @@ document.querySelectorAll("[data-page]:not(#nav [data-page])").forEach(b=>b.addE
 $("#caseSearch").addEventListener("keydown",e=>{if(e.key!=="Enter")return;const q=e.target.value.trim().toLowerCase();if(!q)return;const hit=demoIntakes.find(x=>(x.id+" "+x.title+" "+x.description).toLowerCase().includes(q));if(hit){go("issue");toast("Matching session-only intake: "+hit.id+". See the temporary intake queue.");return}if(("case-024 "+caseData.title+" "+caseData.description+" "+caseData.domain).toLowerCase().includes(q)){go("issue");toast("Matching detailed synthetic case found: CASE-024.");return}const sampleCases=[{id:"CASE-019",title:"Supplier quality evidence pending"},{id:"CASE-011",title:"Service response time deviation"}];const sampleMatch=sampleCases.find(x=>(x.id+" "+x.title).toLowerCase().includes(q));if(sampleMatch){go("issue");toast("Matching illustrative demo case found: "+sampleMatch.id+". Only CASE-024 has a detailed synthetic record.");return}toast("No matching visible demo record. Search is local to this prototype; no server search is performed.");});
 render();
 </script>
+
+<script id="mang03-decision-guardrails">
+(() => {
+  const root = document.querySelector("#content");
+  if (!root) return;
+  const state = {
+    alternatives: {
+      "CAND-024-A": {status:"RETAINED", reason:"Expedite cost and recovery date remain unconfirmed.", trigger:"Reopen when the supplier provides a dated commitment and a costed expedite offer."},
+      "CAND-024-B": {status:"DEFERRED — HARD GATE", reason:"Engineering and Quality approval is not evidenced.", trigger:"Reopen only after documented technical equivalence and Engineering + Quality approval."}
+    },
+    abstained: false, abstainReason: "", emergencyActions: [], valueEvaluation: null
+  };
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const card = (id,title,body) => '<section class="card" data-guardrail-panel="'+id+'" style="margin-top:16px"><div class="cardhead"><h2>'+title+'</h2><span class="badge bblue">Decision safeguard</span></div>'+body+'</section>';
+  function decisionPanel(){
+    const rows = Object.entries(state.alternatives).map(([id,a]) => '<div style="padding:13px 0;border-bottom:1px solid var(--line)" data-alt-row="'+id+'"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><strong>'+id+' · '+(id.endsWith("-A")?"Expedite supplier order":"Qualify alternate source")+'</strong><span class="badge '+(a.status.startsWith("REOPEN")?"bgreen":id.endsWith("-B")?"bred":"bamber")+'" data-alt-status="'+id+'">'+esc(a.status)+'</span></div><p class="small muted" style="margin:7px 0">'+esc(a.reason)+'</p><div class="callout">'+esc(a.trigger)+'</div><div class="actions" style="margin-top:9px"><button class="btn" type="button" data-g3-action="toggle-alt" data-alt-id="'+id+'">'+(a.status.startsWith("REOPEN")?"Clear reconsideration flag":"Flag for reconsideration")+'</button></div></div>').join("");
+    return card("alternatives-ledger","Rejected / deferred alternatives ledger",'<p class="muted small">Alternatives are retained with the reason and a concrete reopening trigger. A changed condition prompts reassessment; it does not silently replace the recorded decision.</p>'+rows+'<div class="callout warn" style="margin-top:12px">Session-only prototype state. A production service must preserve immutable decision versions, evidence and reconsideration events in durable audit history.</div>');
+  }
+  function solutionPanel(){
+    const banner = state.abstained ? '<div class="callout warn" data-abstain-state="withheld" style="margin-bottom:12px"><strong>Recommendation withheld for this session.</strong><br>Reason: '+esc(state.abstainReason)+'. The fixture’s displayed selection is synthetic and must not be treated as a current recommendation.</div>' : '<div class="callout" data-abstain-state="available" style="margin-bottom:12px">A recommendation is not mandatory. Withhold it when evidence is stale, a hard constraint is unresolved, or no candidate is feasible.</div>';
+    const actionRows = state.emergencyActions.map((a,i)=>'<div class="callout" style="margin-top:9px"><strong>Emergency proposal '+(i+1)+': '+esc(a.title)+'</strong><br>Owner: '+esc(a.owner)+' · Expires: '+esc(a.expiresAt)+'<br>Reversible: Yes · Review required: Yes<br><span class="small">Recorded in this browser session only; not approved or executed.</span></div>').join("");
+    return card("abstain-emergency","Recommendation abstention & emergency path",banner+
+      '<div class="fieldgrid"><div class="field"><label for="g3-abstain-reason">Why should recommendation be withheld?</label><select id="g3-abstain-reason"><option value="">Choose a reason</option><option>Evidence stale or source unavailable</option><option>Hard constraint unresolved</option><option>No feasible candidate</option><option>Conflicting evidence or material unknown</option></select></div><div class="field"><label for="g3-evidence-note">Evidence / gate note</label><input id="g3-evidence-note" placeholder="Source, timestamp, constraint, or unknown"></div></div><div class="actions" style="margin-top:10px"><button class="btn" type="button" data-g3-action="abstain">Withhold recommendation</button><button class="btn" type="button" data-g3-action="clear-abstain">Clear session hold</button></div>'+
+      '<div class="divider" style="height:1px;background:var(--line);margin:18px 0"></div><h3 class="sectiontitle">Emergency reversible action proposal</h3><p class="muted small">For time-critical containment only: require an accountable owner, explicit expiry, reversibility and review. This prototype records a proposal only; it does not authorize or execute work.</p>'+
+      '<form id="g3-emergency-form"><div class="fieldgrid"><div class="field"><label for="g3-emergency-title">Proposed action *</label><input id="g3-emergency-title" required placeholder="Containment action"></div><div class="field"><label for="g3-emergency-owner">Accountable owner *</label><input id="g3-emergency-owner" required placeholder="Role / named owner"></div><div class="field"><label for="g3-emergency-expiry">Expiry / review deadline *</label><input id="g3-emergency-expiry" type="datetime-local" required></div><div class="field"><label>Control</label><label style="display:flex;align-items:center;gap:8px"><input id="g3-emergency-reversible" type="checkbox" required style="width:auto"> Action is reversible and reviewable</label></div></div><div class="formfoot"><button class="btn primary" type="submit">Record emergency proposal</button></div></form>'+actionRows+
+      '<div class="callout warn" style="margin-top:12px">Emergency path is not a bypass for safety, legal, technical or delegated-authority gates. Production must define who can authorize it and how expiry/review is enforced.</div>');
+  }
+  function outcomePanel(){
+    const saved = state.valueEvaluation ? '<div class="callout" data-value-result="saved" style="margin-top:12px"><strong>Evaluation captured (session-only)</strong><br>Baseline: '+esc(state.valueEvaluation.baseline)+'<br>Changed decision: '+esc(state.valueEvaluation.changedDecision)+'<br>Observed outcome: '+esc(state.valueEvaluation.observedOutcome)+'<br>Attribution: '+esc(state.valueEvaluation.attribution)+'<br><span class="small">Association or timing alone is not causal proof; preserve the comparison method and competing explanations.</span></div>' : '';
+    return card("value-proof","Decision change & value proof ledger",'<p class="muted small">Measure whether the service changed a decision and what was observed against a defensible baseline. Do not use issue count, closure, or product usage as a proxy for value.</p>'+
+      '<form id="g3-value-form"><div class="fieldgrid"><div class="field full"><label for="g3-baseline">Baseline / counterfactual *</label><textarea id="g3-baseline" required placeholder="What would likely have happened without this decision support? State source and comparison period."></textarea></div><div class="field full"><label for="g3-changed-decision">Decision changed because of review *</label><textarea id="g3-changed-decision" required placeholder="Original option, changed option, decision-maker, and why. Use “no material change” if applicable."></textarea></div><div class="field full"><label for="g3-observed-outcome">Observed outcome + evidence *</label><textarea id="g3-observed-outcome" required placeholder="Observed result, measurement window, evidence source, and uncertainty."></textarea></div><div class="field"><label for="g3-attribution">Attribution status</label><select id="g3-attribution"><option>Not established</option><option>Plausible contribution — alternatives remain</option><option>Independently supported with comparison</option></select></div><div class="field"><label for="g3-measurement-window">Measurement window</label><input id="g3-measurement-window" placeholder="e.g., 30 days after action"></div></div><div class="formfoot"><button class="btn primary" type="submit">Record value evaluation</button></div></form>'+saved+
+      '<div class="kv" style="margin-top:14px"><div><span>Primary signal</span><strong>Decision changed / not changed</strong></div><div><span>Outcome signal</span><strong>Observed vs baseline</strong></div><div><span>Attribution guard</span><strong>No causal claim by default</strong></div></div>');
+  }
+  function enhance(){
+    if (!root.isConnected) return;
+    const crumb = document.querySelector("#crumb")?.textContent || "";
+    if (crumb.includes("Decision") && !root.querySelector('[data-guardrail-panel="alternatives-ledger"]')) root.insertAdjacentHTML("beforeend",decisionPanel());
+    if (crumb.includes("Solution") && !root.querySelector('[data-guardrail-panel="abstain-emergency"]')) root.insertAdjacentHTML("beforeend",solutionPanel());
+    if (crumb.includes("Outcomes") && !root.querySelector('[data-guardrail-panel="value-proof"]')) root.insertAdjacentHTML("beforeend",outcomePanel());
+    const hold = root.querySelector('[data-abstain-state="withheld"]');
+    const clear = root.querySelector('[data-abstain-state="available"]');
+    if (hold) {
+      root.querySelectorAll(".candidate").forEach(el=>el.classList.remove("selected"));
+      root.querySelectorAll(".candidate .candbottom .btn").forEach(el=>{if(el.textContent.includes("Selected"))el.textContent="Fixture selection (not recommendation)";});
+    }
+    const oldNotice=root.querySelector('[data-current-session-hold="true"]');
+    if (state.abstained && crumb.includes("Decision") && !oldNotice) {
+      const n=document.createElement("div");n.className="callout warn";n.dataset.currentSessionHold="true";n.style.marginBottom="16px";n.innerHTML="<strong>Current-session abstention guard is active.</strong> The synthetic approved decision below is fixture data, not an actionable recommendation while the hold is active.";
+      const first=root.querySelector('[data-guardrail-panel="alternatives-ledger"]'); if(first) root.insertBefore(n,first);
+    } else if (!state.abstained && oldNotice) oldNotice.remove();
+  }
+  document.addEventListener("click", e=>{
+    const b=e.target.closest("[data-g3-action]"); if(!b)return;
+    const act=b.dataset.g3Action;
+    if(act==="toggle-alt"){
+      const id=b.dataset.altId, a=state.alternatives[id]; if(!a)return;
+      a.status=a.status.startsWith("REOPEN")?(id.endsWith("-B")?"DEFERRED — HARD GATE":"RETAINED"):"REOPEN WHEN TRIGGER MET";
+      const row=root.querySelector('[data-alt-row="'+id+'"]'); if(row){const s=row.querySelector("[data-alt-status]");s.textContent=a.status;s.className="badge "+(a.status.startsWith("REOPEN")?"bgreen":id.endsWith("-B")?"bred":"bamber");b.textContent=a.status.startsWith("REOPEN")?"Clear reconsideration flag":"Flag for reconsideration";}
+      return;
+    }
+    if(act==="abstain"){
+      const reason=root.querySelector("#g3-abstain-reason")?.value;
+      if(!reason){alert("Choose a reason before withholding a recommendation.");return;}
+      state.abstained=true;state.abstainReason=reason;
+      const panel=root.querySelector('[data-guardrail-panel="abstain-emergency"]'); if(panel) panel.outerHTML=solutionPanel();
+      enhance(); return;
+    }
+    if(act==="clear-abstain"){state.abstained=false;state.abstainReason="";const panel=root.querySelector('[data-guardrail-panel="abstain-emergency"]');if(panel)panel.outerHTML=solutionPanel();enhance();return;}
+  });
+  document.addEventListener("submit",e=>{
+    if(e.target.id==="g3-emergency-form"){
+      e.preventDefault();const title=root.querySelector("#g3-emergency-title").value.trim(),owner=root.querySelector("#g3-emergency-owner").value.trim(),expiry=root.querySelector("#g3-emergency-expiry").value,reversible=root.querySelector("#g3-emergency-reversible").checked;
+      if(!title||!owner||!expiry||!reversible){alert("Action, owner, expiry and reversibility confirmation are required.");return;}
+      if(new Date(expiry).getTime()<=Date.now()){alert("Expiry / review deadline must be in the future.");return;}
+      state.emergencyActions.push({title,owner,expiresAt:expiry});
+      const panel=root.querySelector('[data-guardrail-panel="abstain-emergency"]');if(panel)panel.outerHTML=solutionPanel();enhance();return;
+    }
+    if(e.target.id==="g3-value-form"){
+      e.preventDefault();const baseline=root.querySelector("#g3-baseline").value.trim(),changedDecision=root.querySelector("#g3-changed-decision").value.trim(),observedOutcome=root.querySelector("#g3-observed-outcome").value.trim();
+      if(!baseline||!changedDecision||!observedOutcome){alert("Baseline, changed decision and observed outcome are required.");return;}
+      state.valueEvaluation={baseline,changedDecision,observedOutcome,attribution:root.querySelector("#g3-attribution").value,window:root.querySelector("#g3-measurement-window").value.trim()};
+      const panel=root.querySelector('[data-guardrail-panel="value-proof"]');if(panel)panel.outerHTML=outcomePanel();enhance();return;
+    }
+  });
+  const observer = new MutationObserver(() => enhance());
+  observer.observe(root,{childList:true,subtree:false});
+  enhance();
+  window.__MANG03_GUARDRAILS_TEST_STATE__ = state;
+})();
+</script>
+
 </body></html>
