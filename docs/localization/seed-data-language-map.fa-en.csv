@@ -1,0 +1,108 @@
+term_en,term_fa,category
+Strategy and enterprise performance,راهبرد و عملکرد سازمان,domain
+Market customer and commercial,بازار و مشتری و امور تجاری,domain
+Sales and order management,فروش و مدیریت سفارش,domain
+Contracts and commitments,قراردادها و تعهدات,domain
+Demand and integrated planning,تقاضا و برنامه‌ریزی یکپارچه,domain
+Procurement and sourcing,تدارکات و تأمین‌یابی,domain
+Supplier performance,عملکرد تأمین‌کننده,domain
+Materials inventory and warehouse,موجودی مواد و انبار,domain
+Engineering and product design,مهندسی و طراحی محصول,domain
+Product development and R&D,توسعه محصول و تحقیق‌وتوسعه,domain
+Manufacturing engineering,مهندسی ساخت,domain
+Production planning and scheduling,برنامه‌ریزی و زمان‌بندی تولید,domain
+Production and operations,تولید و عملیات,domain
+Assets maintenance and reliability,نگهداری دارایی‌ها و قابلیت اطمینان,domain
+Quality and product assurance,تضمین کیفیت و محصول,domain
+Environment health and safety,محیط‌زیست، بهداشت و ایمنی,domain
+Projects programs and portfolio,پروژه‌ها، برنامه‌ها و سبد,domain
+Logistics and delivery,لجستیک و تحویل,domain
+Finance treasury and controlling,مالی، خزانه‌داری و کنترل,domain
+Tax and statutory reporting,مالیات و گزارشگری قانونی,domain
+Human resources and workforce,منابع انسانی و نیروی کار,domain
+Organization and governance,سازمان و حاکمیت,domain
+IT services and integrations,خدمات فناوری اطلاعات و یکپارچه‌سازی,domain
+Data and analytics,داده و تحلیل,domain
+Cybersecurity,امنیت سایبری,domain
+Legal ethics and privacy,حقوقی، اخلاق و حریم خصوصی,domain
+Enterprise risk and resilience,ریسک و تاب‌آوری سازمان,domain
+Facilities and utilities,تأسیسات و خدمات زیربنایی,domain
+Shared services and administration,خدمات مشترک و امور اداری,domain
+Process excellence and continuous improvement,تعالی فرایند و بهبود مستمر,domain
+External disruption,اختلال بیرونی,domain
+Innovation and transformation,نوآوری و تحول,domain
+Shared resource management,مدیریت منابع مشترک,domain
+Deviation,انحراف,issue archetype
+Decision,تصمیم,issue archetype
+Customer concern,نگرانی مشتری,issue archetype
+Obligation,تعهد,issue archetype
+Constraint,محدودیت,issue archetype
+Information gap,خلأ اطلاعاتی,issue archetype
+Dependency,وابستگی,issue archetype
+Change,تغییر,issue archetype
+Capability gap,خلأ قابلیت,issue archetype
+Readiness gap,خلأ آمادگی,issue archetype
+Incident,رخداد,issue archetype
+Nonconformance,عدم انطباق,issue archetype
+Risk,ریسک,issue archetype
+Compliance,انطباق,issue archetype
+Ownership gap,خلأ مالکیت و پاسخ‌گویی,issue archetype
+Service issue,مسئله خدماتی,issue archetype
+Opportunity,فرصت,issue archetype
+Disruption,اختلال,issue archetype
+Inventory verification,راستی‌آزمایی موجودی,solution archetype
+Allocation,تخصیص,solution archetype
+Expedite or alternate source,تسریع یا منبع جایگزین,solution archetype
+Approved substitution,جایگزینی تأییدشده,solution archetype
+Replan or resequence,برنامه‌ریزی مجدد یا تغییر توالی,solution archetype
+Engineering recovery,بازیابی/تکمیل مهندسی,solution archetype
+Design or engineering change,تغییر طراحی یا مهندسی,solution archetype
+Experiment or test,آزمایش یا آزمون,solution archetype
+Process engineering or pilot,مهندسی فرایند یا اجرای آزمایشی,solution archetype
+Containment and investigation,مهار و بررسی,solution archetype
+Safe restore or repair,بازیابی ایمن یا تعمیر,solution archetype
+Failure investigation and prevention,بررسی و پیشگیری از خرابی,solution archetype
+Corrective action and effectiveness,اقدام اصلاحی و اثربخشی,solution archetype
+Emergency response or safe shutdown,پاسخ اضطراری یا توقف ایمن,solution archetype
+Recovery plan,برنامه بازیابی,solution archetype
+Reallocate shared resources,تخصیص مجدد منابع مشترک,solution archetype
+Cash forecast and payment prioritization,پیش‌بینی نقدینگی و اولویت‌بندی پرداخت,solution archetype
+Redeploy or train,به‌کارگیری مجدد یا آموزش,solution archetype
+Restore service or controlled workaround,بازیابی خدمت یا راهکار موقت کنترل‌شده,solution archetype
+Reconcile source and correct control,تطبیق منبع و اصلاح کنترل,solution archetype
+Contain and incident response,مهار و پاسخ به رخداد,solution archetype
+Contract review and authorized change,بازبینی قرارداد و تغییر مجاز,solution archetype
+Alternate route or expedite,مسیر جایگزین یا تسریع,solution archetype
+Pilot or experiment,اجرای آزمایشی یا آزمایش,solution archetype
+Escalate or reconsider objectives,ارجاع یا بازنگری اهداف,solution archetype
+Accept and monitor,پذیرش و پایش,solution archetype
+Verify outcome,راستی‌آزمایی نتیجه,solution archetype
+IS_A,نوعی از,relationship type
+SYNONYM_OF,مترادف با,relationship type
+SIMILAR_TO,مشابه با,relationship type
+DUPLICATE_CANDIDATE_OF,نامزد تکراریِ,relationship type
+POSSIBLE_CAUSE_OF,علت احتمالیِ,relationship type
+VALIDATED_CAUSE_OF,علت اعتبارسنجی‌شده برای,relationship type
+SYMPTOM_OF,نشانه‌ای از,relationship type
+MAY_AFFECT,ممکن است بر ... اثر بگذارد,relationship type
+OBSERVED_EFFECT_ON,اثر مشاهده‌شده بر,relationship type
+MITIGATES,کاهش‌دهنده,relationship type
+REQUIRES,نیازمند,relationship type
+BLOCKED_BY,مسدودشده به‌واسطه,relationship type
+DEPENDS_ON,وابسته به,relationship type
+COMPETES_FOR,رقابت بر سر,relationship type
+ALTERNATIVE_TO,جایگزینِ,relationship type
+CONTRADICTS,در تعارض با,relationship type
+SUPERSEDES,جایگزین نسخه قبلی می‌شود,relationship type
+LINKED_TO,مرتبط با,relationship type
+VERIFIED_BY,راستی‌آزمایی‌شده توسط,relationship type
+APPLIES_WHEN,قابل اعمال در صورت,relationship type
+OWNED_BY,دارای مسئولیت نزد,relationship type
+Seed,داده اولیه,status
+Proposed,پیشنهادی,status
+In Review,در حال بررسی,status
+Approved,تأییدشده,status
+Blocked,مسدود,status
+Conditional,مشروط,status
+Enterprise-mandatory,الزامی در سطح سازمان,status
+Non-overridable,غیرقابل چشم‌پوشی,status
