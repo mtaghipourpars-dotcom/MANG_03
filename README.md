@@ -54,6 +54,8 @@ Examples include project, production order, purchase order, sales order, compone
 
 ## Documentation map
 
+- [End-to-end reference design scenario](docs/design/reference-scenario-end-to-end.md)
+
 - [Architecture overview](docs/architecture/overview.md)
 - [Conceptual master data and network map](docs/architecture/conceptual-network-map.md)
 - [Master data and relationships](docs/data/master-data-and-relationships.md)
