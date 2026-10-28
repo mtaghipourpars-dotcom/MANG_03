@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-10-28 — End-to-end demo fixture and visible-but-disabled catalogue buttons
+- Added synthetic `CASE-024` data covering Issue Intake, qualification, accepted case, three case-specific solution candidates, feasibility and constraint checks, shared profile snapshot, decision, actions, outcome review, learning eligibility, and audit events.
+- Added D-026: NEW ISSUE and NEW SOLUTION stay visible but disabled in the related forms; they must not trigger UI or data side effects.
+- Clarified that these buttons concern reusable catalogue definitions only; normal Issue Intake and case-specific Solution Candidate creation remain separate MVP functions.
+- Explicitly labelled the fixture as synthetic; no runtime app or live ERP integration is implied.
+
 ## 2026-10-28 — MVP scope simplified: defer NEW ISSUE / NEW SOLUTION
 - Removed runtime user-facing authoring of reusable Issue Types and Solution Types from MVP scope.
 - Defined unclassified intake and manual-review behavior when no catalogue type or solution fits.
