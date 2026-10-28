@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-10-28 — Interactive visual MVP prototype
+- Added a responsive, single-file client-side prototype at `docs/demo/mvp-prototype.html` with Home, Issue, Solution, Decision & Actions, Outcomes & Learning, and Settings screens.
+- Connected the synthetic CASE-024 journey across qualification, three candidate assessments, decision rationale, action board, outcome review, and audit trace.
+- Added a working local Issue Intake form, candidate assessment feedback, screen navigation, and disabled catalogue-authoring controls.
+- Explicitly documented prototype limits: no backend, persistence, authentication/authorization, or ERP integration; supporting Home queue rows/counts are illustrative.
+
 ## 2026-10-28 — End-to-end demo fixture and visible-but-disabled catalogue buttons
 - Added synthetic `CASE-024` data covering Issue Intake, qualification, accepted case, three case-specific solution candidates, feasibility and constraint checks, shared profile snapshot, decision, actions, outcome review, learning eligibility, and audit events.
 - Added D-026: NEW ISSUE and NEW SOLUTION stay visible but disabled in the related forms; they must not trigger UI or data side effects.
