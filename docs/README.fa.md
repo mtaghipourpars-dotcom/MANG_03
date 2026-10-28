@@ -39,3 +39,5 @@
 - [واژه‌نامه رابط فارسی–انگلیسی](localization/ui-glossary-fa-en.csv)
 - [داده نمونه فارسی CASE-024](data/demo/CASE-024-end-to-end-demo.fa.json)
 - شناسه‌ها و کدهای سیستمی ثابت می‌مانند؛ متن فارسی صرفاً نمایش مکمل است و جایگزین متن اصلی یا شواهد منبع نمی‌شود.
+
+- [واژه‌نامه دوزبانه داده‌های اولیه و کاتالوگ‌ها](localization/seed-data-language-map.fa-en.csv)
