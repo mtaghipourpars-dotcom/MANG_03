@@ -5,7 +5,7 @@
 - [Interactive HTML prototype](docs/demo/mvp-prototype.html)
 - [Worst-case stress test specification](docs/design/worst-case-stress-test-specification.md)
 - [Phase A static review and defect-fix log](docs/testing/phase-a-static-prototype-review.md)
-- Latest iteration implements a temporary in-page Issue Intake queue, visible temporary qualification status changes, and local demo search. Data clears on refresh; no backend, durable storage, authentication/authorization, or ERP integration is implemented. Browser-runtime validation and backend-dependent stress tests remain outstanding.
+- Latest iterations implement a temporary in-page Issue Intake queue, visible temporary qualification status changes, local demo search, and modal keyboard focus handling. Data clears on refresh; no backend, durable storage, authentication/authorization, or ERP integration is implemented. Browser-runtime validation and backend-dependent stress tests remain outstanding.
 
 ## Purpose
 
