@@ -88,3 +88,11 @@ The MVP starts with a manager-owned, staged parametric assessment rather than re
 
 ## Decision Profiles and organizational learning
 The same governed impact parameters are used both to assess each case-specific solution and to prioritize alternatives under weighted Decision Profiles. The product direction includes organization-defined default profiles, personal/custom profiles, and a solution-specific profile perspective. Candidate comparisons must use the same selected comparison profile. Over time, the service may recommend context-specific organizational Best Profiles from observed outcomes, with sample size and uncertainty visible; selection alone is not evidence of success. See [Parametric Solution Impact Assessment](docs/decision/parametric-impact-assessment.md) and [Decision, Action, Outcome, and Learning](docs/decision/decision-and-learning.md).
+
+
+## Canonical Issue–Solution reference matrix
+- [Enterprise Issue–Solution Reference Matrix](docs/design/enterprise-issue-solution-reference-matrix.md) — full value-chain coverage, qualification rules, solution archetypes, relationships, user extensibility, governance and outcome learning.
+- [Enterprise Issue Type seed catalogue](docs/data/seed/enterprise-issue-type-catalog.csv) — editable seed definitions across enterprise domains.
+- [Issue–Solution applicability matrix](docs/data/seed/issue-solution-applicability-matrix.csv) — conditional cross-domain solution patterns and safeguards.
+- [Enterprise qualification rules](docs/data/seed/enterprise-qualification-rules.csv) — explicit qualification and governance checks.
+- [Relationship types](docs/data/seed/relationship-types.csv) — typed semantics, evidence and prohibited inferences.
