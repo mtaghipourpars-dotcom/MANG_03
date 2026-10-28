@@ -46,3 +46,5 @@
 - [گزارش بازبینی نمونه اولیه — فارسی](testing/phase-a-static-prototype-review.fa.md)
 - [داده‌های پایه و روابط — فارسی](data/master-data-and-relationships.fa.md)
 - [زنجیره انتهابه‌انتهای مسئله تا راهکار — فارسی](design/issue-solution-end-to-end-chain.fa.md)
+
+- [برچسب‌ها و شرح دوزبانه انواع مسئله سازمانی](localization/enterprise-issue-type-labels.fa-en.csv)
