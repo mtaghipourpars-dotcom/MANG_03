@@ -1,3 +1,9 @@
+## 2026-10-28 — Phase A static HTML prototype review
+- Added `docs/testing/phase-a-static-prototype-review.md` with 22 source-level checks and disposition of all 12 Worst-Case Stress Tests.
+- Recorded two defects: Issue Intake submit claims “Saved locally” without retaining a record; “Mark information needed” implies a status change but only shows a toast.
+- Marked browser-runtime validation outstanding and persistence, authorization, ERP integration, concurrency, and offline synchronization as BLOCKED / NOT IMPLEMENTED.
+- Linked the review report from README; no prototype behavior was changed in this review.
+
 ## 2026-10-28 — Worst-case stress test specification
 - Added `docs/design/worst-case-stress-test-specification.md` with an Iran/high-risk synthetic stress scenario and 12 test cases covering intake integrity, qualification vs urgency, stale data, FX/liquidity shocks, hard constraints, shared-resource collisions, decision pressure, action/outcome separation, degraded connectivity, recovery, audit history, and unclassified catalogue items.
 - Defined PASS / FAIL / BLOCKED / NEEDS REVIEW statuses, phased execution, minimum acceptance gates, and a test-run evidence template.
