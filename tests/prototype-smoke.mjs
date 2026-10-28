@@ -16,6 +16,8 @@ try {
   await page.getByText("Open Issue Cases", { exact: true }).waitFor();
   await page.getByRole("heading", { name: "Project Value & Risk Map" }).waitFor();
   await page.getByRole("heading", { name: "Product / Work-Portfolio Status" }).waitFor();
+  await page.getByRole("heading", { name: "Issue List & Work Queue" }).waitFor();
+  assert.ok(await page.locator(".home-issue-workbench").count() === 1, "Home should show the Issue workbench after the status cards");
   assert.deepEqual(await page.locator("#nav [data-page]").evaluateAll(nodes => nodes.map(n => n.dataset.page)),
     ["home", "projects", "valueMap", "issue", "solution", "decision", "outcome", "settings"],
     "sidebar should contain the eight agreed destinations in the agreed order");
@@ -58,8 +60,8 @@ try {
   await page.getByText("Open Issue Cases", { exact: true }).waitFor();
 
   for (const [key, heading] of [
-    ["issue", /Issue intake & qualification/],
-    ["solution", /Compare solution candidates/],
+    ["issue", /Issue List & Qualification/],
+    ["solution", /Solution List & Assessment/],
     ["decision", /Decision & action tracking/],
     ["outcome", /Outcomes & organizational learning/],
     ["settings", /Settings & demo controls/],
@@ -74,12 +76,17 @@ try {
   }
 
   await page.locator('[data-page="solution"]').first().click();
+  await page.getByRole("heading", { name: "Solution List" }).waitFor();
+  assert.equal(await page.locator("#solution-list-table tbody tr").count(), 3, "Solution page should show candidate list and statuses");
+  await page.locator("#solution-search").fill("alternate");
+  assert.equal(await page.locator("#solution-list-table tbody tr:visible").count(), 1, "Solution search should filter the list");
+  await page.locator("#solution-search").fill("");
   await page.locator("#mang03-language-toggle").click();
-  await page.getByRole("heading", { name: "مقایسه گزینه‌های راهکار" }).waitFor();
+  await page.getByRole("heading", { name: "فهرست راهکارها و ارزیابی" }).waitFor();
   assert.equal((await page.locator(".candtitle").first().innerText()).trim(), "تسریع سفارش فعلی تأمین‌کننده",
     "candidate labels generated after navigation should be translated into Persian");
   await page.locator("#mang03-language-toggle").click();
-  await page.getByRole("heading", { name: /Compare solution candidates/ }).waitFor();
+  await page.getByRole("heading", { name: /Solution List & Assessment/ }).waitFor();
 
   await page.locator('[data-page="issue"]').first().click();
   await page.getByRole("button", { name: /New Issue Intake/ }).click();
