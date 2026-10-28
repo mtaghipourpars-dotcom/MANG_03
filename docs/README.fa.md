@@ -48,3 +48,5 @@
 - [زنجیره انتهابه‌انتهای مسئله تا راهکار — فارسی](design/issue-solution-end-to-end-chain.fa.md)
 
 - [برچسب‌ها و شرح دوزبانه انواع مسئله سازمانی](localization/enterprise-issue-type-labels.fa-en.csv)
+
+- [برچسب‌های دوزبانه قواعد ارزیابی صلاحیت](localization/qualification-rule-labels.fa-en.csv)
