@@ -38,6 +38,8 @@ try {
 
   await page.getByText("Browser smoke test intake", { exact: false }).waitFor();
   await page.getByText("SMOKE-EVIDENCE-001", { exact: false }).waitFor();
+  assert.equal(await page.evaluate(() => document.activeElement?.id), "intakeQueueHeading",
+    "after submit, keyboard focus should move to the new intake queue");
   await page.getByText(/disappear when this page is refreshed or closed/i).waitFor();
   const intakeIdText = await page.locator("#content").innerText();
   const intakeId = intakeIdText.match(/INT-DEMO-\d+-\d+/)?.[0];
