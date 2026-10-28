@@ -154,6 +154,8 @@ render();
     if (hold) {
       root.querySelectorAll(".candidate").forEach(el=>el.classList.remove("selected"));
       root.querySelectorAll(".candidate .candbottom .btn").forEach(el=>{if(el.textContent.includes("Selected"))el.textContent="Fixture selection (not recommendation)";});
+    } else if (crumb.includes("Solution")) {
+      root.querySelectorAll(".candidate").forEach(el=>{if(el.innerText.includes("CAND-024-C")){el.classList.add("selected");const btn=el.querySelector(".candbottom .btn");if(btn)btn.textContent="Selected ✓";}});
     }
     const oldNotice=root.querySelector('[data-current-session-hold="true"]');
     if (state.abstained && crumb.includes("Decision") && !oldNotice) {
