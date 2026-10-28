@@ -29,6 +29,11 @@ try {
 
   await page.locator('[data-page="issue"]').first().click();
   await page.getByRole("button", { name: /New Issue Intake/ }).click();
+  await page.getByRole("button", { name: "Save intake" }).click();
+  assert.equal(await page.locator("#title").evaluate(el => el.validity.valueMissing), true,
+    "blank title should be rejected by native required-field validation");
+  assert.equal(await page.locator("#description").evaluate(el => el.validity.valueMissing), true,
+    "blank observed situation should be rejected by native required-field validation");
   await page.locator("#title").fill("Browser smoke test intake");
   await page.locator("#domain").selectOption({ label: "Finance" });
   await page.locator("#urgency").selectOption({ label: "Critical — immediate review" });
@@ -82,6 +87,23 @@ try {
   await page.locator("#closeModal").click();
   assert.equal(await opener.evaluate(el => el === document.activeElement), true,
     "closing the modal should restore focus to the opener");
+
+  await opener.click();
+  await page.keyboard.press("Escape");
+  assert.equal(await page.locator("#modalback").evaluate(el => el.classList.contains("open")), false,
+    "Escape should close the modal");
+  assert.equal(await opener.evaluate(el => el === document.activeElement), true,
+    "Escape dismissal should restore opener focus");
+
+  await opener.click();
+  await page.locator("#cancelIntake").click();
+  assert.equal(await page.locator("#modalback").evaluate(el => el.classList.contains("open")), false,
+    "Cancel should close the modal");
+
+  await opener.click();
+  await page.locator("#modalback").click({ position: { x: 4, y: 4 } });
+  assert.equal(await page.locator("#modalback").evaluate(el => el.classList.contains("open")), false,
+    "backdrop click should close the modal");
 
   await page.reload();
   await page.locator('[data-page="issue"]').first().click();
