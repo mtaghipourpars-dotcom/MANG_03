@@ -79,3 +79,7 @@ Issue and Solution catalogues are enterprise-wide and user-extensible across the
 
 ## 11. Canonical enterprise-wide reference matrix
 The [Enterprise Issue–Solution Reference Matrix](../design/enterprise-issue-solution-reference-matrix.md) governs domain coverage, qualification checks, solution archetypes, relationship semantics, user-extensible catalogues, versioning, resource conflicts and outcome review. The manufacturing matrix is a domain appendix, not a scope boundary.
+
+
+## MVP catalogue scope
+The MVP does not allow users to create reusable Issue Types or Solution Types. When no Issue Type fits, preserve the intake as **Not sure / Other — classification review required** and route it for review. When no Solution Type fits, record manual review/escalation rather than force-fitting a solution. User-facing NEW ISSUE / NEW SOLUTION authoring and AI-generated qualification templates/relationships are deferred to a later version. See [D-025](../../DECISIONS.md) and the [canonical matrix](../design/enterprise-issue-solution-reference-matrix.md).
