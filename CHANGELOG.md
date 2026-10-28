@@ -1,5 +1,10 @@
 # Change Log
 
+## 2026-10-28 — Parametric financial-impact assessment
+- Added a manager-owned, staged 1–5 assessment model for case-specific solution candidates.
+- Distinguished ordinal ratings from monetary calculations; documented scale direction, unknown values, assessment ownership, progressive refinement, and audit history.
+- Linked the proposed baseline model and its open decisions from the decision architecture.
+
 ## 2026-10-28 — Decision rules clarified
 - Added financial impact assessment for each solution candidate, with costs, margin, cash-flow timing, assumptions, evidence, and uncertainty kept distinct.
 - Clarified configurable, versioned decision profiles including sales commitments and liquidity preservation.
