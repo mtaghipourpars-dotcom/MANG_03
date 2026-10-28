@@ -73,8 +73,10 @@ try {
   await page.locator('[data-page="solution"]').first().click();
   await page.getByRole("heading", { name: "Recommendation abstention & emergency path" }).waitFor();
   await page.locator("#g3-abstain-reason").selectOption({ label: "Hard constraint unresolved" });
+  await page.locator("#g3-evidence-note").fill("Engineering approval evidence is missing.");
   await page.getByRole("button", { name: "Withhold recommendation" }).click();
   await page.getByText(/Recommendation withheld for this session/i).waitFor();
+  await page.getByText(/Engineering approval evidence is missing/i).waitFor();
   assert.equal(await page.locator(".candidate.selected").count(), 0, "abstention must remove the visual recommended-selection state");
   await page.getByRole("button", { name: "Clear session hold" }).click();
   assert.equal(await page.locator(".candidate.selected").count(), 1, "clearing abstention must restore the fixture's selected-candidate styling");
@@ -97,6 +99,7 @@ try {
   await page.getByRole("button", { name: "Record value evaluation" }).click();
   await page.getByText(/Evaluation captured \(session-only\)/i).waitFor();
   await page.getByText(/Attribution: Not established/i).waitFor();
+  await page.getByText(/Measurement window: 5 days after action/i).waitFor();
   await page.locator('[data-page="solution"]').first().click();
   const disabledSolutionButtons = page.getByRole("button", { name: "NEW SOLUTION", exact: true });
   assert.ok(await disabledSolutionButtons.count() >= 1, "NEW SOLUTION should remain visible in Solution");
