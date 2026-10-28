@@ -41,9 +41,9 @@ These are independent decision dimensions and must remain visible separately.
 
 A low-cost option can be ineffective. An effective option can be financially inefficient or infeasible under cash timing. Do not collapse both dimensions into one opaque score. Apply hard safety, legal, technical, authority, and liquidity constraints first; then compare the remaining feasible options under a versioned decision profile.
 
-## 5. Financial assessment for every material issue
+## 5. Financial assessment as a standard dimension of every issue
 
-Financial assessment is a required dimension of material issue evaluation, not a decorative dashboard widget. The depth should be proportional to materiality and evidence availability.
+Every issue receives a financial-impact screening as a standard part of assessment—not as an optional field or decorative dashboard widget. The screening may conclude that an effect is not applicable, unknown, or potentially material; it must record the basis. The depth of quantification should be proportional to materiality, uncertainty, and decision stakes.
 
 Where relevant, capture or derive:
 - incremental cash required and expected payment dates;
@@ -82,7 +82,7 @@ Financial indicators should be visible, not buried in a report, but each must di
 
 ## 8. Decision logic and record
 
-For each material Issue:
+For every Issue, with deeper quantification when materiality or decision stakes warrant it:
 1. Preserve the original report and establish what is observed versus unknown.
 2. Link relevant products, projects, commitments, and key resources only when the relationship is supported.
 3. Estimate time-phased operational and financial impact, including a no-action baseline where defensible.
